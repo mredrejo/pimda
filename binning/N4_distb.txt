@@ -1,0 +1,16 @@
+../refs/NC_000913.3.fasta	N4b/bins/bin_0.fasta	1	1	0/1000
+../refs/NC_000964.3.fasta	N4b/bins/bin_0.fasta	0.0110444	0	657/1000
+../refs/CP013113.1_PAER4.fasta	N4b/bins/bin_0.fasta	1	1	0/1000
+../refs/Kocuria_rhizophila_ATCC_9341.fasta	N4b/bins/bin_0.fasta	1	1	0/1000
+../refs/NC_000913.3.fasta	N4b/bins/bin_1.fasta	0.000312573	0	987/1000
+../refs/NC_000964.3.fasta	N4b/bins/bin_1.fasta	0.295981	0.000497774	1/1000
+../refs/CP013113.1_PAER4.fasta	N4b/bins/bin_1.fasta	1	1	0/1000
+../refs/Kocuria_rhizophila_ATCC_9341.fasta	N4b/bins/bin_1.fasta	0.295981	0.000385149	1/1000
+../refs/NC_000913.3.fasta	N4b/bins/bin_3.fasta	1	1	0/1000
+../refs/NC_000964.3.fasta	N4b/bins/bin_3.fasta	1	1	0/1000
+../refs/CP013113.1_PAER4.fasta	N4b/bins/bin_3.fasta	0.0263945	0	403/1000
+../refs/Kocuria_rhizophila_ATCC_9341.fasta	N4b/bins/bin_3.fasta	1	1	0/1000
+../refs/NC_000913.3.fasta	N4b/bins/bin_9.fasta	1	1	0/1000
+../refs/NC_000964.3.fasta	N4b/bins/bin_9.fasta	1	1	0/1000
+../refs/CP013113.1_PAER4.fasta	N4b/bins/bin_9.fasta	0.0778587	0	108/1000
+../refs/Kocuria_rhizophila_ATCC_9341.fasta	N4b/bins/bin_9.fasta	0.191731	8.49317e-42	9/1000

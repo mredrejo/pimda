@@ -1,0 +1,23 @@
+reference chromosomes:
+	GCF_000006765.1_ASM676v1_genomic_NC_002516.2 (total length: 6264404 bp, total length without N's: 6264404 bp, maximal covered length: 6004217 bp)
+
+total genome size: 6264404
+
+gap min size: 50
+partial gene/operon min size: 100
+
+
+
+assembly                 | genome    | duplication | gaps      | genes     | partial   | operons   | partial   |
+                         | fraction  | ratio       | number    |           | genes     |           | operons   |
+========================================================================================================================
+NA_to_GCF_000006765.1_AS | 95.847    | 1.001       | 91        | -         | -         | -         | -         |
+NA_2_to_GCF_000006765.1_ | 95.836    | 1.001       | 90        | -         | -         | -         | -         |
+Phi29-RP_to_GCF_00000676 | 66.002    | 0.999       | 1573      | -         | -         | -         | -         |
+Phi29-RP_2_to_GCF_000006 | 95.432    | 1.001       | 148       | -         | -         | -         | -         |
+PrimPol-Phi29_to_GCF_000 | 95.731    | 1.001       | 97        | -         | -         | -         | -         |
+piPolB-D_to_GCF_00000676 | 95.630    | 1.001       | 107       | -         | -         | -         | -         |
+piMDA_to_GCF_000006765.1 | 95.826    | 1.004       | 96        | -         | -         | -         | -         |
+piMDA_2_to_GCF_000006765 | 95.837    | 1.004       | 94        | -         | -         | -         | -         |
+piMDA-D_to_GCF_000006765 | 95.811    | 1.001       | 92        | -         | -         | -         | -         |
+piMDA-D_2_to_GCF_0000067 | 95.753    | 1.001       | 91        | -         | -         | -         | -         |

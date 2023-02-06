@@ -1,0 +1,1272 @@
+2022-02-10 23:00:03,082 - INFO - Welcome to MetaCoAG: Binning Metagenomic Contigs via Composition, Coverage and Assembly Graphs.
+2022-02-10 23:00:03,082 - INFO - This version of MetaCoAG makes use of the assembly graph produced by SPAdes which is based on the de Bruijn graph approach.
+2022-02-10 23:00:03,082 - INFO - Input arguments: 
+2022-02-10 23:00:03,082 - INFO - Assembler used: spades
+2022-02-10 23:00:03,082 - INFO - Contigs file: ../spades_results/N4/contigs.fasta
+2022-02-10 23:00:03,082 - INFO - Assembly graph file: ../spades_results/N4/assembly_graph_with_scaffolds.gfa
+2022-02-10 23:00:03,082 - INFO - Contig paths file: ../spades_results/N4/contigs.paths
+2022-02-10 23:00:03,082 - INFO - Abundance file: ../binning/abundance_N4.tsv
+2022-02-10 23:00:03,082 - INFO - Final binning output file: ../binning/N4b/
+2022-02-10 23:00:03,082 - INFO - Marker file: /home/modesto/data/freeDNA/MetaCoAG/auxiliary/marker.hmm
+2022-02-10 23:00:03,082 - INFO - Minimum length of contigs to consider: 1000
+2022-02-10 23:00:03,082 - INFO - Depth to consider for label propagation: 10
+2022-02-10 23:00:03,082 - INFO - p_intra: 0.1
+2022-02-10 23:00:03,082 - INFO - p_inter: 0.01
+2022-02-10 23:00:03,082 - DEBUG - bin_threshold: 0.9999999999999998
+2022-02-10 23:00:03,082 - DEBUG - break_threshold: 1.9999999999999996
+2022-02-10 23:00:03,082 - INFO - mg_threshold: 0.5
+2022-02-10 23:00:03,082 - INFO - bin_mg_threshold: 0.33333
+2022-02-10 23:00:03,082 - INFO - min_bin_size: 200000 base pairs
+2022-02-10 23:00:03,082 - INFO - d_limit: 20
+2022-02-10 23:00:03,082 - INFO - Number of threads: 12
+2022-02-10 23:00:03,082 - INFO - MetaCoAG started
+2022-02-10 23:00:03,133 - INFO - Total number of contigs available: 5634
+2022-02-10 23:00:03,154 - INFO - Total number of edges in the assembly graph: 495
+2022-02-10 23:00:03,154 - INFO - Obtaining lengths and coverage values of contigs
+2022-02-10 23:00:03,236 - DEBUG - w_intra: 1.9999999999999996
+2022-02-10 23:00:03,236 - DEBUG - w_inter: 3.999999999999999
+2022-02-10 23:00:03,236 - INFO - Obtaining tetranucleotide frequencies of contigs
+2022-02-10 23:00:14,171 - INFO - Scanning for single-copy marker genes
+2022-02-10 23:00:14,171 - INFO - .hmmout file already exists
+2022-02-10 23:00:14,171 - INFO - Obtaining contigs with single-copy marker genes
+2022-02-10 23:00:14,173 - INFO - Number of contigs containing single-copy marker genes: 80
+2022-02-10 23:00:14,173 - INFO - Determining contig counts for each single-copy marker gene
+2022-02-10 23:00:14,173 - DEBUG - Contig counts of single-copy marker genes: 
+2022-02-10 23:00:14,173 - DEBUG - [6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+2022-02-10 23:00:14,173 - INFO - Initialising bins
+2022-02-10 23:00:14,173 - DEBUG - Number of initial bins detected: 6
+2022-02-10 23:00:14,173 - DEBUG - Initialised bins: 
+2022-02-10 23:00:14,173 - DEBUG - {0: [0], 1: [2], 2: [1], 3: [141], 4: [735], 5: [544]}
+2022-02-10 23:00:14,173 - INFO - Matching and assigning contigs with single-copy marker genes to bins
+2022-02-10 23:00:14,174 - DEBUG - Iteration 0: 6 contig(s) with seed marker genes
+2022-02-10 23:00:14,174 - DEBUG - Iteration 1: 5 contig(s) with seed marker genes
+2022-02-10 23:00:14,174 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,185 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,185 - DEBUG - New bin has contig 661 to bin 7 weight=8.813319453409179
+2022-02-10 23:00:14,185 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:00:14,185 - DEBUG - Iteration 2: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,185 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,186 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,186 - DEBUG - Iteration 3: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,186 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,187 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,187 - DEBUG - Iteration 4: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,187 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,188 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,188 - DEBUG - Iteration 5: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,188 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,189 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,189 - DEBUG - Iteration 6: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,189 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,190 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,190 - DEBUG - Iteration 7: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,190 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,191 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,191 - DEBUG - Iteration 8: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,191 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,191 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,191 - DEBUG - Iteration 9: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,191 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,192 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,192 - DEBUG - Iteration 10: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,192 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,193 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,193 - DEBUG - Iteration 11: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,193 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,194 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,194 - DEBUG - Iteration 12: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,194 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,195 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,195 - DEBUG - Iteration 13: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,195 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,196 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,196 - DEBUG - Iteration 14: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,196 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,197 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,197 - DEBUG - Iteration 15: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,197 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,197 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,197 - DEBUG - Iteration 16: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,197 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,198 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,198 - DEBUG - Iteration 17: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,198 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,199 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,199 - DEBUG - Iteration 18: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,199 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,200 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,200 - DEBUG - Iteration 19: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,200 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,200 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,200 - DEBUG - Iteration 20: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,200 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,201 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,201 - DEBUG - Iteration 21: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,201 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,202 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,202 - DEBUG - Iteration 22: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,202 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,203 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,203 - DEBUG - New bin has contig 221 to bin 8 weight=4.6078504545369485
+2022-02-10 23:00:14,203 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:00:14,203 - DEBUG - Iteration 23: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,203 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,203 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,203 - DEBUG - Iteration 24: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,203 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,204 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,204 - DEBUG - Iteration 25: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,204 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,205 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,205 - DEBUG - New bin has contig 1114 to bin 9 weight=8.266559346815345
+2022-02-10 23:00:14,205 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,205 - DEBUG - Iteration 26: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,205 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,206 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,206 - DEBUG - New bin has contig 324 to bin 10 weight=4.437400524359169
+2022-02-10 23:00:14,206 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,206 - DEBUG - Iteration 27: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,206 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,207 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,207 - DEBUG - Iteration 28: 4 contig(s) with seed marker genes
+2022-02-10 23:00:14,207 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:00:14,208 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,208 - DEBUG - Iteration 29: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,208 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,209 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,209 - DEBUG - Iteration 30: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,209 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,209 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,209 - DEBUG - Iteration 31: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,210 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,210 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,210 - DEBUG - Iteration 32: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,210 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,211 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,211 - DEBUG - Iteration 33: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,211 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,212 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,212 - DEBUG - Iteration 34: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,212 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,213 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,213 - DEBUG - Iteration 35: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,213 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,214 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,214 - DEBUG - Iteration 36: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,214 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 37: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 38: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 39: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 40: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 41: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,215 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,215 - DEBUG - Iteration 42: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,215 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,216 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,216 - DEBUG - Iteration 43: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,216 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,216 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,216 - DEBUG - Iteration 44: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,216 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,217 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,217 - DEBUG - Iteration 45: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,217 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,218 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,218 - DEBUG - Iteration 46: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,218 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,218 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,218 - DEBUG - Iteration 47: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,218 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,219 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,219 - DEBUG - Iteration 48: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,219 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,219 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,219 - DEBUG - Iteration 49: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,219 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,220 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,220 - DEBUG - Iteration 50: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,220 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,220 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,220 - DEBUG - Iteration 51: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,220 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,221 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,221 - DEBUG - Iteration 52: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,221 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,222 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,222 - DEBUG - Iteration 53: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,222 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,222 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,222 - DEBUG - Iteration 54: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,223 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,223 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,223 - DEBUG - Iteration 55: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,223 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,224 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,224 - DEBUG - Iteration 56: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,224 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,224 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,224 - DEBUG - Iteration 57: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,224 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,225 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,225 - DEBUG - Iteration 58: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,225 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,226 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,226 - DEBUG - Iteration 59: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,226 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,226 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,226 - DEBUG - Iteration 60: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,226 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,227 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,227 - DEBUG - Iteration 61: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,227 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,228 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,228 - DEBUG - Iteration 62: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,228 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,229 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,229 - DEBUG - Iteration 63: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,229 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,229 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,229 - DEBUG - New bin has contig 608 to bin 11 weight=6.095420386992134
+2022-02-10 23:00:14,229 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,229 - DEBUG - Iteration 64: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,229 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,230 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,230 - DEBUG - New bin has contig 50 to bin 12 weight=6.18945838482734
+2022-02-10 23:00:14,230 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,230 - DEBUG - Iteration 65: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,230 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,231 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,231 - DEBUG - Iteration 66: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,231 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,232 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,232 - DEBUG - Iteration 67: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,232 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,233 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,233 - DEBUG - Iteration 68: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,233 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,234 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,234 - DEBUG - Iteration 69: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,234 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,236 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,236 - DEBUG - Iteration 70: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,236 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,237 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,237 - DEBUG - Iteration 71: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,237 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,238 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,238 - DEBUG - Iteration 72: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,238 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,239 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,239 - DEBUG - Iteration 73: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,239 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,241 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,241 - DEBUG - Iteration 74: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,241 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,242 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,242 - DEBUG - Iteration 75: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,242 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,242 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,243 - DEBUG - Iteration 76: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,243 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,243 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,243 - DEBUG - Iteration 77: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,243 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,245 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,245 - DEBUG - Iteration 78: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,245 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,246 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,246 - DEBUG - Iteration 79: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,246 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,247 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:00:14,247 - DEBUG - Iteration 80: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,247 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,248 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,248 - DEBUG - Iteration 81: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,248 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,249 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,249 - DEBUG - Iteration 82: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,249 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,250 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,250 - DEBUG - Iteration 83: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,250 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:00:14,251 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,251 - DEBUG - Iteration 84: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,251 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,252 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,252 - DEBUG - Iteration 85: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,252 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,253 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,253 - DEBUG - Iteration 86: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,253 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,253 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,253 - DEBUG - Iteration 87: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,253 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:00:14,254 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,254 - DEBUG - Iteration 88: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,254 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,254 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,254 - DEBUG - Iteration 89: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,254 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,255 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,255 - DEBUG - Iteration 90: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,255 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,256 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,256 - DEBUG - Iteration 91: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,256 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,257 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,257 - DEBUG - Iteration 92: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,257 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,258 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,258 - DEBUG - Iteration 93: 3 contig(s) with seed marker genes
+2022-02-10 23:00:14,258 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,260 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,260 - DEBUG - Iteration 94: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,260 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,260 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,260 - DEBUG - Iteration 95: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,260 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,261 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,261 - DEBUG - Iteration 96: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,261 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,262 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,262 - DEBUG - Iteration 97: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,262 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,262 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,262 - DEBUG - Iteration 98: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,262 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,263 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,263 - DEBUG - Iteration 99: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,263 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,264 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,264 - DEBUG - Iteration 100: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,264 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,265 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,265 - DEBUG - Iteration 101: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,265 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,266 - DEBUG - Creating new bin...
+2022-02-10 23:00:14,266 - DEBUG - New bin has contig 253 to bin 13 weight=8.08765616491646
+2022-02-10 23:00:14,266 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:00:14,266 - DEBUG - Iteration 102: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,266 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,267 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,267 - DEBUG - Iteration 103: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,267 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:00:14,267 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,267 - DEBUG - Iteration 104: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,267 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,269 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,269 - DEBUG - Iteration 105: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,269 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,270 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,270 - DEBUG - Iteration 106: 2 contig(s) with seed marker genes
+2022-02-10 23:00:14,270 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:00:14,271 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:00:14,271 - DEBUG - Number of bins after matching: 13
+2022-02-10 23:00:14,271 - DEBUG - Bins with contigs containing seed marker genes
+2022-02-10 23:00:14,271 - DEBUG - 0: [0]
+2022-02-10 23:00:14,271 - DEBUG - 1: [2, 12, 79, 56]
+2022-02-10 23:00:14,271 - DEBUG - 2: [1]
+2022-02-10 23:00:14,271 - DEBUG - 3: [141, 80, 57, 100, 71, 96, 46, 160, 48]
+2022-02-10 23:00:14,271 - DEBUG - 4: [735]
+2022-02-10 23:00:14,271 - DEBUG - 5: [544]
+2022-02-10 23:00:14,271 - DEBUG - 6: [661]
+2022-02-10 23:00:14,271 - DEBUG - 7: [221]
+2022-02-10 23:00:14,271 - DEBUG - 8: [1114]
+2022-02-10 23:00:14,271 - DEBUG - 9: [324, 97, 92]
+2022-02-10 23:00:14,271 - DEBUG - 10: [608]
+2022-02-10 23:00:14,271 - DEBUG - 11: [50, 123]
+2022-02-10 23:00:14,271 - DEBUG - 12: [253]
+2022-02-10 23:00:14,271 - DEBUG - Number of binned contigs with single-copy marker genes: 27
+2022-02-10 23:00:14,286 - DEBUG - Number of unbinned contigs with single-copy marker genes: 53
+2022-02-10 23:00:14,286 - INFO - Further assigning contigs with single-copy marker genes
+2022-02-10 23:00:14,305 - DEBUG - Remaining number of unbinned MG seed contigs: 51
+2022-02-10 23:00:14,305 - DEBUG - Number of binned contigs with single-copy marker genes: 29
+2022-02-10 23:00:14,319 - DEBUG - Number of binned contigs: 29
+2022-02-10 23:00:14,319 - DEBUG - Number of unbinned contigs: 5605
+2022-02-10 23:00:14,319 - DEBUG - Number of binned contigs with markers: 29
+2022-02-10 23:00:14,334 - DEBUG - Number of non-isolated contigs: 262
+2022-02-10 23:00:14,334 - INFO - Propagating labels to connected vertices of unlabelled long contigs
+2022-02-10 23:00:14,335 - DEBUG - Total number of binned contigs: 29
+2022-02-10 23:00:14,361 - DEBUG - Total number of binned contigs: 34
+2022-02-10 23:00:14,361 - DEBUG - Number of binned contigs: 34
+2022-02-10 23:00:14,361 - DEBUG - Number of unbinned contigs: 5600
+2022-02-10 23:00:14,361 - INFO - Further propagating labels to vertices of unlabelled long contigs
+2022-02-10 23:00:14,716 - DEBUG - Total number of binned contigs: 1249
+2022-02-10 23:00:14,716 - INFO - Further propagating labels to connected vertices of unlabelled long contigs
+2022-02-10 23:00:14,826 - DEBUG - Total number of binned contigs: 1249
+2022-02-10 23:00:14,826 - INFO - Elapsed time: 11.74370265007019 seconds
+2022-02-10 23:00:14,826 - DEBUG - Bin 0: # contigs: 12, bin size: 2779894bp, # markers: 89
+2022-02-10 23:00:14,826 - DEBUG - Bin 1: # contigs: 87, bin size: 4556781bp, # markers: 106
+2022-02-10 23:00:14,826 - DEBUG - Bin 2: # contigs: 7, bin size: 1300681bp, # markers: 19
+2022-02-10 23:00:14,826 - DEBUG - Bin 3: # contigs: 740, bin size: 2825476bp, # markers: 36
+2022-02-10 23:00:14,827 - DEBUG - Bin 4: # contigs: 17, bin size: 24959bp, # markers: 2
+2022-02-10 23:00:14,827 - DEBUG - Bin 5: # contigs: 88, bin size: 129196bp, # markers: 1
+2022-02-10 23:00:14,827 - DEBUG - Bin 6: # contigs: 9, bin size: 12002bp, # markers: 1
+2022-02-10 23:00:14,827 - DEBUG - Bin 7: # contigs: 98, bin size: 303595bp, # markers: 8
+2022-02-10 23:00:14,827 - DEBUG - Bin 8: # contigs: 3, bin size: 3260bp, # markers: 2
+2022-02-10 23:00:14,827 - DEBUG - Bin 9: # contigs: 146, bin size: 614403bp, # markers: 44
+2022-02-10 23:00:14,828 - DEBUG - Bin 10: # contigs: 9, bin size: 13050bp, # markers: 1
+2022-02-10 23:00:14,828 - DEBUG - Bin 11: # contigs: 25, bin size: 641355bp, # markers: 16
+2022-02-10 23:00:14,828 - DEBUG - Bin 12: # contigs: 8, bin size: 15004bp, # markers: 15
+2022-02-10 23:00:14,840 - INFO - Writing the Final Binning result to file
+2022-02-10 23:00:14,921 - INFO - Producing 4 bins...
+2022-02-10 23:00:14,922 - INFO - Final binning results can be found in ../binning/N4b/bins/
+2022-02-10 23:00:14,922 - INFO - Thank you for using MetaCoAG!
+2022-02-10 23:40:21,395 - INFO - Welcome to MetaCoAG: Binning Metagenomic Contigs via Composition, Coverage and Assembly Graphs.
+2022-02-10 23:40:21,395 - INFO - This version of MetaCoAG makes use of the assembly graph produced by SPAdes which is based on the de Bruijn graph approach.
+2022-02-10 23:40:21,395 - INFO - Input arguments: 
+2022-02-10 23:40:21,395 - INFO - Assembler used: spades
+2022-02-10 23:40:21,395 - INFO - Contigs file: ../spades_results/N4/contigs.fasta
+2022-02-10 23:40:21,395 - INFO - Assembly graph file: ../spades_results/N4/assembly_graph_with_scaffolds.gfa
+2022-02-10 23:40:21,396 - INFO - Contig paths file: ../spades_results/N4/contigs.paths
+2022-02-10 23:40:21,396 - INFO - Abundance file: ../binning/abundance_N4.tsv
+2022-02-10 23:40:21,396 - INFO - Final binning output file: ../binning/N4b/
+2022-02-10 23:40:21,396 - INFO - Marker file: /home/modesto/data/freeDNA/MetaCoAG/auxiliary/marker.hmm
+2022-02-10 23:40:21,396 - INFO - Minimum length of contigs to consider: 1000
+2022-02-10 23:40:21,396 - INFO - Depth to consider for label propagation: 10
+2022-02-10 23:40:21,396 - INFO - p_intra: 0.1
+2022-02-10 23:40:21,396 - INFO - p_inter: 0.01
+2022-02-10 23:40:21,396 - DEBUG - bin_threshold: 0.9999999999999998
+2022-02-10 23:40:21,396 - DEBUG - break_threshold: 1.9999999999999996
+2022-02-10 23:40:21,396 - INFO - mg_threshold: 0.2
+2022-02-10 23:40:21,396 - INFO - bin_mg_threshold: 0.2
+2022-02-10 23:40:21,396 - INFO - min_bin_size: 200000 base pairs
+2022-02-10 23:40:21,396 - INFO - d_limit: 20
+2022-02-10 23:40:21,396 - INFO - Number of threads: 12
+2022-02-10 23:40:21,396 - INFO - MetaCoAG started
+2022-02-10 23:40:21,449 - INFO - Total number of contigs available: 5634
+2022-02-10 23:40:21,471 - INFO - Total number of edges in the assembly graph: 495
+2022-02-10 23:40:21,471 - INFO - Obtaining lengths and coverage values of contigs
+2022-02-10 23:40:21,555 - DEBUG - w_intra: 1.9999999999999996
+2022-02-10 23:40:21,555 - DEBUG - w_inter: 3.999999999999999
+2022-02-10 23:40:21,555 - INFO - Obtaining tetranucleotide frequencies of contigs
+2022-02-10 23:40:21,578 - INFO - Scanning for single-copy marker genes
+2022-02-10 23:40:21,579 - INFO - .hmmout file already exists
+2022-02-10 23:40:21,579 - INFO - Obtaining contigs with single-copy marker genes
+2022-02-10 23:40:21,581 - INFO - Number of contigs containing single-copy marker genes: 81
+2022-02-10 23:40:21,581 - INFO - Determining contig counts for each single-copy marker gene
+2022-02-10 23:40:21,581 - DEBUG - Contig counts of single-copy marker genes: 
+2022-02-10 23:40:21,581 - DEBUG - [6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+2022-02-10 23:40:21,581 - INFO - Initialising bins
+2022-02-10 23:40:21,581 - DEBUG - Number of initial bins detected: 6
+2022-02-10 23:40:21,581 - DEBUG - Initialised bins: 
+2022-02-10 23:40:21,581 - DEBUG - {0: [0], 1: [2], 2: [1], 3: [141], 4: [735], 5: [544]}
+2022-02-10 23:40:21,581 - INFO - Matching and assigning contigs with single-copy marker genes to bins
+2022-02-10 23:40:21,581 - DEBUG - Iteration 0: 6 contig(s) with seed marker genes
+2022-02-10 23:40:21,581 - DEBUG - Iteration 1: 5 contig(s) with seed marker genes
+2022-02-10 23:40:21,581 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,591 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,591 - DEBUG - New bin has contig 661 to bin 7 weight=8.813319453409179
+2022-02-10 23:40:21,591 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:40:21,591 - DEBUG - Iteration 2: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,591 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,592 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,592 - DEBUG - Iteration 3: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,592 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,593 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,593 - DEBUG - Iteration 4: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,593 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,594 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,594 - DEBUG - Iteration 5: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,594 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,595 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,595 - DEBUG - Iteration 6: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,595 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,596 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,596 - DEBUG - Iteration 7: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,596 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,597 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,597 - DEBUG - Iteration 8: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,597 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,598 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,598 - DEBUG - Iteration 9: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,598 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,599 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,599 - DEBUG - Iteration 10: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,599 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,600 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,600 - DEBUG - Iteration 11: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,600 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,600 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,600 - DEBUG - Iteration 12: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,600 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,601 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,601 - DEBUG - Iteration 13: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,601 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,602 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,602 - DEBUG - Iteration 14: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,602 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,603 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,603 - DEBUG - Iteration 15: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,603 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,604 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,604 - DEBUG - Iteration 16: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,604 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,605 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,605 - DEBUG - Iteration 17: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,605 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,606 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,606 - DEBUG - Iteration 18: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,606 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,607 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,607 - DEBUG - Iteration 19: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,607 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,607 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,607 - DEBUG - Iteration 20: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,607 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,608 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,608 - DEBUG - Iteration 21: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,608 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,609 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,609 - DEBUG - Iteration 22: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,609 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,610 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,610 - DEBUG - Iteration 23: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,610 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,611 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,611 - DEBUG - New bin has contig 221 to bin 8 weight=4.6078504545369485
+2022-02-10 23:40:21,611 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:40:21,611 - DEBUG - Iteration 24: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,611 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,611 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,611 - DEBUG - Iteration 25: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,611 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,612 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,612 - DEBUG - Iteration 26: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,612 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,613 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,613 - DEBUG - New bin has contig 1114 to bin 9 weight=8.266559346815345
+2022-02-10 23:40:21,613 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,613 - DEBUG - Iteration 27: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,613 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,614 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,614 - DEBUG - New bin has contig 324 to bin 10 weight=4.437400524359169
+2022-02-10 23:40:21,614 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,614 - DEBUG - Iteration 28: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,614 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,615 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,615 - DEBUG - Iteration 29: 4 contig(s) with seed marker genes
+2022-02-10 23:40:21,615 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-10 23:40:21,616 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,616 - DEBUG - Iteration 30: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,616 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,617 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,617 - DEBUG - Iteration 31: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,617 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,618 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,618 - DEBUG - Iteration 32: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,618 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,619 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,619 - DEBUG - Iteration 33: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,619 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,620 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,620 - DEBUG - Iteration 34: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,620 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,621 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,621 - DEBUG - Iteration 35: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,621 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,622 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,622 - DEBUG - Iteration 36: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,622 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 37: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 38: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 39: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 40: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 41: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,623 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,623 - DEBUG - Iteration 42: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,623 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,624 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,624 - DEBUG - Iteration 43: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,624 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,624 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,624 - DEBUG - Iteration 44: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,624 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,625 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,625 - DEBUG - Iteration 45: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,625 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,625 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,626 - DEBUG - Iteration 46: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,626 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,626 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,626 - DEBUG - Iteration 47: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,626 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,627 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,627 - DEBUG - Iteration 48: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,627 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,627 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,627 - DEBUG - Iteration 49: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,627 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,628 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,628 - DEBUG - Iteration 50: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,628 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,628 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,628 - DEBUG - Iteration 51: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,628 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,629 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,629 - DEBUG - Iteration 52: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,629 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,630 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,630 - DEBUG - Iteration 53: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,630 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,630 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,631 - DEBUG - Iteration 54: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,631 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,631 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,631 - DEBUG - Iteration 55: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,631 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,632 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,632 - DEBUG - Iteration 56: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,632 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,633 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,633 - DEBUG - Iteration 57: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,633 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,633 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,633 - DEBUG - Iteration 58: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,633 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,634 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,634 - DEBUG - Iteration 59: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,634 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,635 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,635 - DEBUG - Iteration 60: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,635 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,635 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,635 - DEBUG - Iteration 61: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,635 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,636 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,636 - DEBUG - Iteration 62: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,636 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,637 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,637 - DEBUG - Iteration 63: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,637 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,638 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,638 - DEBUG - New bin has contig 608 to bin 11 weight=6.095420386992134
+2022-02-10 23:40:21,638 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,638 - DEBUG - Iteration 64: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,638 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,639 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,639 - DEBUG - Iteration 65: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,639 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,640 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,640 - DEBUG - New bin has contig 50 to bin 12 weight=6.18945838482734
+2022-02-10 23:40:21,640 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,640 - DEBUG - Iteration 66: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,640 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,641 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,641 - DEBUG - Iteration 67: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,641 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,642 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,642 - DEBUG - Iteration 68: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,642 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,644 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,644 - DEBUG - Iteration 69: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,644 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,645 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,645 - DEBUG - Iteration 70: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,645 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,646 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,646 - DEBUG - Iteration 71: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,646 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,648 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,648 - DEBUG - Iteration 72: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,648 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,649 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,649 - DEBUG - Iteration 73: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,649 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,650 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,650 - DEBUG - Iteration 74: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,650 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,651 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,651 - DEBUG - Iteration 75: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,651 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,652 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,652 - DEBUG - Iteration 76: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,652 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,653 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,653 - DEBUG - Iteration 77: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,653 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,654 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,654 - DEBUG - Iteration 78: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,654 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,655 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,655 - DEBUG - Iteration 79: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,655 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,656 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,656 - DEBUG - Iteration 80: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,656 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,657 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,657 - DEBUG - Iteration 81: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,657 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,658 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-10 23:40:21,658 - DEBUG - Iteration 82: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,658 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,659 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,659 - DEBUG - Iteration 83: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,659 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,660 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,660 - DEBUG - Iteration 84: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,660 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,662 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,662 - DEBUG - Iteration 85: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,662 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-10 23:40:21,663 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,663 - DEBUG - Iteration 86: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,663 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,664 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,664 - DEBUG - Iteration 87: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,664 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,665 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,665 - DEBUG - Iteration 88: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,665 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,665 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,665 - DEBUG - Iteration 89: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,665 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-10 23:40:21,665 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,665 - DEBUG - Iteration 90: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,665 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,666 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,666 - DEBUG - Iteration 91: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,666 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,667 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,667 - DEBUG - Iteration 92: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,667 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,668 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,668 - DEBUG - Iteration 93: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,668 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,669 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,669 - DEBUG - Iteration 94: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,669 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,671 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,671 - DEBUG - Iteration 95: 3 contig(s) with seed marker genes
+2022-02-10 23:40:21,671 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,672 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,672 - DEBUG - Iteration 96: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,672 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,672 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,673 - DEBUG - Iteration 97: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,673 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,673 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,673 - DEBUG - Iteration 98: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,673 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,674 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,674 - DEBUG - Iteration 99: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,674 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,675 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,675 - DEBUG - Iteration 100: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,675 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,675 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,676 - DEBUG - Iteration 101: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,676 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,677 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,677 - DEBUG - Iteration 102: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,677 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,678 - DEBUG - Creating new bin...
+2022-02-10 23:40:21,678 - DEBUG - New bin has contig 253 to bin 13 weight=8.08765616491646
+2022-02-10 23:40:21,678 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-10 23:40:21,678 - DEBUG - Iteration 103: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,678 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,679 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,679 - DEBUG - Iteration 104: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,679 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-10 23:40:21,679 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,679 - DEBUG - Iteration 105: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,679 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,681 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,681 - DEBUG - Iteration 106: 2 contig(s) with seed marker genes
+2022-02-10 23:40:21,681 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-10 23:40:21,682 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-10 23:40:21,682 - DEBUG - Number of bins after matching: 13
+2022-02-10 23:40:21,682 - DEBUG - Bins with contigs containing seed marker genes
+2022-02-10 23:40:21,682 - DEBUG - 0: [0]
+2022-02-10 23:40:21,682 - DEBUG - 1: [2, 12, 79, 56]
+2022-02-10 23:40:21,682 - DEBUG - 2: [1]
+2022-02-10 23:40:21,682 - DEBUG - 3: [141, 80, 57, 100, 71, 96, 46, 160, 48]
+2022-02-10 23:40:21,682 - DEBUG - 4: [735]
+2022-02-10 23:40:21,682 - DEBUG - 5: [544]
+2022-02-10 23:40:21,682 - DEBUG - 6: [661]
+2022-02-10 23:40:21,682 - DEBUG - 7: [221]
+2022-02-10 23:40:21,682 - DEBUG - 8: [1114]
+2022-02-10 23:40:21,682 - DEBUG - 9: [324, 97, 92]
+2022-02-10 23:40:21,682 - DEBUG - 10: [608]
+2022-02-10 23:40:21,682 - DEBUG - 11: [50, 123]
+2022-02-10 23:40:21,682 - DEBUG - 12: [253]
+2022-02-10 23:40:21,682 - DEBUG - Number of binned contigs with single-copy marker genes: 27
+2022-02-10 23:40:21,697 - DEBUG - Number of unbinned contigs with single-copy marker genes: 54
+2022-02-10 23:40:21,697 - INFO - Further assigning contigs with single-copy marker genes
+2022-02-10 23:40:21,718 - DEBUG - Remaining number of unbinned MG seed contigs: 52
+2022-02-10 23:40:21,718 - DEBUG - Number of binned contigs with single-copy marker genes: 29
+2022-02-10 23:40:21,732 - DEBUG - Number of binned contigs: 29
+2022-02-10 23:40:21,732 - DEBUG - Number of unbinned contigs: 5605
+2022-02-10 23:40:21,732 - DEBUG - Number of binned contigs with markers: 29
+2022-02-10 23:40:21,748 - DEBUG - Number of non-isolated contigs: 262
+2022-02-10 23:40:21,748 - INFO - Propagating labels to connected vertices of unlabelled long contigs
+2022-02-10 23:40:21,749 - DEBUG - Total number of binned contigs: 29
+2022-02-10 23:40:21,777 - DEBUG - Total number of binned contigs: 34
+2022-02-10 23:40:21,777 - DEBUG - Number of binned contigs: 34
+2022-02-10 23:40:21,777 - DEBUG - Number of unbinned contigs: 5600
+2022-02-10 23:40:21,777 - INFO - Further propagating labels to vertices of unlabelled long contigs
+2022-02-10 23:40:22,149 - DEBUG - Total number of binned contigs: 1249
+2022-02-10 23:40:22,149 - INFO - Further propagating labels to connected vertices of unlabelled long contigs
+2022-02-10 23:40:22,267 - DEBUG - Total number of binned contigs: 1249
+2022-02-10 23:40:22,267 - INFO - Elapsed time: 0.8713774681091309 seconds
+2022-02-10 23:40:22,267 - DEBUG - Bin 0: # contigs: 12, bin size: 2779894bp, # markers: 90
+2022-02-10 23:40:22,268 - DEBUG - Bin 1: # contigs: 87, bin size: 4556781bp, # markers: 106
+2022-02-10 23:40:22,268 - DEBUG - Bin 2: # contigs: 7, bin size: 1300681bp, # markers: 19
+2022-02-10 23:40:22,268 - DEBUG - Bin 3: # contigs: 740, bin size: 2825476bp, # markers: 36
+2022-02-10 23:40:22,268 - DEBUG - Bin 4: # contigs: 17, bin size: 24959bp, # markers: 2
+2022-02-10 23:40:22,268 - DEBUG - Bin 5: # contigs: 88, bin size: 129196bp, # markers: 1
+2022-02-10 23:40:22,268 - DEBUG - Bin 6: # contigs: 9, bin size: 12002bp, # markers: 1
+2022-02-10 23:40:22,269 - DEBUG - Bin 7: # contigs: 98, bin size: 303595bp, # markers: 8
+2022-02-10 23:40:22,269 - DEBUG - Bin 8: # contigs: 3, bin size: 3260bp, # markers: 2
+2022-02-10 23:40:22,269 - DEBUG - Bin 9: # contigs: 146, bin size: 614403bp, # markers: 45
+2022-02-10 23:40:22,269 - DEBUG - Bin 10: # contigs: 9, bin size: 13050bp, # markers: 1
+2022-02-10 23:40:22,269 - DEBUG - Bin 11: # contigs: 25, bin size: 641355bp, # markers: 16
+2022-02-10 23:40:22,270 - DEBUG - Bin 12: # contigs: 8, bin size: 15004bp, # markers: 16
+2022-02-10 23:40:22,271 - INFO - Writing the Final Binning result to file
+2022-02-10 23:40:22,380 - INFO - Producing 4 bins...
+2022-02-10 23:40:22,380 - INFO - Final binning results can be found in ../binning/N4b/bins/
+2022-02-10 23:40:22,380 - INFO - Thank you for using MetaCoAG!
+2022-02-14 11:21:50,556 - INFO - Welcome to MetaCoAG: Binning Metagenomic Contigs via Composition, Coverage and Assembly Graphs.
+2022-02-14 11:21:50,557 - INFO - This version of MetaCoAG makes use of the assembly graph produced by SPAdes which is based on the de Bruijn graph approach.
+2022-02-14 11:21:50,557 - INFO - Input arguments: 
+2022-02-14 11:21:50,557 - INFO - Assembler used: spades
+2022-02-14 11:21:50,557 - INFO - Contigs file: ../spades_results/N4/contigs.fasta
+2022-02-14 11:21:50,557 - INFO - Assembly graph file: ../spades_results/N4/assembly_graph_with_scaffolds.gfa
+2022-02-14 11:21:50,558 - INFO - Contig paths file: ../spades_results/N4/contigs.paths
+2022-02-14 11:21:50,558 - INFO - Abundance file: ../binning/abundance_N4.tsv
+2022-02-14 11:21:50,558 - INFO - Final binning output file: ../binning/N4b/
+2022-02-14 11:21:50,558 - INFO - Marker file: /home/modesto/data/freeDNA/MetaCoAG/auxiliary/marker.hmm
+2022-02-14 11:21:50,558 - INFO - Minimum length of contigs to consider: 1000
+2022-02-14 11:21:50,558 - INFO - Depth to consider for label propagation: 10
+2022-02-14 11:21:50,558 - INFO - p_intra: 0.1
+2022-02-14 11:21:50,558 - INFO - p_inter: 0.01
+2022-02-14 11:21:50,558 - DEBUG - bin_threshold: 0.9999999999999998
+2022-02-14 11:21:50,558 - DEBUG - break_threshold: 1.9999999999999996
+2022-02-14 11:21:50,558 - INFO - mg_threshold: 0.4
+2022-02-14 11:21:50,558 - INFO - bin_mg_threshold: 0.2
+2022-02-14 11:21:50,558 - INFO - min_bin_size: 200000 base pairs
+2022-02-14 11:21:50,558 - INFO - d_limit: 20
+2022-02-14 11:21:50,558 - INFO - Number of threads: 12
+2022-02-14 11:21:50,558 - INFO - MetaCoAG started
+2022-02-14 11:21:50,608 - INFO - Total number of contigs available: 5634
+2022-02-14 11:21:50,659 - INFO - Total number of edges in the assembly graph: 495
+2022-02-14 11:21:50,659 - INFO - Obtaining lengths and coverage values of contigs
+2022-02-14 11:21:50,742 - DEBUG - w_intra: 1.9999999999999996
+2022-02-14 11:21:50,742 - DEBUG - w_inter: 3.999999999999999
+2022-02-14 11:21:50,742 - INFO - Obtaining tetranucleotide frequencies of contigs
+2022-02-14 11:21:50,771 - INFO - Scanning for single-copy marker genes
+2022-02-14 11:21:50,771 - INFO - .hmmout file already exists
+2022-02-14 11:21:50,771 - INFO - Obtaining contigs with single-copy marker genes
+2022-02-14 11:21:50,774 - INFO - Number of contigs containing single-copy marker genes: 81
+2022-02-14 11:21:50,774 - INFO - Determining contig counts for each single-copy marker gene
+2022-02-14 11:21:50,774 - DEBUG - Contig counts of single-copy marker genes: 
+2022-02-14 11:21:50,774 - DEBUG - [6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+2022-02-14 11:21:50,774 - INFO - Initialising bins
+2022-02-14 11:21:50,774 - DEBUG - Number of initial bins detected: 6
+2022-02-14 11:21:50,774 - DEBUG - Initialised bins: 
+2022-02-14 11:21:50,774 - DEBUG - {0: [0], 1: [2], 2: [1], 3: [141], 4: [735], 5: [544]}
+2022-02-14 11:21:50,774 - INFO - Matching and assigning contigs with single-copy marker genes to bins
+2022-02-14 11:21:50,774 - DEBUG - Iteration 0: 6 contig(s) with seed marker genes
+2022-02-14 11:21:50,774 - DEBUG - Iteration 1: 5 contig(s) with seed marker genes
+2022-02-14 11:21:50,774 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,784 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,784 - DEBUG - New bin has contig 661 to bin 7 weight=8.813319453409179
+2022-02-14 11:21:50,784 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-14 11:21:50,784 - DEBUG - Iteration 2: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,784 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,785 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,785 - DEBUG - Iteration 3: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,785 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,786 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,786 - DEBUG - Iteration 4: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,786 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,787 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,787 - DEBUG - Iteration 5: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,787 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,788 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,788 - DEBUG - Iteration 6: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,788 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,788 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,788 - DEBUG - Iteration 7: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,788 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,789 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,789 - DEBUG - Iteration 8: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,789 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,790 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,790 - DEBUG - Iteration 9: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,790 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,791 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,791 - DEBUG - Iteration 10: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,791 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,792 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,792 - DEBUG - Iteration 11: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,792 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,793 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,793 - DEBUG - Iteration 12: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,793 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,793 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,793 - DEBUG - Iteration 13: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,793 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,794 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,794 - DEBUG - Iteration 14: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,794 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,795 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,795 - DEBUG - Iteration 15: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,795 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,796 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,796 - DEBUG - Iteration 16: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,796 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,797 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,797 - DEBUG - Iteration 17: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,797 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,798 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,798 - DEBUG - Iteration 18: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,798 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,798 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,798 - DEBUG - Iteration 19: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,798 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,799 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,799 - DEBUG - Iteration 20: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,799 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,800 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,800 - DEBUG - Iteration 21: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,800 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,801 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,801 - DEBUG - Iteration 22: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,801 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,801 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,801 - DEBUG - Iteration 23: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,801 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,802 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,802 - DEBUG - New bin has contig 221 to bin 8 weight=4.6078504545369485
+2022-02-14 11:21:50,802 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-14 11:21:50,802 - DEBUG - Iteration 24: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,802 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,803 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,803 - DEBUG - Iteration 25: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,803 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,803 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,803 - DEBUG - Iteration 26: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,803 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,804 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,804 - DEBUG - New bin has contig 1114 to bin 9 weight=8.266559346815345
+2022-02-14 11:21:50,804 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,804 - DEBUG - Iteration 27: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,804 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,805 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,805 - DEBUG - New bin has contig 324 to bin 10 weight=4.437400524359169
+2022-02-14 11:21:50,805 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,805 - DEBUG - Iteration 28: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,805 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,806 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,806 - DEBUG - Iteration 29: 4 contig(s) with seed marker genes
+2022-02-14 11:21:50,806 - DEBUG - 4 contig(s) to bin in the iteration
+2022-02-14 11:21:50,807 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,807 - DEBUG - Iteration 30: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,807 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,808 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,808 - DEBUG - Iteration 31: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,808 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,808 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,809 - DEBUG - Iteration 32: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,809 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,809 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,809 - DEBUG - Iteration 33: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,809 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,810 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,810 - DEBUG - Iteration 34: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,810 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,811 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,811 - DEBUG - Iteration 35: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,811 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,812 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,812 - DEBUG - Iteration 36: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,812 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 37: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 38: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 39: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 40: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 41: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,813 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,813 - DEBUG - Iteration 42: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,813 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,814 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,814 - DEBUG - Iteration 43: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,814 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,814 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,814 - DEBUG - Iteration 44: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,814 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,815 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,815 - DEBUG - Iteration 45: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,815 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,816 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,816 - DEBUG - Iteration 46: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,816 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,816 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,816 - DEBUG - Iteration 47: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,816 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,817 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,817 - DEBUG - Iteration 48: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,817 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,817 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,817 - DEBUG - Iteration 49: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,817 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,818 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,818 - DEBUG - Iteration 50: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,818 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,818 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,818 - DEBUG - Iteration 51: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,818 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,819 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,819 - DEBUG - Iteration 52: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,819 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,820 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,820 - DEBUG - Iteration 53: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,820 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,820 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,820 - DEBUG - Iteration 54: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,820 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,821 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,821 - DEBUG - Iteration 55: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,821 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,822 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,822 - DEBUG - Iteration 56: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,822 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,822 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,822 - DEBUG - Iteration 57: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,822 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,823 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,823 - DEBUG - Iteration 58: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,823 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,823 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,823 - DEBUG - Iteration 59: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,823 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,824 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,824 - DEBUG - Iteration 60: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,824 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,825 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,825 - DEBUG - Iteration 61: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,825 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,826 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,826 - DEBUG - Iteration 62: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,826 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,826 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,826 - DEBUG - Iteration 63: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,827 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,827 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,827 - DEBUG - New bin has contig 608 to bin 11 weight=6.095420386992134
+2022-02-14 11:21:50,827 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,827 - DEBUG - Iteration 64: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,827 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,828 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,828 - DEBUG - Iteration 65: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,828 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,829 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,829 - DEBUG - New bin has contig 50 to bin 12 weight=6.18945838482734
+2022-02-14 11:21:50,829 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,829 - DEBUG - Iteration 66: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,829 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,830 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,830 - DEBUG - Iteration 67: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,830 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,831 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,831 - DEBUG - Iteration 68: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,831 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,832 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,832 - DEBUG - Iteration 69: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,832 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,834 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,834 - DEBUG - Iteration 70: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,834 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,835 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,835 - DEBUG - Iteration 71: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,835 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,836 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,836 - DEBUG - Iteration 72: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,836 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,837 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,837 - DEBUG - Iteration 73: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,837 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,839 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,839 - DEBUG - Iteration 74: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,839 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,840 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,840 - DEBUG - Iteration 75: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,840 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,840 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,840 - DEBUG - Iteration 76: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,841 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,841 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,841 - DEBUG - Iteration 77: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,841 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,842 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,842 - DEBUG - Iteration 78: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,842 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,843 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,843 - DEBUG - Iteration 79: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,843 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,844 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,844 - DEBUG - Iteration 80: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,844 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,845 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,845 - DEBUG - Iteration 81: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,845 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,846 - DEBUG - 2 contig(s) binned in the iteration
+2022-02-14 11:21:50,846 - DEBUG - Iteration 82: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,846 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,847 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,847 - DEBUG - Iteration 83: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,847 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,848 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,848 - DEBUG - Iteration 84: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,848 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,849 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,849 - DEBUG - Iteration 85: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,849 - DEBUG - 3 contig(s) to bin in the iteration
+2022-02-14 11:21:50,851 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,851 - DEBUG - Iteration 86: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,851 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,851 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,851 - DEBUG - Iteration 87: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,851 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,852 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,852 - DEBUG - Iteration 88: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,852 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,852 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,853 - DEBUG - Iteration 89: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,853 - DEBUG - 0 contig(s) to bin in the iteration
+2022-02-14 11:21:50,853 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,853 - DEBUG - Iteration 90: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,853 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,853 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,853 - DEBUG - Iteration 91: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,853 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,854 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,854 - DEBUG - Iteration 92: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,854 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,855 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,855 - DEBUG - Iteration 93: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,855 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,856 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,856 - DEBUG - Iteration 94: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,856 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,857 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,857 - DEBUG - Iteration 95: 3 contig(s) with seed marker genes
+2022-02-14 11:21:50,857 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,858 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,859 - DEBUG - Iteration 96: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,859 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,859 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,859 - DEBUG - Iteration 97: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,859 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,860 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,860 - DEBUG - Iteration 98: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,860 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,861 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,861 - DEBUG - Iteration 99: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,861 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,861 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,861 - DEBUG - Iteration 100: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,861 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,862 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,862 - DEBUG - Iteration 101: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,862 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,863 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,863 - DEBUG - Iteration 102: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,863 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,864 - DEBUG - Creating new bin...
+2022-02-14 11:21:50,864 - DEBUG - New bin has contig 253 to bin 13 weight=8.08765616491646
+2022-02-14 11:21:50,864 - DEBUG - 1 contig(s) binned in the iteration
+2022-02-14 11:21:50,864 - DEBUG - Iteration 103: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,864 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,865 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,865 - DEBUG - Iteration 104: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,865 - DEBUG - 1 contig(s) to bin in the iteration
+2022-02-14 11:21:50,866 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,866 - DEBUG - Iteration 105: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,866 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,867 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,867 - DEBUG - Iteration 106: 2 contig(s) with seed marker genes
+2022-02-14 11:21:50,867 - DEBUG - 2 contig(s) to bin in the iteration
+2022-02-14 11:21:50,868 - DEBUG - 0 contig(s) binned in the iteration
+2022-02-14 11:21:50,868 - DEBUG - Number of bins after matching: 13
+2022-02-14 11:21:50,868 - DEBUG - Bins with contigs containing seed marker genes
+2022-02-14 11:21:50,868 - DEBUG - 0: [0]
+2022-02-14 11:21:50,868 - DEBUG - 1: [2, 12, 79, 56]
+2022-02-14 11:21:50,868 - DEBUG - 2: [1]
+2022-02-14 11:21:50,868 - DEBUG - 3: [141, 80, 57, 100, 71, 96, 46, 160, 48]
+2022-02-14 11:21:50,868 - DEBUG - 4: [735]
+2022-02-14 11:21:50,868 - DEBUG - 5: [544]
+2022-02-14 11:21:50,868 - DEBUG - 6: [661]
+2022-02-14 11:21:50,868 - DEBUG - 7: [221]
+2022-02-14 11:21:50,868 - DEBUG - 8: [1114]
+2022-02-14 11:21:50,868 - DEBUG - 9: [324, 97, 92]
+2022-02-14 11:21:50,868 - DEBUG - 10: [608]
+2022-02-14 11:21:50,868 - DEBUG - 11: [50, 123]
+2022-02-14 11:21:50,868 - DEBUG - 12: [253]
+2022-02-14 11:21:50,868 - DEBUG - Number of binned contigs with single-copy marker genes: 27
+2022-02-14 11:21:50,882 - DEBUG - Number of unbinned contigs with single-copy marker genes: 54
+2022-02-14 11:21:50,882 - INFO - Further assigning contigs with single-copy marker genes
+2022-02-14 11:21:50,902 - DEBUG - Remaining number of unbinned MG seed contigs: 52
+2022-02-14 11:21:50,902 - DEBUG - Number of binned contigs with single-copy marker genes: 29
+2022-02-14 11:21:50,915 - DEBUG - Number of binned contigs: 29
+2022-02-14 11:21:50,916 - DEBUG - Number of unbinned contigs: 5605
+2022-02-14 11:21:50,916 - DEBUG - Number of binned contigs with markers: 29
+2022-02-14 11:21:50,930 - DEBUG - Number of non-isolated contigs: 262
+2022-02-14 11:21:50,930 - INFO - Propagating labels to connected vertices of unlabelled long contigs
+2022-02-14 11:21:50,931 - DEBUG - Total number of binned contigs: 29
+2022-02-14 11:21:50,957 - DEBUG - Total number of binned contigs: 34
+2022-02-14 11:21:50,958 - DEBUG - Number of binned contigs: 34
+2022-02-14 11:21:50,958 - DEBUG - Number of unbinned contigs: 5600
+2022-02-14 11:21:50,958 - INFO - Further propagating labels to vertices of unlabelled long contigs
+2022-02-14 11:21:51,298 - DEBUG - Total number of binned contigs: 1249
+2022-02-14 11:21:51,298 - INFO - Further propagating labels to connected vertices of unlabelled long contigs
+2022-02-14 11:21:51,409 - DEBUG - Total number of binned contigs: 1249
+2022-02-14 11:21:51,409 - INFO - Elapsed time: 0.8506772518157959 seconds
+2022-02-14 11:21:51,409 - DEBUG - Bin 0: # contigs: 12, bin size: 2779894bp, # markers: 90
+2022-02-14 11:21:51,409 - DEBUG - Bin 1: # contigs: 87, bin size: 4556781bp, # markers: 106
+2022-02-14 11:21:51,409 - DEBUG - Bin 2: # contigs: 7, bin size: 1300681bp, # markers: 19
+2022-02-14 11:21:51,409 - DEBUG - Bin 3: # contigs: 740, bin size: 2825476bp, # markers: 36
+2022-02-14 11:21:51,409 - DEBUG - Bin 4: # contigs: 17, bin size: 24959bp, # markers: 2
+2022-02-14 11:21:51,409 - DEBUG - Bin 5: # contigs: 88, bin size: 129196bp, # markers: 1
+2022-02-14 11:21:51,410 - DEBUG - Bin 6: # contigs: 9, bin size: 12002bp, # markers: 1
+2022-02-14 11:21:51,410 - DEBUG - Bin 7: # contigs: 98, bin size: 303595bp, # markers: 8
+2022-02-14 11:21:51,410 - DEBUG - Bin 8: # contigs: 3, bin size: 3260bp, # markers: 2
+2022-02-14 11:21:51,410 - DEBUG - Bin 9: # contigs: 146, bin size: 614403bp, # markers: 45
+2022-02-14 11:21:51,410 - DEBUG - Bin 10: # contigs: 9, bin size: 13050bp, # markers: 1
+2022-02-14 11:21:51,410 - DEBUG - Bin 11: # contigs: 25, bin size: 641355bp, # markers: 16
+2022-02-14 11:21:51,411 - DEBUG - Bin 12: # contigs: 8, bin size: 15004bp, # markers: 16
+2022-02-14 11:21:51,412 - INFO - Writing the Final Binning result to file
+2022-02-14 11:21:51,514 - INFO - Producing 4 bins...
+2022-02-14 11:21:51,514 - INFO - Final binning results can be found in ../binning/N4b/bins/
+2022-02-14 11:21:51,514 - INFO - Thank you for using MetaCoAG!

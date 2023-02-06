@@ -1,0 +1,704 @@
+Aligning contigs to reference...
+	Aligning contigs to the reference
+Filtering alignments...
+Parsing coords...
+Loading reference...
+	Loaded [GCF_000006765.1_ASM676v1_genomic_NC_002516.2]
+	Total Regions: 1
+	Total Region Length: 6264404
+Analyzing contigs...
+CONTIG: NODE_6_length_480222_cov_130.185846 (480222bp)
+Best alignment score: 128607.4 (LEN: 129098, IDY: 99.62), Total number of alignments: 13
+			Looking for the best set of alignments (out of 13 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 630406 630515 | 397047 397156 | 110 110 | 100.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 429989.7, number of alignments: 12, unaligned bases: 46564
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 433658 out of 480222 non-N bases (90.30%))
+			Real Alignment 1: 264842 286235 | 47 21437 | 21394 21391 | 99.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = -505
+			Real Alignment 2: 286332 370486 | 22039 106222 | 84155 84184 | 99.46 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = -757
+			Excluding internal overlap of size 82 between Alignment 3 and 4: 501220 515760 | 236215 250753 | 14541 14539 --> 501302 515760 | 236297 250753 | 14459 14457
+			Real Alignment 3: 370706 499828 | 107199 236296 | 129123 129098 | 99.62 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Extensive misassembly (relocation, inconsistency = 1473) between these two alignments
+			Real Alignment 4: 501302 515760 | 236297 250753 | 14459 14457 | 99.36 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = 267
+			Excluding internal overlap of size 36 between Alignment 5 and 6: 516029 521367 | 250755 256092 | 5339 5338 --> 516029 521331 | 250755 256056 | 5303 5302
+			Real Alignment 5: 516029 521331 | 250755 256056 | 5303 5302 | 99.18 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = 238
+			Real Alignment 6: 521570 556266 | 256057 290739 | 34697 34683 | 99.2 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Extensive misassembly (relocation, inconsistency = 1088) between these two alignments
+			Real Alignment 7: 558755 628414 | 292140 361823 | 69660 69684 | 99.54 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Extensive misassembly (relocation, inconsistency = -36079) between these two alignments
+			Real Alignment 8: 630516 654090 | 400004 423578 | 23575 23575 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = -18
+			Real Alignment 9: 655203 656593 | 424709 426099 | 1391 1391 | 98.63 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Extensive misassembly (relocation, inconsistency = -2990) between these two alignments
+			Real Alignment 10: 656594 680157 | 429090 452651 | 23564 23562 | 99.54 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Gap between these two alignments (local misassembly). Inconsistency = -23
+			Real Alignment 11: 681341 689219 | 453858 461736 | 7879 7879 | 99.3 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+			  Extensive misassembly (relocation, inconsistency = 13908) between these two alignments
+			Real Alignment 12: 703162 721614 | 461771 480222 | 18453 18452 | 99.3 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_6_length_480222_cov_130.185846
+		Unaligned bases: 46564
+
+CONTIG: NODE_7_length_464647_cov_114.826848 (464647bp)
+Best alignment score: 215718.7 (LEN: 216585, IDY: 99.60), Total number of alignments: 9
+			Looking for the best set of alignments (out of 9 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 450062.8, number of alignments: 9, unaligned bases: 11144
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 453503 out of 464647 non-N bases (97.60%))
+			Real Alignment 1: 2171452 2201550 | 1 30099 | 30099 30099 | 99.72 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Extensive misassembly (relocation, inconsistency = 2080177) between these two alignments
+			Real Alignment 2: 4281739 4291255 | 39631 30111 | 9517 9521 | 98.98 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Extensive misassembly (relocation, inconsistency = -3996) between these two alignments
+			Real Alignment 3: 4225664 4281752 | 99701 43614 | 56089 56088 | 99.6 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Extensive misassembly (relocation, inconsistency = -6835) between these two alignments
+			Excluding internal overlap of size 203 between Alignment 4 and 5: 3930743 4008924 | 401181 323029 | 78182 78153 --> 3930743 4008732 | 401181 323232 | 77990 77950
+			Real Alignment 4: 4008951 4225553 | 323231 106647 | 216603 216585 | 99.6 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Gap between these two alignments (local misassembly). Inconsistency = 218
+			Real Alignment 5: 3930743 4008732 | 401181 323232 | 77990 77950 | 99.57 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Extensive misassembly (relocation, inconsistency = 16488) between these two alignments
+			Real Alignment 6: 3907188 3914108 | 408241 401328 | 6921 6914 | 99.57 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Extensive misassembly (relocation, inconsistency = 7193) between these two alignments
+			Excluding internal overlap of size 642 between Alignment 7 and 8: 3873988 3899934 | 434225 408302 | 25947 25924 --> 3874646 3899934 | 433583 408302 | 25289 25282
+			Real Alignment 7: 3874646 3899934 | 433583 408302 | 25289 25282 | 99.42 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Gap between these two alignments (local misassembly). Inconsistency = 114
+			Excluding internal overlap of size 39 between Alignment 8 and 9: 3843323 3843435 | 464647 464535 | 113 113 --> 3843323 3843396 | 464647 464574 | 74 74
+			Real Alignment 8: 3843599 3874531 | 464573 433584 | 30933 30990 | 99.15 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+			  Gap between these two alignments (local misassembly). Inconsistency = 202
+			Real Alignment 9: 3843323 3843396 | 464647 464574 | 74 74 | 95.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_7_length_464647_cov_114.826848
+		Unaligned bases: 11144
+
+CONTIG: NODE_10_length_400827_cov_103.762409 (400827bp)
+Best alignment score: 209797.1 (LEN: 211106, IDY: 99.38), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+			The best set is below. Score: 397989.5, number of alignments: 3, unaligned bases: 59
+		This contig is misassembled.
+			Excluding internal overlap of size 1383 between Alignment 1 and 2: 2040010 2071350 | 31341 1 | 31341 31341 --> 2041393 2071350 | 29958 1 | 29958 29958
+			Real Alignment 1: 2041393 2071350 | 29958 1 | 29958 29958 | 98.64 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_10_length_400827_cov_103.762409
+			  Overlap between these two alignments (local misassembly). Inconsistency = -738
+			Real Alignment 2: 1882456 2042130 | 189662 29959 | 159675 159704 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_10_length_400827_cov_103.762409
+			  Gap between these two alignments (local misassembly). Inconsistency = -121
+			Real Alignment 3: 1671364 1882541 | 400803 189698 | 211178 211106 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_10_length_400827_cov_103.762409
+
+CONTIG: NODE_11_length_394509_cov_109.382118 (394509bp)
+Best alignment score: 300593.5 (LEN: 301922, IDY: 99.56), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+			The best set is below. Score: 378986.6, number of alignments: 3, unaligned bases: 13564
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 380945 out of 394509 non-N bases (96.56%))
+			Excluding internal overlap of size 82 between Alignment 1 and 2: 3475648 3526477 | 301841 352671 | 50830 50831 --> 3475730 3526477 | 301923 352671 | 50748 50749
+			Real Alignment 1: 3173623 3475538 | 1 301922 | 301916 301922 | 99.56 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_11_length_394509_cov_109.382118
+			  Gap between these two alignments (local misassembly). Inconsistency = 191
+			Real Alignment 2: 3475730 3526477 | 301923 352671 | 50748 50749 | 99.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_11_length_394509_cov_109.382118
+			  Extensive misassembly (relocation, inconsistency = 7647) between these two alignments
+			Real Alignment 3: 3547689 3575968 | 366236 394509 | 28280 28274 | 99.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_11_length_394509_cov_109.382118
+		Unaligned bases: 13564
+
+CONTIG: NODE_12_length_389013_cov_105.071566 (389013bp)
+Best alignment score: 132288.0 (LEN: 132886, IDY: 99.55), Total number of alignments: 7
+			Looking for the best set of alignments (out of 7 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 688102 688200 | 188063 188161 | 99 99 | 94.95 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 303709.7, number of alignments: 6, unaligned bases: 83097
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 305916 out of 389013 non-N bases (78.64%))
+			Real Alignment 1: 3087873 3088130 | 1006 749 | 258 258 | 97.29 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+			  Gap between these two alignments (local misassembly). Inconsistency = 157
+			Excluding internal overlap of size 1 between Alignment 2 and 3: 3044846 3087636 | 43928 1086 | 42791 42843 --> 3044847 3087636 | 43927 1086 | 42790 42842
+			Real Alignment 2: 3044847 3087636 | 43927 1086 | 42790 42842 | 99.33 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+			  Extensive misassembly (relocation, inconsistency = 1372) between these two alignments
+			Real Alignment 3: 2947618 3043474 | 139772 43928 | 95857 95845 | 99.62 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+			  Extensive misassembly (relocation, inconsistency = -50494) between these two alignments
+			Real Alignment 4: 2936477 2947641 | 201407 190243 | 11165 11165 | 99.71 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+			  Extensive misassembly (relocation, inconsistency = -31747) between these two alignments
+			Real Alignment 5: 2803519 2936423 | 366093 233208 | 132905 132886 | 99.55 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+			  Gap between these two alignments (local misassembly). Inconsistency = 96
+			Real Alignment 6: 2780503 2803422 | 389013 366094 | 22920 22920 | 99.48 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_12_length_389013_cov_105.071566
+		Unaligned bases: 83097
+
+CONTIG: NODE_13_length_341015_cov_123.054188 (341015bp)
+Best alignment score: 156307.2 (LEN: 156998, IDY: 99.56), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			The best set is below. Score: 338968.8, number of alignments: 4, unaligned bases: 250
+		This contig is misassembled.
+			Excluding internal overlap of size 87 between Alignment 1 and 2: 5361354 5382520 | 91503 112632 | 21167 21130 --> 5361441 5382520 | 91590 112632 | 21080 21043
+			Real Alignment 1: 5269747 5361339 | 1 91589 | 91593 91589 | 99.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_13_length_341015_cov_123.054188
+			  Gap between these two alignments (local misassembly). Inconsistency = 101
+			Excluding internal overlap of size 1 between Alignment 2 and 3: 5361441 5382520 | 91590 112632 | 21080 21043 --> 5361441 5382519 | 91590 112631 | 21079 21042
+			Real Alignment 2: 5361441 5382519 | 91590 112631 | 21079 21042 | 99.54 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_13_length_341015_cov_123.054188
+			  Extensive misassembly (relocation, inconsistency = 1372) between these two alignments
+			Excluding internal overlap of size 96 between Alignment 3 and 4: 5383892 5455107 | 112632 183863 | 71216 71232 --> 5383892 5455011 | 112632 183767 | 71120 71136
+			Real Alignment 3: 5383892 5455011 | 112632 183767 | 71120 71136 | 99.61 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_13_length_341015_cov_123.054188
+			  Gap between these two alignments (local misassembly). Inconsistency = 212
+			Real Alignment 4: 5455224 5612211 | 183768 340765 | 156988 156998 | 99.56 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_13_length_341015_cov_123.054188
+
+CONTIG: NODE_14_length_320156_cov_129.480536 (320156bp)
+Best alignment score: 116146.4 (LEN: 116871, IDY: 99.38), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 299331.4, number of alignments: 4, unaligned bases: 18742
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 301414 out of 320156 non-N bases (94.15%))
+			Real Alignment 1: 5612277 5725080 | 2268 115071 | 112804 112804 | 99.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_14_length_320156_cov_129.480536
+			  Gap between these two alignments (local misassembly). Inconsistency = -878
+			Real Alignment 2: 5726104 5726611 | 116973 117480 | 508 508 | 90.55 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_14_length_320156_cov_129.480536
+			  Gap between these two alignments (local misassembly). Inconsistency = 3
+			Real Alignment 3: 5727409 5798637 | 118275 189505 | 71229 71231 | 99.48 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_14_length_320156_cov_129.480536
+			  Extensive misassembly (relocation, inconsistency = -13827) between these two alignments
+			Real Alignment 4: 5798591 5915519 | 203286 320156 | 116929 116871 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_14_length_320156_cov_129.480536
+		Unaligned bases: 18742
+
+CONTIG: NODE_17_length_295753_cov_114.951650 (295753bp)
+Best alignment score: 76445.0 (LEN: 77264, IDY: 98.94), Total number of alignments: 7
+			Looking for the best set of alignments (out of 7 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 228376.4, number of alignments: 7, unaligned bases: 64454
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 231299 out of 295753 non-N bases (78.21%))
+			Real Alignment 1: 1244530 1247979 | 3503 54 | 3450 3450 | 99.45 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Gap between these two alignments (local misassembly). Inconsistency = 191
+			Real Alignment 2: 1242899 1243394 | 4943 4448 | 496 496 | 96.98 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Gap between these two alignments (local misassembly). Inconsistency = -867
+			Real Alignment 3: 1187274 1242668 | 61437 6041 | 55395 55397 | 99.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Extensive misassembly (relocation, inconsistency = -3505) between these two alignments
+			Real Alignment 4: 1096940 1174198 | 155281 78018 | 77259 77264 | 98.94 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Extensive misassembly (relocation, inconsistency = -6821) between these two alignments
+			Excluding internal overlap of size 22 between Alignment 5 and 6: 1069361 1096956 | 189662 162086 | 27596 27577 --> 1069383 1096956 | 189640 162086 | 27574 27555
+			Real Alignment 5: 1069383 1096956 | 189640 162086 | 27574 27555 | 98.94 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Extensive misassembly (relocation, inconsistency = 8950) between these two alignments
+			Real Alignment 6: 999717 1060432 | 250376 189641 | 60716 60736 | 99.47 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+			  Extensive misassembly (relocation, inconsistency = -38971) between these two alignments
+			Real Alignment 7: 993358 999724 | 295740 289340 | 6367 6401 | 98.91 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_17_length_295753_cov_114.951650
+		Unaligned bases: 64454
+
+CONTIG: NODE_18_length_271299_cov_106.090937 (271299bp)
+Best alignment score: 120085.4 (LEN: 120701, IDY: 99.49), Total number of alignments: 8
+			Looking for the best set of alignments (out of 8 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 3874252 3874340 | 104766 104854 | 89 89 | 97.75 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+		Skipping redundant alignment 2705339 2705423 | 104771 104855 | 85 85 | 98.82 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 225529.5, number of alignments: 6, unaligned bases: 43246
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 228053 out of 271299 non-N bases (84.06%))
+			Real Alignment 1: 2201551 2226247 | 11 24706 | 24697 24696 | 99.44 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+			  Extensive misassembly (relocation, inconsistency = 2742) between these two alignments
+			Real Alignment 2: 2229137 2277496 | 24854 73243 | 48360 48390 | 99.1 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+			  Extensive misassembly (relocation, inconsistency = 1880) between these two alignments
+			Real Alignment 3: 2279379 2279535 | 73246 73402 | 157 157 | 98.09 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+			  Gap between these two alignments (local misassembly). Inconsistency = 310
+			Real Alignment 4: 2279853 2311107 | 73410 104662 | 31255 31253 | 99.43 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+			  Extensive misassembly (relocation, inconsistency = 6707) between these two alignments
+			Real Alignment 5: 2318223 2438984 | 105071 225771 | 120762 120701 | 99.49 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+			  Extensive misassembly (relocation, inconsistency = 2820687) between these two alignments
+			Real Alignment 6: 5260377 5263232 | 229332 226477 | 2856 2856 | 95.5 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_18_length_271299_cov_106.090937
+		Unaligned bases: 43246
+
+CONTIG: NODE_20_length_268827_cov_139.012847 (268827bp)
+Best alignment score: 96555.9 (LEN: 97217, IDY: 99.32), Total number of alignments: 6
+			Looking for the best set of alignments (out of 6 total alignments)
+			The best set is below. Score: 257910.4, number of alignments: 6, unaligned bases: 8842
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 259985 out of 268827 non-N bases (96.71%))
+			Real Alignment 1: 1 41215 | 41216 1 | 41215 41216 | 99.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+			  Not a misassembly [linear representation of circular genome] between these two alignments
+			Real Alignment 2: 6241772 6264404 | 63849 41217 | 22633 22633 | 99.51 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+			  Extensive misassembly (relocation, inconsistency = -7151) between these two alignments
+			Real Alignment 3: 6209481 6241499 | 103261 71273 | 32019 31989 | 99.28 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+			  Extensive misassembly (relocation, inconsistency = -1215) between these two alignments
+			Excluding internal overlap of size 125 between Alignment 4 and 5: 6187916 6209407 | 126040 104550 | 21492 21491 --> 6188042 6209407 | 125915 104550 | 21366 21366
+			Real Alignment 4: 6188042 6209407 | 125915 104550 | 21366 21366 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+			  Overlap between these two alignments (local misassembly). Inconsistency = -109
+			Real Alignment 5: 6090921 6188150 | 223132 125916 | 97230 97217 | 99.32 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+			  Gap between these two alignments (local misassembly). Inconsistency = 1
+			Real Alignment 6: 6045214 6090788 | 268827 223264 | 45575 45564 | 99.52 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_20_length_268827_cov_139.012847
+		Unaligned bases: 8842
+
+CONTIG: NODE_23_length_233610_cov_100.510612 (233610bp)
+Best alignment score: 80752.0 (LEN: 81354, IDY: 99.26), Total number of alignments: 9
+			Looking for the best set of alignments (out of 9 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 199620.2, number of alignments: 9, unaligned bases: 30379
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 203231 out of 233610 non-N bases (87.00%))
+			Real Alignment 1: 2723313 2757549 | 34253 1 | 34237 34253 | 99.19 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Gap between these two alignments (local misassembly). Inconsistency = -692
+			Real Alignment 2: 2707666 2722710 | 50592 35548 | 15045 15045 | 99.36 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Extensive misassembly (relocation, inconsistency = -1003) between these two alignments
+			Real Alignment 3: 2682632 2707184 | 76608 52077 | 24553 24532 | 98.49 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Extensive misassembly (relocation, inconsistency = 7623) between these two alignments
+			Real Alignment 4: 2672266 2673484 | 79351 78133 | 1219 1219 | 90.08 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Extensive misassembly (relocation, inconsistency = -27762) between these two alignments
+			Real Alignment 5: 2683966 2685697 | 95413 93682 | 1732 1732 | 96.39 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Extensive misassembly (relocation, inconsistency = 21218) between these two alignments
+			Real Alignment 6: 2648321 2653057 | 109837 105104 | 4737 4734 | 92.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Gap between these two alignments (local misassembly). Inconsistency = -12
+			Real Alignment 7: 2641521 2647640 | 116647 110530 | 6120 6118 | 96.97 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Gap between these two alignments (local misassembly). Inconsistency = 19
+			Excluding internal overlap of size 101 between Alignment 8 and 9: 2522460 2556801 | 233610 199266 | 34342 34345 --> 2522460 2556700 | 233610 199367 | 34241 34244
+			Real Alignment 8: 2558730 2640136 | 199366 118013 | 81407 81354 | 99.26 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+			  Extensive misassembly (relocation, inconsistency = 2029) between these two alignments
+			Real Alignment 9: 2522460 2556700 | 233610 199367 | 34241 34244 | 99.33 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_23_length_233610_cov_100.510612
+		Unaligned bases: 30379
+
+CONTIG: NODE_27_length_203190_cov_119.360942 (203190bp)
+Best alignment score: 96222.0 (LEN: 96560, IDY: 99.65), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			The best set is below. Score: 201814.5, number of alignments: 4, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 6 between Alignment 1 and 2: 4291244 4326875 | 1 35630 | 35632 35630 --> 4291244 4326869 | 1 35624 | 35626 35624
+			Real Alignment 1: 4291244 4326869 | 1 35624 | 35626 35624 | 99.48 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_27_length_203190_cov_119.360942
+			  Extensive misassembly (relocation, inconsistency = 6336) between these two alignments
+			Excluding internal overlap of size 231 between Alignment 2 and 3: 4333206 4376986 | 35625 79399 | 43781 43775 --> 4333206 4376753 | 35625 79168 | 43548 43544
+			Real Alignment 2: 4333206 4376753 | 35625 79168 | 43548 43544 | 99.53 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_27_length_203190_cov_119.360942
+			  Gap between these two alignments (local misassembly). Inconsistency = 258
+			Excluding internal overlap of size 1 between Alignment 3 and 4: 4474915 4502376 | 175728 203190 | 27462 27463 --> 4474916 4502376 | 175729 203190 | 27461 27462
+			Real Alignment 3: 4377012 4473543 | 79169 175728 | 96532 96560 | 99.65 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_27_length_203190_cov_119.360942
+			  Extensive misassembly (relocation, inconsistency = 1372) between these two alignments
+			Real Alignment 4: 4474916 4502376 | 175729 203190 | 27461 27462 | 99.65 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_27_length_203190_cov_119.360942
+
+CONTIG: NODE_28_length_184533_cov_134.389347 (184533bp)
+Best alignment score: 160211.8 (LEN: 160936, IDY: 99.55), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 183330.0, number of alignments: 2, unaligned bases: 142
+		This contig is misassembled.
+			Real Alignment 1: 69537 230535 | 76 161011 | 160999 160936 | 99.55 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_28_length_184533_cov_134.389347
+			  Extensive misassembly (relocation, inconsistency = 6586) between these two alignments
+			Real Alignment 2: 237163 260600 | 161053 184507 | 23438 23455 | 99.63 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_28_length_184533_cov_134.389347
+
+CONTIG: NODE_29_length_178100_cov_112.961291 (178100bp)
+Best alignment score: 93195.5 (LEN: 93598, IDY: 99.57), Total number of alignments: 5
+			Looking for the best set of alignments (out of 5 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 3778546 3778725 | 1127 948 | 180 180 | 98.89 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_29_length_178100_cov_112.961291
+		Skipping redundant alignment 53846 54026 | 1312 1132 | 181 181 | 92.31 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_29_length_178100_cov_112.961291
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 172946.6, number of alignments: 3, unaligned bases: 4337
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 173763 out of 178100 non-N bases (97.56%))
+			Real Alignment 1: 3684539 3778172 | 96913 3316 | 93634 93598 | 99.57 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_29_length_178100_cov_112.961291
+			  Gap between these two alignments (local misassembly). Inconsistency = 0
+			Real Alignment 2: 3618636 3683575 | 162817 97877 | 64940 64941 | 99.43 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_29_length_178100_cov_112.961291
+			  Gap between these two alignments (local misassembly). Inconsistency = -114
+			Real Alignment 3: 3603487 3618710 | 178080 162857 | 15224 15224 | 99.87 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_29_length_178100_cov_112.961291
+		Unaligned bases: 4337
+
+CONTIG: NODE_30_length_175297_cov_122.827216 (175297bp)
+Best alignment score: 85989.8 (LEN: 86535, IDY: 99.37), Total number of alignments: 6
+			Looking for the best set of alignments (out of 6 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 102433.4, number of alignments: 6, unaligned bases: 71051
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 104246 out of 175297 non-N bases (59.47%))
+			Real Alignment 1: 5101243 5187783 | 86535 1 | 86541 86535 | 99.37 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+			  Gap between these two alignments (local misassembly). Inconsistency = -15
+			Excluding internal overlap of size 79 between Alignment 2 and 3: 1060354 1061197 | 100790 101622 | 844 833 --> 1060433 1061197 | 100869 101622 | 765 754
+			Real Alignment 2: 5086925 5100864 | 100868 86929 | 13940 13940 | 99.67 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+			  Extensive misassembly (relocation, inconsistency = 4025727) between these two alignments
+			Real Alignment 3: 1060433 1061197 | 100869 101622 | 765 754 | 92.79 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+			  Extensive misassembly (relocation, inconsistency = -10019) between these two alignments
+			Real Alignment 4: 1062435 1064232 | 112879 114678 | 1798 1800 | 97.72 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+			  Extensive misassembly (relocation, inconsistency = -3812) between these two alignments
+			Real Alignment 5: 1064259 1065080 | 118517 119337 | 822 821 | 92.1 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+			  Extensive misassembly (relocation, inconsistency = -43367) between these two alignments
+			Real Alignment 6: 1065390 1065785 | 163014 163409 | 396 396 | 94.7 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_30_length_175297_cov_122.827216
+		Unaligned bases: 71051
+
+CONTIG: NODE_31_length_174978_cov_107.918656 (174978bp)
+Best alignment score: 102391.1 (LEN: 102947, IDY: 99.46), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+			The best set is below. Score: 173188.1, number of alignments: 3, unaligned bases: 741
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 174237 out of 174978 non-N bases (99.58%))
+			Real Alignment 1: 1645024 1671394 | 26396 25 | 26371 26372 | 99.59 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_31_length_174978_cov_107.918656
+			  Gap between these two alignments (local misassembly). Inconsistency = -133
+			Real Alignment 2: 1600081 1645012 | 71458 26541 | 44932 44918 | 99.25 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_31_length_174978_cov_107.918656
+			  Gap between these two alignments (local misassembly). Inconsistency = 601
+			Real Alignment 3: 1496003 1598962 | 174922 71976 | 102960 102947 | 99.46 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_31_length_174978_cov_107.918656
+		Unaligned bases: 741
+
+CONTIG: NODE_33_length_155892_cov_121.343147 (155892bp)
+Best alignment score: 69156.6 (LEN: 69567, IDY: 99.41), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			The best set is below. Score: 152677.7, number of alignments: 4, unaligned bases: 2244
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 153648 out of 155892 non-N bases (98.56%))
+			Excluding internal overlap of size 80 between Alignment 1 and 2: 4503735 4528533 | 1 24798 | 24799 24798 --> 4503735 4528453 | 1 24718 | 24719 24718
+			Real Alignment 1: 4503735 4528453 | 1 24718 | 24719 24718 | 99.76 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_33_length_155892_cov_121.343147
+			  Gap between these two alignments (local misassembly). Inconsistency = 226
+			Excluding internal overlap of size 4 between Alignment 2 and 3: 4528680 4553812 | 24719 49822 | 25133 25104 --> 4528680 4553808 | 24719 49818 | 25129 25100
+			Real Alignment 2: 4528680 4553808 | 24719 49818 | 25129 25100 | 99.42 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_33_length_155892_cov_121.343147
+			  Gap between these two alignments (local misassembly). Inconsistency = 513
+			Excluding internal overlap of size 49 between Alignment 3 and 4: 4554322 4588609 | 49819 84130 | 34288 34312 --> 4554322 4588560 | 49819 84081 | 34239 34263
+			Real Alignment 3: 4554322 4588560 | 49819 84081 | 34239 34263 | 99.32 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_33_length_155892_cov_121.343147
+			  Gap between these two alignments (local misassembly). Inconsistency = 107
+			Real Alignment 4: 4588668 4658246 | 84082 153648 | 69579 69567 | 99.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_33_length_155892_cov_121.343147
+		Unaligned bases: 2244
+
+CONTIG: NODE_34_length_153528_cov_105.552612 (153528bp)
+Best alignment score: 137011.0 (LEN: 137741, IDY: 99.47), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 147553.5, number of alignments: 4, unaligned bases: 4355
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 149173 out of 153528 non-N bases (97.16%))
+			Real Alignment 1: 1495586 1496000 | 461 47 | 415 415 | 97.83 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_34_length_153528_cov_105.552612
+			  Extensive misassembly (relocation, inconsistency = -1547) between these two alignments
+			Real Alignment 2: 1489618 1495495 | 7948 2099 | 5878 5850 | 98.37 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_34_length_153528_cov_105.552612
+			  Extensive misassembly (relocation, inconsistency = 5864) between these two alignments
+			Real Alignment 3: 1343379 1481162 | 148280 10540 | 137784 137741 | 99.47 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_34_length_153528_cov_105.552612
+			  Extensive misassembly (relocation, inconsistency = 2573) between these two alignments
+			Real Alignment 4: 1335561 1340741 | 153511 148345 | 5181 5167 | 99.32 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_34_length_153528_cov_105.552612
+		Unaligned bases: 4355
+
+CONTIG: NODE_40_length_127830_cov_112.489830 (127830bp)
+Best alignment score: 73956.2 (LEN: 74283, IDY: 99.56), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 122850.9, number of alignments: 2, unaligned bases: 4195
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 123635 out of 127830 non-N bases (96.72%))
+			Real Alignment 1: 901468 950823 | 49396 45 | 49356 49352 | 99.58 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_40_length_127830_cov_112.489830
+			  Extensive misassembly (relocation, inconsistency = 1177) between these two alignments
+			Real Alignment 2: 821870 896139 | 127830 53548 | 74270 74283 | 99.56 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_40_length_127830_cov_112.489830
+		Unaligned bases: 4195
+
+CONTIG: NODE_41_length_125447_cov_116.825818 (125447bp)
+Best alignment score: 103520.5 (LEN: 103832, IDY: 99.70), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 124841.1, number of alignments: 2, unaligned bases: 161
+		This contig is misassembled.
+			Real Alignment 1: 4837038 4858479 | 1 21454 | 21442 21454 | 99.49 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_41_length_125447_cov_116.825818
+			  Gap between these two alignments (local misassembly). Inconsistency = -222
+			Real Alignment 2: 4858419 4962249 | 21616 125447 | 103831 103832 | 99.7 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_41_length_125447_cov_116.825818
+
+CONTIG: NODE_42_length_125107_cov_134.956122 (125107bp)
+Best alignment score: 108359.2 (LEN: 108849, IDY: 99.55), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 118483.4, number of alignments: 2, unaligned bases: 5797
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 119310 out of 125107 non-N bases (95.37%))
+			Real Alignment 1: 5915471 5925966 | 1 10461 | 10496 10461 | 99.17 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_42_length_125107_cov_134.956122
+			  Extensive misassembly (relocation, inconsistency = -1004) between these two alignments
+			Real Alignment 2: 5930760 6039582 | 16259 125107 | 108823 108849 | 99.55 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_42_length_125107_cov_134.956122
+		Unaligned bases: 5797
+
+CONTIG: NODE_50_length_103656_cov_125.027220 (103656bp)
+Best alignment score: 52343.9 (LEN: 52644, IDY: 99.43), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 74293.6, number of alignments: 2, unaligned bases: 28703
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 74953 out of 103656 non-N bases (72.31%))
+			Real Alignment 1: 5189209 5241843 | 1 52644 | 52635 52644 | 99.43 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_50_length_103656_cov_125.027220
+			  Extensive misassembly (relocation, inconsistency = -28711) between these two alignments
+			Real Alignment 2: 5241836 5264145 | 81348 103656 | 22310 22309 | 99.51 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_50_length_103656_cov_125.027220
+		Unaligned bases: 28703
+
+CONTIG: NODE_53_length_91181_cov_114.642967 (91181bp)
+Best alignment score: 57713.7 (LEN: 58103, IDY: 99.33), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 84855.4, number of alignments: 3, unaligned bases: 5450
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 85731 out of 91181 non-N bases (94.02%))
+			Real Alignment 1: 794431 821871 | 27459 20 | 27441 27440 | 99.28 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_53_length_91181_cov_114.642967
+			  Extensive misassembly (relocation, inconsistency = 4045) between these two alignments
+			Real Alignment 2: 789727 789916 | 28116 27929 | 190 188 | 92.15 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_53_length_91181_cov_114.642967
+			  Gap between these two alignments (local misassembly). Inconsistency = -574
+			Real Alignment 3: 727223 785338 | 91181 33079 | 58116 58103 | 99.33 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_53_length_91181_cov_114.642967
+		Unaligned bases: 5450
+
+CONTIG: NODE_54_length_88821_cov_118.168882 (88821bp)
+Best alignment score: 87789.3 (LEN: 88533, IDY: 99.16), Total number of alignments: 1
+		One align captures most of this contig: 4962250 5050782 | 33 88565 | 88533 88533 | 99.16 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_54_length_88821_cov_118.168882
+
+CONTIG: NODE_56_length_87627_cov_107.085598 (87627bp)
+Best alignment score: 87099.9 (LEN: 87564, IDY: 99.47), Total number of alignments: 1
+		One align captures most of this contig: 1247975 1335537 | 87575 12 | 87563 87564 | 99.47 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_56_length_87627_cov_107.085598
+
+CONTIG: NODE_59_length_81823_cov_107.810231 (81823bp)
+Best alignment score: 48634.0 (LEN: 48962, IDY: 99.33), Total number of alignments: 5
+			Looking for the best set of alignments (out of 5 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 3173533 3173652 | 120 1 | 120 120 | 100.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_59_length_81823_cov_107.810231
+		Skipping redundant alignment 2118520 2118620 | 81723 81823 | 101 101 | 99.01 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_59_length_81823_cov_107.810231
+		Skipping redundant alignment 1062334 1062434 | 81823 81723 | 101 101 | 97.03 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_59_length_81823_cov_107.810231
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 71238.1, number of alignments: 2, unaligned bases: 9776
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 72047 out of 81823 non-N bases (88.05%))
+			Real Alignment 1: 3148359 3171531 | 30084 7000 | 23173 23085 | 99.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_59_length_81823_cov_107.810231
+			  Extensive misassembly (relocation, inconsistency = -2249) between these two alignments
+			Real Alignment 2: 3099303 3148252 | 81401 32440 | 48950 48962 | 99.33 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_59_length_81823_cov_107.810231
+		Unaligned bases: 9776
+
+CONTIG: NODE_65_length_68627_cov_129.488683 (68627bp)
+Best alignment score: 68162.5 (LEN: 68505, IDY: 99.50), Total number of alignments: 2
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 4720069 4720241 | 123 295 | 173 173 | 98.27 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_65_length_68627_cov_129.488683
+		One align captures most of this contig: 4720069 4788572 | 123 68627 | 68504 68505 | 99.5 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_65_length_68627_cov_129.488683
+
+CONTIG: NODE_68_length_65668_cov_112.440080 (65668bp)
+Best alignment score: 33839.7 (LEN: 34092, IDY: 99.26), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 3841871 3842042 | 173 1 | 172 173 | 95.95 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_68_length_65668_cov_112.440080
+		Skipping redundant alignment 2757424 2757549 | 65543 65668 | 126 126 | 98.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_68_length_65668_cov_112.440080
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 62611.8, number of alignments: 2, unaligned bases: 2570
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 63098 out of 65668 non-N bases (96.09%))
+			Excluding internal overlap of size 8 between Alignment 1 and 2: 3812835 3841897 | 29058 45 | 29063 29014 --> 3812843 3841897 | 29050 45 | 29055 29006
+			Real Alignment 1: 3812843 3841897 | 29050 45 | 29055 29006 | 99.29 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_68_length_65668_cov_112.440080
+			  Gap between these two alignments (local misassembly). Inconsistency = 87
+			Real Alignment 2: 3778655 3812755 | 63142 29051 | 34101 34092 | 99.26 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_68_length_65668_cov_112.440080
+		Unaligned bases: 2570
+
+CONTIG: NODE_81_length_53265_cov_123.570306 (53265bp)
+Best alignment score: 14304.5 (LEN: 14515, IDY: 98.55), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			The best set is below. Score: 30820.1, number of alignments: 4, unaligned bases: 21605
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 31660 out of 53265 non-N bases (59.44%))
+			Real Alignment 1: 5050782 5053630 | 61 2909 | 2849 2849 | 99.16 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_81_length_53265_cov_123.570306
+			  Gap between these two alignments (local misassembly). Inconsistency = -39
+			Real Alignment 2: 5055626 5069017 | 4944 18335 | 13392 13392 | 99.25 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_81_length_53265_cov_123.570306
+			  Extensive misassembly (relocation, inconsistency = -1450) between these two alignments
+			Real Alignment 3: 5072399 5086973 | 23167 37681 | 14575 14515 | 98.55 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_81_length_53265_cov_123.570306
+			  Extensive misassembly (relocation, inconsistency = -786090) between these two alignments
+			Real Alignment 4: 4309916 4310819 | 46714 47617 | 904 904 | 99.45 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_81_length_53265_cov_123.570306
+		Unaligned bases: 21605
+
+CONTIG: NODE_82_length_47795_cov_97.234730 (47795bp)
+Best alignment score: 47281.0 (LEN: 47576, IDY: 99.38), Total number of alignments: 1
+		One align captures most of this contig: 2122521 2170093 | 47576 1 | 47573 47576 | 99.38 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_82_length_47795_cov_97.234730
+
+CONTIG: NODE_85_length_42941_cov_98.331087 (42941bp)
+Best alignment score: 39307.8 (LEN: 39561, IDY: 99.36), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 39307.8, number of alignments: 1, unaligned bases: 3380
+		This contig is partially unaligned. (Aligned 39561 out of 42941 non-N bases (92.13%))
+		Alignment: 2076964 2116525 | 76 39636 | 39562 39561 | 99.36 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_85_length_42941_cov_98.331087
+		Unaligned bases: 1 to 75 (75)
+		Unaligned bases: 39637 to 42941 (3305)
+
+CONTIG: NODE_86_length_42583_cov_112.941921 (42583bp)
+Best alignment score: 42340.2 (LEN: 42506, IDY: 99.61), Total number of alignments: 1
+		One align captures most of this contig: 950847 993367 | 42515 10 | 42521 42506 | 99.61 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_86_length_42583_cov_112.941921
+
+CONTIG: NODE_89_length_41594_cov_121.749464 (41594bp)
+Best alignment score: 41324.6 (LEN: 41549, IDY: 99.46), Total number of alignments: 1
+		One align captures most of this contig: 4672934 4714455 | 41549 1 | 41522 41549 | 99.46 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_89_length_41594_cov_121.749464
+
+CONTIG: NODE_94_length_38946_cov_116.379085 (38946bp)
+Best alignment score: 38724.0 (LEN: 38946, IDY: 99.43), Total number of alignments: 1
+		One align captures most of this contig: 4794219 4833166 | 1 38946 | 38948 38946 | 99.43 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_94_length_38946_cov_116.379085
+
+CONTIG: NODE_95_length_38346_cov_95.712465 (38346bp)
+Best alignment score: 34478.7 (LEN: 34652, IDY: 99.50), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 34478.7, number of alignments: 1, unaligned bases: 3694
+		This contig is partially unaligned. (Aligned 34652 out of 38346 non-N bases (90.37%))
+		Alignment: 2451596 2486242 | 3640 38291 | 34647 34652 | 99.5 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_95_length_38346_cov_95.712465
+		Unaligned bases: 1 to 3639 (3639)
+		Unaligned bases: 38292 to 38346 (55)
+
+CONTIG: NODE_99_length_35106_cov_96.881430 (35106bp)
+Best alignment score: 34929.8 (LEN: 35063, IDY: 99.62), Total number of alignments: 2
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 2558197 2558266 | 35106 35037 | 70 70 | 100.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_99_length_35106_cov_96.881430
+		One align captures most of this contig: 2486251 2521314 | 35063 1 | 35064 35063 | 99.62 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_99_length_35106_cov_96.881430
+
+CONTIG: NODE_102_length_31611_cov_89.781626 (31611bp)
+Best alignment score: 196.2 (LEN: 217, IDY: 90.41), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 789741 789918 | 1 176 | 178 176 | 92.18 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_102_length_31611_cov_89.781626
+		Skipping redundant alignment 789725 789916 | 11281 11092 | 192 190 | 90.62 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_102_length_31611_cov_89.781626
+			The best set is below. Score: 196.2, number of alignments: 1, unaligned bases: 31394
+		This contig is partially unaligned. (Aligned 217 out of 31611 non-N bases (0.69%))
+		Alignment: 789699 789917 | 14778 14562 | 219 217 | 90.41 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_102_length_31611_cov_89.781626
+		Unaligned bases: 1 to 14561 (14561)
+		Unaligned bases: 14779 to 31611 (16833)
+
+CONTIG: NODE_109_length_26386_cov_110.494094 (26386bp)
+Best alignment score: 26298.9 (LEN: 26386, IDY: 99.67), Total number of alignments: 1
+		One align captures most of this contig: 3577114 3603493 | 26386 1 | 26380 26386 | 99.67 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_109_length_26386_cov_110.494094
+
+CONTIG: NODE_111_length_24223_cov_155.041253 (24223bp)
+Best alignment score: 12505.2 (LEN: 12620, IDY: 99.09), Total number of alignments: 3
+			Looking for the best set of alignments (out of 3 total alignments)
+			The best set is below. Score: 21988.6, number of alignments: 3, unaligned bases: 1977
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 22246 out of 24223 non-N bases (91.84%))
+			Real Alignment 1: 56084 68711 | 12745 126 | 12628 12620 | 99.09 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_111_length_24223_cov_155.041253
+			  Gap between these two alignments (local misassembly). Inconsistency = 258
+			Real Alignment 2: 54050 54839 | 14521 13732 | 790 790 | 98.99 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_111_length_24223_cov_155.041253
+			  Gap between these two alignments (local misassembly). Inconsistency = 101
+			Real Alignment 3: 44247 53082 | 24223 15388 | 8836 8836 | 99.02 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_111_length_24223_cov_155.041253
+		Unaligned bases: 1977
+
+CONTIG: NODE_113_length_21264_cov_143.903909 (21264bp)
+Best alignment score: 10101.6 (LEN: 10180, IDY: 99.23), Total number of alignments: 5
+			Looking for the best set of alignments (out of 5 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 2760362 2760819 | 3026 3484 | 458 459 | 98.04 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_113_length_21264_cov_143.903909
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 16434.9, number of alignments: 4, unaligned bases: 4293
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 16971 out of 21264 non-N bases (79.81%))
+			Real Alignment 1: 2761408 2762955 | 1699 3269 | 1548 1571 | 96.63 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_113_length_21264_cov_143.903909
+			  Extensive misassembly (relocation, inconsistency = -4505) between these two alignments
+			Real Alignment 2: 2759147 2760356 | 3966 5175 | 1210 1210 | 99.17 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_113_length_21264_cov_143.903909
+			  Gap between these two alignments (local misassembly). Inconsistency = 975
+			Real Alignment 3: 2762285 2766330 | 6129 10138 | 4046 4010 | 96.99 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_113_length_21264_cov_143.903909
+			  Gap between these two alignments (local misassembly). Inconsistency = 15
+			Real Alignment 4: 2767292 2777471 | 11085 21264 | 10180 10180 | 99.23 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_113_length_21264_cov_143.903909
+		Unaligned bases: 4293
+
+CONTIG: NODE_114_length_17558_cov_121.222190 (17558bp)
+Best alignment score: 14380.5 (LEN: 14460, IDY: 99.45), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 14380.5, number of alignments: 1, unaligned bases: 3098
+		This contig is partially unaligned. (Aligned 14460 out of 17558 non-N bases (82.36%))
+		Alignment: 4658362 4672822 | 3052 17511 | 14461 14460 | 99.45 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_114_length_17558_cov_121.222190
+		Unaligned bases: 1 to 3051 (3051)
+		Unaligned bases: 17512 to 17558 (47)
+
+CONTIG: NODE_115_length_16809_cov_118.723588 (16809bp)
+Best alignment score: 290.0 (LEN: 297, IDY: 97.64), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 2119335 2119458 | 1 124 | 124 124 | 100.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_115_length_16809_cov_118.723588
+		Skipping redundant alignment 1061496 1061619 | 124 1 | 124 124 | 100.0 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_115_length_16809_cov_118.723588
+		Skipping redundant alignment 2119459 2119755 | 1581 1877 | 297 297 | 97.31 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_115_length_16809_cov_118.723588
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 290.0, number of alignments: 1, unaligned bases: 16512
+		This contig is partially unaligned. (Aligned 297 out of 16809 non-N bases (1.77%))
+		Alignment: 1061199 1061495 | 1877 1581 | 297 297 | 97.64 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_115_length_16809_cov_118.723588
+		Unaligned bases: 1 to 1580 (1580)
+		Unaligned bases: 1878 to 16809 (14932)
+
+CONTIG: NODE_129_length_5699_cov_215.044472 (5699bp)
+Best alignment score: 5638.0 (LEN: 5699, IDY: 98.93), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 4714401 4720087 | 1 5699 | 5687 5699 | 98.93 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_129_length_5699_cov_215.044472
+			Skipping alignment 2071296 2076982 | 1 5699 | 5687 5699 | 98.4 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_129_length_5699_cov_215.044472
+
+CONTIG: NODE_130_length_5695_cov_716.214007 (5695bp)
+Best alignment score: 5600.5 (LEN: 5695, IDY: 98.34), Total number of alignments: 4
+		This contig has 4 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 6039575 6045268 | 1 5695 | 5694 5695 | 98.34 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_130_length_5695_cov_716.214007
+			Skipping alignment 721572 727265 | 5695 1 | 5694 5695 | 98.32 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_130_length_5695_cov_716.214007
+			Skipping alignment 5264091 5269784 | 1 5695 | 5694 5695 | 98.32 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_130_length_5695_cov_716.214007
+			Skipping alignment 4788565 4794256 | 1 5695 | 5692 5695 | 98.29 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_130_length_5695_cov_716.214007
+
+CONTIG: NODE_135_length_4016_cov_129.164352 (4016bp)
+Best alignment score: 3994.2 (LEN: 4003, IDY: 99.78), Total number of alignments: 1
+		One align captures most of this contig: 260604 264606 | 14 4016 | 4003 4003 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_135_length_4016_cov_129.164352
+
+CONTIG: NODE_136_length_3816_cov_130.359745 (3816bp)
+Best alignment score: 3808.0 (LEN: 3816, IDY: 99.79), Total number of alignments: 1
+		One align captures most of this contig: 4833188 4837003 | 3816 1 | 3816 3816 | 99.79 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_136_length_3816_cov_130.359745
+
+CONTIG: NODE_141_length_3141_cov_241.388529 (3141bp)
+Best alignment score: 3119.0 (LEN: 3141, IDY: 99.30), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 2777417 2780557 | 1 3141 | 3141 3141 | 99.3 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_141_length_3141_cov_241.388529
+			Skipping alignment 41161 44301 | 3141 1 | 3141 3141 | 99.27 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_141_length_3141_cov_241.388529
+
+CONTIG: NODE_143_length_2682_cov_206.522269 (2682bp)
+Best alignment score: 1625.1 (LEN: 1651, IDY: 98.43), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 1625.1, number of alignments: 1, unaligned bases: 1031
+		This contig is partially unaligned. (Aligned 1651 out of 2682 non-N bases (61.56%))
+		Alignment: 2757495 2759146 | 1 1651 | 1652 1651 | 98.43 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_143_length_2682_cov_206.522269
+		Unaligned bases: 1652 to 2682 (1031)
+
+CONTIG: NODE_152_length_1468_cov_229.147912 (1468bp)
+Best alignment score: 1463.0 (LEN: 1468, IDY: 99.66), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 2170039 2171506 | 1468 1 | 1468 1468 | 99.66 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_152_length_1468_cov_229.147912
+			Skipping alignment 4502322 4503789 | 1468 1 | 1468 1468 | 99.46 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_152_length_1468_cov_229.147912
+
+CONTIG: NODE_153_length_1379_cov_1043.911631 (1379bp)
+Best alignment score: 1376.0 (LEN: 1379, IDY: 99.78), Total number of alignments: 6
+		This contig has 6 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 4473538 4474916 | 1 1379 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+			Skipping alignment 2556863 2558241 | 1 1379 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+			Skipping alignment 3841997 3843375 | 1379 1 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+			Skipping alignment 5382519 5383897 | 1379 1 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+			Skipping alignment 3043473 3044851 | 1379 1 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+			Skipping alignment 499827 501205 | 1379 1 | 1379 1379 | 99.78 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_153_length_1379_cov_1043.911631
+
+CONTIG: NODE_156_length_1255_cov_214.719167 (1255bp)
+Best alignment score: 1252.0 (LEN: 1255, IDY: 99.76), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 3575914 3577168 | 1255 1 | 1255 1255 | 99.76 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_156_length_1255_cov_214.719167
+			Skipping alignment 2521260 2522514 | 1255 1 | 1255 1255 | 99.68 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_156_length_1255_cov_214.719167
+
+CONTIG: NODE_164_length_824_cov_562.423927 (824bp)
+Best alignment score: 815.0 (LEN: 824, IDY: 98.91), Total number of alignments: 2
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 1061565 1062388 | 824 1 | 824 824 | 96.97 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_164_length_824_cov_562.423927
+		One align captures most of this contig: 2118566 2119389 | 1 824 | 824 824 | 98.91 | GCF_000006765.1_ASM676v1_genomic_NC_002516.2 NODE_164_length_824_cov_562.423927
+
+Analyzing coverage...
+Writing SNPs into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/GCF_000006765.1_ASM676v1_genomic/contigs_reports/minimap_output/NA.used_snps.gz
+
+Analysis is finished!
+Founded SNPs were written into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/GCF_000006765.1_ASM676v1_genomic/contigs_reports/minimap_output/NA.used_snps.gz
+
+Results:
+	Local Misassemblies: 43
+	Misassemblies: 49
+		Relocations: 49
+		Translocations: 0
+		Inversions: 0
+	Scaffold gap extensive misassemblies: 0
+	Scaffold gap local misassemblies: 0
+	Misassembled Contigs: 21
+	Misassembled Contig Bases: 4779725
+	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
+Unaligned Contigs: 0 + 29 part
+Half Unaligned Contigs with Misassemblies: 0
+Unaligned Bases in Fully and Partially Unaligned Contigs: 546235
+
+Ambiguously Mapped Contigs: 21
+Total Bases in Ambiguously Mapped Contigs: 3257007
+"Extra" Aligned Bases in Ambiguously Mapped Contigs: 0
+Note that --allow-ambiguity option was set to "one" and only first alignment per each of these contigs was used (there is no "extra" aligned bases).
+
+	Covered Bases in Reference: 6004217
+	Raw Aligned Bases in Assembly: 6010661
+	Total Aligned Bases in Assembly (with "Extras"): 6010661
+
+	SNPs: 30494
+	Insertions: 1453
+	Deletions: 2041
+

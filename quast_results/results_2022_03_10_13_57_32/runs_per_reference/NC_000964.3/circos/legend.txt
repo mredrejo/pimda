@@ -1,0 +1,14 @@
+1) The outer circle represents reference sequence with GC (%) heatmap [from 25% (white) to 56% (black)].
+
+2) Assembly tracks:
+	assembly1 - NA
+	assembly2 - NA_2
+	assembly3 - Phi29+RP
+	assembly4 - Phi29+RP_2
+	assembly5 - PrimPol+Phi29
+	assembly6 - piPolB+D
+	assembly7 - piMDA
+	assembly8 - piMDA_2
+	assembly9 - piMDA+D
+	assembly10 - piMDA+D_2
+Assembly tracks are combined with mismatches visualization: higher columns indicate larger mismatch rate.

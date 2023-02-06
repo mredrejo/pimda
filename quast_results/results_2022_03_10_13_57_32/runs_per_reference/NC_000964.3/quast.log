@@ -1,0 +1,592 @@
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast.py -k -f --mgm --circos -t 32 --mgm --min-identity 90.0 --colors #E31A1C,#1F78B4,#33A02C,#6A3D9A,#FF7F00,#800000,#A6CEE3,#B2DF8A,#333300,#CCCC00 --ls solid,solid,solid,solid,solid,solid,solid,solid,solid,solid --no-check-meta --contig-thresholds 1000,5000,10000,25000,50000 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta -R /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna -o /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3 --labels "NA, NA_2, Phi29+RP, Phi29+RP_2, PrimPol+Phi29, piPolB+D, piMDA, piMDA_2, piMDA+D, piMDA+D_2"
+
+Started: 2022-03-10 13:59:56
+
+Logging to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/quast.log
+
+CWD: /home/modesto/data/freeDNA
+Main parameters: 
+  MODE: meta, threads: 32, min contig length: 500, min alignment length: 65, min alignment IDY: 90.0, \
+  ambiguity: one, threshold for extensive misassembly size: 1000
+
+Reference:
+  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna ==> NC_000964.3
+
+Contigs:
+  Pre-processing...
+  1  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta ==> NA
+  2  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta ==> NA_2
+  3  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta ==> Phi29+RP
+  4  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta ==> Phi29+RP_2
+  5  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta ==> PrimPol+Phi29
+  6  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta ==> piPolB+D
+  7  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta ==> piMDA
+  8  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta ==> piMDA_2
+  9  /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta ==> piMDA+D
+  10 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta ==> piMDA+D_2
+
+2022-03-10 13:59:56
+Running Basic statistics processor...
+  Reference genome:
+    NC_000964.3.fna, length = 4215606, num fragments = 1, GC % = 43.51
+  Contig files: 
+    1  NA
+    2  NA_2
+    3  Phi29+RP
+    4  Phi29+RP_2
+    5  PrimPol+Phi29
+    6  piPolB+D
+    7  piMDA
+    8  piMDA_2
+    9  piMDA+D
+    10 piMDA+D_2
+  Calculating N50 and L50...
+    1  NA, N50 = 1042019, L50 = 2, Total length = 4032246, GC % = 43.69, # N's per 100 kbp =  0.00
+    2  NA_2, N50 = 1042514, L50 = 2, Total length = 4031946, GC % = 43.69, # N's per 100 kbp =  0.00
+    3  Phi29+RP, N50 = 2089305, L50 = 1, Total length = 4043931, GC % = 43.69, # N's per 100 kbp =  0.00
+    4  Phi29+RP_2, N50 = 2086699, L50 = 1, Total length = 4034613, GC % = 43.70, # N's per 100 kbp =  0.00
+    5  PrimPol+Phi29, N50 = 1042490, L50 = 2, Total length = 4032507, GC % = 43.69, # N's per 100 kbp =  0.00
+    6  piPolB+D, N50 = 144514, L50 = 6, Total length = 4033041, GC % = 43.68, # N's per 100 kbp =  0.00
+    7  piMDA, N50 = 2071182, L50 = 1, Total length = 4031764, GC % = 43.69, # N's per 100 kbp =  0.00
+    8  piMDA_2, N50 = 1027920, L50 = 2, Total length = 4035388, GC % = 43.69, # N's per 100 kbp =  0.00
+    9  piMDA+D, N50 = 1015468, L50 = 2, Total length = 4031308, GC % = 43.69, # N's per 100 kbp =  0.00
+    10 piMDA+D_2, N50 = 2086696, L50 = 1, Total length = 4033864, GC % = 43.70, # N's per 100 kbp =  0.00
+Done.
+
+2022-03-10 13:59:59
+Running analysis based on unique 101-mers...
+  Running KMC on reference...
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+  Analyzing assemblies completeness...
+    1  NA
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NA_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NA_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    2  NA_2
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NA_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NA_2_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_2_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_NA_2_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    3  Phi29+RP
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/Phi29-RP_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/Phi29-RP_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    4  Phi29+RP_2
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/Phi29-RP_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/Phi29-RP_2_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_2_to_NC_000964.3.fast.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_2_to_NC_000964.3.fast.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_Phi29-RP_2_to_NC_000964.3.fast.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    5  PrimPol+Phi29
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/PrimPol-Phi29_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/PrimPol-Phi29_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_PrimPol-Phi29_to_NC_000964.3.f.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_PrimPol-Phi29_to_NC_000964.3.f.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_PrimPol-Phi29_to_NC_000964.3.f.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    6  piPolB+D
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piPolB-D_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piPolB-D_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piPolB-D_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piPolB-D_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piPolB-D_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    7  piMDA
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    8  piMDA_2
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA_2_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_2_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA_2_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    9  piMDA+D
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA-D_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA-D_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    10 piMDA+D_2
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc -t32 -hp \
+-m31 -n128 -k101 -fm -cx1 -ci1 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA-D_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp simple quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/piMDA-D_2_to_NC_000964.3.fasta.kmc \
+intersect quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_2_to_NC_000964.3.fasta.kmc \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp histogram quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_2_to_NC_000964.3.fasta.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna_piMDA-D_2_to_NC_000964.3.fasta.kmc.histo.txt \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+  Analyzing assemblies correctness...
+    Downsampling k-mers...
+/home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/kmc/kmc_tools -t32 \
+-hp filter quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/NC_000964.3.fna.kmc \
+quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers_NC_000964.3_NC_000964.3.fasta \
+-ci1 -fa quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers_NC_000964.3_NC_000964.3.filtered.fasta \
+>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.log \
+2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    1  NA
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    2  NA_2
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    3  Phi29+RP
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    4  Phi29+RP_2
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    5  PrimPol+Phi29
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    6  piPolB+D
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    7  piMDA
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    8  piMDA_2
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    9  piMDA+D
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+    10 piMDA+D_2
+  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+  -cx sr -s202 --frag=no -t 32 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta \
+  quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt \
+  > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmers.coords \
+  2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmc.err
+  Creating total report...
+    saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/kmers_report.txt, kmers_report.tsv, and kmers_report.tex
+Done.
+
+2022-03-10 14:00:41
+Running Contig analyzer...
+  1  NA
+  2  NA_2
+  2  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_NA_2.stdout and contigs_report_NA_2.stderr...
+  1  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_NA.stdout and contigs_report_NA.stderr...
+  2  Aligning contigs to the reference
+  3  Phi29+RP
+  1  Aligning contigs to the reference
+  4  Phi29+RP_2
+  3  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_Phi29-RP.stdout and contigs_report_Phi29-RP.stderr...
+  5  PrimPol+Phi29
+  3  Aligning contigs to the reference
+  4  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_Phi29-RP_2.stdout and contigs_report_Phi29-RP_2.stderr...
+  4  Aligning contigs to the reference
+  5  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_PrimPol-Phi29.stdout and contigs_report_PrimPol-Phi29.stderr...
+  6  piPolB+D
+  5  Aligning contigs to the reference
+  7  piMDA
+  6  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piPolB-D.stdout and contigs_report_piPolB-D.stderr...
+  7  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA.stdout and contigs_report_piMDA.stderr...
+  6  Aligning contigs to the reference
+  8  piMDA_2
+  7  Aligning contigs to the reference
+  8  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA_2.stdout and contigs_report_piMDA_2.stderr...
+  9  piMDA+D
+  8  Aligning contigs to the reference
+  10 piMDA+D_2
+  9  Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA-D.stdout and contigs_report_piMDA-D.stderr...
+  10 Logging to files /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA-D_2.stdout and contigs_report_piMDA-D_2.stderr...
+  9  Aligning contigs to the reference
+  10 Aligning contigs to the reference
+  1  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/NA.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_NA.stderr
+  2  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/NA_2.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_NA_2.stderr
+  3  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/Phi29-RP.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_Phi29-RP.stderr
+  4  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/Phi29-RP_2.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_Phi29-RP_2.stderr
+  5  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/PrimPol-Phi29.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_PrimPol-Phi29.stderr
+  6  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/piPolB-D.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piPolB-D.stderr
+  8  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/piMDA_2.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA_2.stderr
+  7  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/piMDA.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA.stderr
+  10 /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/piMDA-D_2.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA-D_2.stderr
+  9  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 \
+     -c -x asm10 -B5 -O4,16 --no-long-join -r 85 -N 50 -s 65 -z 200 --mask-level 0.9 \
+     --min-occ 200 -g 2500 --score-N 2 --cs -t 3 quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NC_000964.3.fna \
+     quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta \
+     > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/minimap_output/piMDA-D.coords_tmp \
+     2>> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/contigs_report_piMDA-D.stderr
+  6  Analysis is finished.
+
+  5  Analysis is finished.
+
+  2  Analysis is finished.
+
+  9  Analysis is finished.
+
+  1  Analysis is finished.
+
+  8  Analysis is finished.
+
+  4  Analysis is finished.
+
+  10 Analysis is finished.
+
+  7  Analysis is finished.
+
+  3  Analysis is finished.
+
+  Creating total report...
+    saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+Done.
+
+2022-03-10 14:00:43
+Running NA-NGA calculation...
+  1  NA, Largest alignment = 1042225, NA50 = 976111, NGA50 = 886483, LA50 = 2, LGA50 = 3
+  2  NA_2, Largest alignment = 1036878, NA50 = 1015468, NGA50 = 886978, LA50 = 2, LGA50 = 3
+  3  Phi29+RP, Largest alignment = 995045, NA50 = 604097, NGA50 = 604097, LA50 = 3, LGA50 = 3
+  4  Phi29+RP_2, Largest alignment = 1200132, NA50 = 1036878, NGA50 = 1036878, LA50 = 2, LGA50 = 2
+  5  PrimPol+Phi29, Largest alignment = 1036878, NA50 = 1028950, NGA50 = 886954, LA50 = 2, LGA50 = 3
+  6  piPolB+D, Largest alignment = 610348, NA50 = 144514, NGA50 = 144514, LA50 = 7, LGA50 = 7
+  7  piMDA, Largest alignment = 1028984, NA50 = 886751, NGA50 = 886751, LA50 = 3, LGA50 = 3
+  8  piMDA_2, Largest alignment = 1027920, NA50 = 458984, NGA50 = 458984, LA50 = 3, LGA50 = 3
+  9  piMDA+D, Largest alignment = 1015468, NA50 = 886483, NGA50 = 886483, LA50 = 3, LGA50 = 3
+  10 piMDA+D_2, Largest alignment = 1199874, NA50 = 1036878, NGA50 = 1036878, LA50 = 2, LGA50 = 2
+Done.
+
+2022-03-10 14:00:43
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  1  NA
+  2  NA_2
+  3  Phi29+RP
+  4  Phi29+RP_2
+  5  PrimPol+Phi29
+  6  piPolB+D
+  7  piMDA
+  8  piMDA_2
+  9  piMDA+D
+  10 piMDA+D_2
+  3  Analysis is finished.
+  5  Analysis is finished.
+  7  Analysis is finished.
+  9  Analysis is finished.
+  4  Analysis is finished.
+  8  Analysis is finished.
+  10 Analysis is finished.
+  1  Analysis is finished.
+  6  Analysis is finished.
+  2  Analysis is finished.
+Done.
+
+2022-03-10 14:00:44
+Running MetaGeneMark...
+  1  NA
+  2  NA_2
+  3  Phi29+RP
+    1  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_genemark.stderr
+    3  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_genemark.stderr
+    2  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_2_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_2_genemark.stderr
+  4  Phi29+RP_2
+  5  PrimPol+Phi29
+  6  piPolB+D
+  7  piMDA
+    4  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_2_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_2_genemark.stderr
+    5  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/PrimPol-Phi29_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/PrimPol-Phi29_genemark.stderr
+    7  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_genemark.stderr
+    6  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piPolB-D_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piPolB-D_genemark.stderr
+  8  piMDA_2
+  9  piMDA+D
+  10 piMDA+D_2
+    8  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_2_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_2_genemark.stderr
+    9  /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_genemark.stderr
+    10 /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/gmhmmp \
+       -d -a -p 0 -m /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/genemark/linux_64/../MetaGeneMark_v1.mod \
+       -o quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta.gmhmm \
+       quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta \
+       > quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_2_genemark.stderr \
+       2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_2_genemark.stderr
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/NA_2_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/Phi29-RP_2_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piPolB-D_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/PrimPol-Phi29_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA_2_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_2_genemark.stderr for stderr.
+       The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/predicted_genes/piMDA-D_genemark.stderr for stderr.
+
+WARNING: License period for GeneMark has ended! 
+To update license, please visit http://exon.gatech.edu/GeneMark/license_download.cgi page and fill in the form.
+You should choose GeneMarkS tool and your operating system (note that GeneMark is free for non-commercial use).
+Download the license key and replace your ~/.gm_key with the updated version. After that you can restart QUAST.
+
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2022-03-10 14:00:44
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating Circos plot...
+/home/linuxbrew/.linuxbrew/bin/circos -conf quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.conf \
+> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.log \
+2> quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.err
+The tool returned non-zero. See quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.err for stderr.
+WARNING:   Circos diagram was not created. See /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.log and /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/circos/circos.err for details
+Done
+
+2022-03-10 14:00:45
+RESULTS:
+  Text versions of total report are saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/report.html
+  Icarus (contig browser) is saved to /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/icarus.html

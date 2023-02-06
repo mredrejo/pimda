@@ -1,0 +1,9 @@
+NODE_4_length_593849_cov_223.459526
+Extensive misassembly (relocation, inconsistency = -1558) between 102821 1 and 230977 102822
+Extensive misassembly (relocation, inconsistency = -2811) between 230977 102822 and 237362 230978
+Extensive misassembly (relocation, inconsistency = -3659) between 443170 403419 and 449407 443171
+NODE_10_length_376610_cov_234.566993
+Extensive misassembly (relocation, inconsistency = -2219) between 10125 181444 and 181445 250151
+Extensive misassembly (relocation, inconsistency = -2562) between 181445 250151 and 250152 267406
+NODE_46_length_120619_cov_223.117365
+Extensive misassembly (relocation, inconsistency = -1082) between 67098 1 and 84599 67099

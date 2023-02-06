@@ -1,0 +1,5 @@
+Strain;Model strain;Reference genome;Length (MB);GC content
+E.coli;E. coli K12 MG1655;NC_000913.3;4.64;50.79
+B. subtilis 110NA;B. subtilis 168;NC_000964.3;4.21;43.51
+P. aeruginosa;P. aeruginosa PAO1;NC_002516.2;6.5;66.37
+Micrococcus luteus;K. rhizophila ATCC 9341;NC_010617.1;2.7;70.56

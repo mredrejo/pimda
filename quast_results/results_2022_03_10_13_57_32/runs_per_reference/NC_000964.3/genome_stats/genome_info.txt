@@ -1,0 +1,23 @@
+reference chromosomes:
+	NC_000964.3_NC_000964.3 (total length: 4215606 bp, total length without N's: 4215606 bp, maximal covered length: 4032333 bp)
+
+total genome size: 4215606
+
+gap min size: 50
+partial gene/operon min size: 100
+
+
+
+assembly                 | genome    | duplication | gaps      | genes     | partial   | operons   | partial   |
+                         | fraction  | ratio       | number    |           | genes     |           | operons   |
+========================================================================================================================
+NA_to_NC_000964.3        | 95.650    | 1.000       | 14        | -         | -         | -         | -         |
+NA_2_to_NC_000964.3      | 95.409    | 1.000       | 12        | -         | -         | -         | -         |
+Phi29-RP_to_NC_000964.3  | 95.653    | 1.003       | 12        | -         | -         | -         | -         |
+Phi29-RP_2_to_NC_000964. | 95.472    | 1.000       | 11        | -         | -         | -         | -         |
+PrimPol-Phi29_to_NC_0009 | 95.420    | 1.000       | 14        | -         | -         | -         | -         |
+piPolB-D_to_NC_000964.3  | 95.606    | 1.001       | 13        | -         | -         | -         | -         |
+piMDA_to_NC_000964.3     | 95.635    | 1.000       | 13        | -         | -         | -         | -         |
+piMDA_2_to_NC_000964.3   | 95.636    | 1.001       | 13        | -         | -         | -         | -         |
+piMDA-D_to_NC_000964.3   | 95.623    | 1.000       | 13        | -         | -         | -         | -         |
+piMDA-D_2_to_NC_000964.3 | 95.458    | 1.000       | 10        | -         | -         | -         | -         |

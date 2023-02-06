@@ -1,0 +1,23 @@
+reference chromosomes:
+	Kocuria_rhizophila_ATCC_9341_NC_010617.1 (total length: 2696980 bp, total length without N's: 2696980 bp, maximal covered length: 2685783 bp)
+
+total genome size: 2696980
+
+gap min size: 50
+partial gene/operon min size: 100
+
+
+
+assembly                 | genome    | duplication | gaps      | genes     | partial   | operons   | partial   |
+                         | fraction  | ratio       | number    |           | genes     |           | operons   |
+========================================================================================================================
+NA_to_Kocuria_rhizophila | 99.403    | 1.000       | 5         | -         | -         | -         | -         |
+NA_2_to_Kocuria_rhizophi | 99.585    | 1.000       | 4         | -         | -         | -         | -         |
+Phi29-RP_to_Kocuria_rhiz | 22.013    | 0.998       | 441       | -         | -         | -         | -         |
+Phi29-RP_2_to_Kocuria_rh | 89.821    | 0.998       | 538       | -         | -         | -         | -         |
+PrimPol-Phi29_to_Kocuria | 99.479    | 1.000       | 5         | -         | -         | -         | -         |
+piPolB-D_to_Kocuria_rhiz | 99.401    | 1.000       | 5         | -         | -         | -         | -         |
+piMDA_to_Kocuria_rhizoph | 99.402    | 1.003       | 5         | -         | -         | -         | -         |
+piMDA_2_to_Kocuria_rhizo | 99.479    | 1.011       | 4         | -         | -         | -         | -         |
+piMDA-D_to_Kocuria_rhizo | 99.407    | 1.000       | 5         | -         | -         | -         | -         |
+piMDA-D_2_to_Kocuria_rhi | 99.479    | 1.000       | 5         | -         | -         | -         | -         |

@@ -1,0 +1,143 @@
+1st stage: 0.327928s
+2nd stage: 1.92047s
+Total    : 2.24839s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        66032
+   No. of unique k-mers               :     17653884
+   No. of unique counted k-mers       :     17587852
+   Total no. of k-mers                :     17818242
+   Total no. of sequences             :            4
+   Total no. of super-k-mers          :       362207
+1st stage: 0.42823s
+2nd stage: 1.86232s
+Total    : 2.29055s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        29745
+   No. of unique k-mers               :     17849539
+   No. of unique counted k-mers       :     17819794
+   Total no. of k-mers                :     17882157
+   Total no. of sequences             :          169
+   Total no. of super-k-mers          :       363580
+1st stage: 0.417357s
+2nd stage: 1.85844s
+Total    : 2.2758s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        34127
+   No. of unique k-mers               :     17850843
+   No. of unique counted k-mers       :     17816716
+   Total no. of k-mers                :     17887887
+   Total no. of sequences             :          154
+   Total no. of super-k-mers          :       363693
+1st stage: 0.338671s
+2nd stage: 1.83368s
+Total    : 2.17235s
+Tmp size : 10MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        77573
+   No. of unique k-mers               :     13640194
+   No. of unique counted k-mers       :     13562621
+   Total no. of k-mers                :     13720618
+   Total no. of sequences             :         2295
+   Total no. of super-k-mers          :       280719
+1st stage: 0.403436s
+2nd stage: 1.83202s
+Total    : 2.23546s
+Tmp size : 13MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        20275
+   No. of unique k-mers               :     17492187
+   No. of unique counted k-mers       :     17471912
+   Total no. of k-mers                :     17516082
+   Total no. of sequences             :          920
+   Total no. of super-k-mers          :       356792
+1st stage: 0.421295s
+2nd stage: 1.92009s
+Total    : 2.34138s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        22335
+   No. of unique k-mers               :     17845594
+   No. of unique counted k-mers       :     17823259
+   Total no. of k-mers                :     17870807
+   Total no. of sequences             :          170
+   Total no. of super-k-mers          :       363380
+1st stage: 0.428044s
+2nd stage: 1.92109s
+Total    : 2.34913s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        18301
+   No. of unique k-mers               :     17833168
+   No. of unique counted k-mers       :     17814867
+   Total no. of k-mers                :     17852004
+   Total no. of sequences             :          289
+   Total no. of super-k-mers          :       363084
+1st stage: 0.428758s
+2nd stage: 1.91628s
+Total    : 2.34504s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        56353
+   No. of unique k-mers               :     17854039
+   No. of unique counted k-mers       :     17797686
+   Total no. of k-mers                :     17911858
+   Total no. of sequences             :          205
+   Total no. of super-k-mers          :       364202
+1st stage: 0.431831s
+2nd stage: 1.9219s
+Total    : 2.35373s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        88414
+   No. of unique k-mers               :     17864788
+   No. of unique counted k-mers       :     17776374
+   Total no. of k-mers                :     17954880
+   Total no. of sequences             :          181
+   Total no. of super-k-mers          :       365039
+1st stage: 0.429349s
+2nd stage: 1.91257s
+Total    : 2.34192s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        33841
+   No. of unique k-mers               :     17847964
+   No. of unique counted k-mers       :     17814123
+   Total no. of k-mers                :     17884508
+   Total no. of sequences             :          168
+   Total no. of super-k-mers          :       363623
+1st stage: 0.428477s
+2nd stage: 1.90904s
+Total    : 2.33752s
+Tmp size : 14MB
+
+Stats:
+   No. of k-mers below min. threshold :            0
+   No. of k-mers above max. threshold :        33602
+   No. of unique k-mers               :     17849939
+   No. of unique counted k-mers       :     17816337
+   Total no. of k-mers                :     17888120
+   Total no. of sequences             :          158
+   Total no. of super-k-mers          :       363705

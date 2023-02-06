@@ -1,0 +1,27 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                              NA       NA_2     Phi29+RP  Phi29+RP_2  PrimPol+Phi29  piPolB+D  piMDA    piMDA_2  piMDA+D  piMDA+D_2
+# misassemblies                       52       53       93        56          53             45        65       66       52       52       
+  # contig misassemblies              52       53       93        56          53             45        65       66       52       52       
+    # c. relocations                  52       52       82        55          52             45        65       65       52       52       
+    # c. translocations               0        0        0         0           0              0         0        0        0        0        
+    # c. inversions                   0        1        7         1           1              0         0        1        0        0        
+    # c. interspecies translocations  0        0        4         0           0              0         0        0        0        0        
+  # scaffold misassemblies            0        0        0         0           0              0         0        0        0        0        
+    # s. relocations                  0        0        0         0           0              0         0        0        0        0        
+    # s. translocations               0        0        0         0           0              0         0        0        0        0        
+    # s. inversions                   0        0        0         0           0              0         0        0        0        0        
+    # s. interspecies translocations  0        0        0         0           0              0         0        0        0        0        
+# misassembled contigs                23       22       86        34          23             29        29       35       23       23       
+Misassembled contigs length           5929686  6317121  5276981   5307327     5909034        4521393   7396030  8148728  6365130  7354160  
+# possibly misassembled contigs       29       27       45        32          27             36        31       30       29       27       
+    # possible misassemblies          116      116      76        109         112            108       116      115      116      113      
+# local misassemblies                 52       51       328       175         53             51        63       100      52       51       
+# scaffold gap ext. mis.              0        0        0         0           0              0         0        0        0        0        
+# scaffold gap loc. mis.              0        0        0         0           0              0         0        0        0        0        
+# unaligned mis. contigs              0        0        6         1           0              1         0        0        0        0        
+# mismatches                          31527    31502    22521     31629       31647          31433     31639    31499    31480    31477    
+# indels                              1154     1141     1654      1342        1159           1338      1148     1100     1117     1101     
+    # indels (<= 5 bp)                1005     994      965       975         1014           1186      1003     959      969      958      
+    # indels (> 5 bp)                 149      147      689       367         145            152       145      141      148      143      
+Indels length                         4351     4265     24759     11583       4242           4802      4254     4075     4344     4221     

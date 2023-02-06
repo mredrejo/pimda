@@ -1,0 +1,1 @@
+GCF_000005845.2_ASM584v2_genomic_NC_000913.3	0	0	null	track0=assembly1,track1=assembly2,track2=assembly3,track3=assembly4,track4=assembly5,track5=assembly6,track6=assembly7,track7=assembly8,track8=assembly9,track9=assembly10

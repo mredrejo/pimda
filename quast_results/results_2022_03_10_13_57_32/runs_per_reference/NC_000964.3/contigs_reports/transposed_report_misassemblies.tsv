@@ -1,0 +1,11 @@
+Assembly	# misassemblies	  # contig misassemblies	    # c. relocations	    # c. translocations	    # c. inversions	  # scaffold misassemblies	    # s. relocations	    # s. translocations	    # s. inversions	# misassembled contigs	Misassembled contigs length	# possibly misassembled contigs	    # possible misassemblies	# local misassemblies	# scaffold gap ext. mis.	# scaffold gap loc. mis.	# unaligned mis. contigs	# mismatches	# indels	    # indels (<= 5 bp)	    # indels (> 5 bp)	Indels length
+NA	1	1	1	0	0	0	0	0	0	1	1042019	0	0	1	0	0	0	188	36	32	4	102
+NA_2	1	1	1	0	0	0	0	0	0	1	1042514	0	0	1	0	0	0	175	37	32	5	115
+Phi29+RP	4	4	4	0	0	0	0	0	0	2	3144512	0	0	1	0	0	0	180	33	29	4	101
+Phi29+RP_2	1	1	1	0	0	0	0	0	0	1	2086699	0	0	1	0	0	0	212	36	32	4	102
+PrimPol+Phi29	1	1	1	0	0	0	0	0	0	1	1042490	0	0	1	0	0	0	179	40	35	5	120
+piPolB+D	1	1	1	0	0	0	0	0	0	1	568529	0	0	1	0	0	0	176	227	223	4	365
+piMDA	2	2	2	0	0	0	0	0	0	1	2071182	0	0	1	0	0	0	167	37	33	4	103
+piMDA_2	2	2	2	0	0	0	0	0	0	2	1746504	0	0	4	0	0	0	159	32	28	4	98
+piMDA+D	1	1	1	0	0	0	0	0	0	1	1042019	0	0	1	0	0	0	163	37	32	5	113
+piMDA+D_2	1	1	1	0	0	0	0	0	0	1	2086696	0	0	1	0	0	0	209	34	30	4	102

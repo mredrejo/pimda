@@ -1,0 +1,10 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                              NA     NA_2   Phi29+RP  Phi29+RP_2  PrimPol+Phi29  piPolB+D  piMDA  piMDA_2  piMDA+D  piMDA+D_2
+K-mer-based compl. (%)                99.64  99.69  19.19     85.32       99.64          99.61     99.36  98.73    0.00     99.69    
+K-mer-based cor. length (%)           77.95  78.20  50.68     83.77       79.43          99.69     88.41  99.61    99.69    77.95    
+K-mer-based mis. length (%)           21.73  21.70  0.00      0.00        20.25          0.00      11.14  0.00     0.00     21.73    
+K-mer-based undef. length (%)         0.31   0.11   49.32     16.23       0.32           0.31      0.45   0.39     0.31     0.32     
+# k-mer-based misjoins                1      1      0         0           1              0         1      0        0        1        
+    # k-mer-based translocations      0      0      0         0           0              0         0      0        0        0        
+    # k-mer-based 100kbp relocations  1      1      0         0           1              0         1      0        0        1        

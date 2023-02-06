@@ -1,0 +1,123 @@
+Aligning contigs to reference...
+	Aligning contigs to the reference
+Filtering alignments...
+Parsing coords...
+Loading reference...
+	Loaded [Kocuria_rhizophila_ATCC_9341_NC_010617.1]
+	Total Regions: 1
+	Total Region Length: 2696980
+Analyzing contigs...
+CONTIG: NODE_3_length_958637_cov_286.203019 (958637bp)
+Best alignment score: 839988.0 (LEN: 840072, IDY: 99.99), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 958505.0, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 482 between Alignment 1 and 2: 1629198 1748244 | 839591 958637 | 119047 119047 --> 1629680 1748244 | 840073 958637 | 118565 118565
+			Real Alignment 1: 789292 1629259 | 1 840072 | 839968 840072 | 99.99 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_3_length_958637_cov_286.203019
+			  Gap between these two alignments (local misassembly). Inconsistency = 420
+			Real Alignment 2: 1629680 1748244 | 840073 958637 | 118565 118565 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_3_length_958637_cov_286.203019
+
+CONTIG: NODE_4_length_583319_cov_523.650700 (583319bp)
+Best alignment score: 293931.0 (LEN: 293931, IDY: 100.00), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 583290.1, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Real Alignment 1: 1 293921 | 293931 1 | 293921 293931 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_4_length_583319_cov_523.650700
+			  Not a misassembly [linear representation of circular genome] between these two alignments
+			Real Alignment 2: 2407585 2696980 | 583319 293932 | 289396 289388 | 99.99 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_4_length_583319_cov_523.650700
+
+CONTIG: NODE_8_length_446480_cov_378.478611 (446480bp)
+Best alignment score: 446390.7 (LEN: 446480, IDY: 99.98), Total number of alignments: 1
+		One align captures most of this contig: 340135 786547 | 1 446480 | 446413 446480 | 99.98 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_8_length_446480_cov_378.478611
+
+CONTIG: NODE_12_length_369599_cov_293.415423 (369599bp)
+Best alignment score: 326782.6 (LEN: 326848, IDY: 99.98), Total number of alignments: 4
+			Looking for the best set of alignments (out of 4 total alignments)
+			The best set is below. Score: 368957.4, number of alignments: 4, unaligned bases: 501
+		This contig is misassembled.
+			Real Alignment 1: 2118163 2122907 | 4745 1 | 4745 4745 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_12_length_369599_cov_293.415423
+			  Gap between these two alignments (local misassembly). Inconsistency = -113
+			Real Alignment 2: 2113279 2118170 | 9742 4851 | 4892 4892 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_12_length_369599_cov_293.415423
+			  Gap between these two alignments (local misassembly). Inconsistency = -222
+			Real Alignment 3: 2080664 2113273 | 42582 9970 | 32610 32613 | 99.99 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_12_length_369599_cov_293.415423
+			  Gap between these two alignments (local misassembly). Inconsistency = -172
+			Real Alignment 4: 1753766 2080666 | 369599 42752 | 326901 326848 | 99.98 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_12_length_369599_cov_293.415423
+
+CONTIG: NODE_18_length_273772_cov_372.690063 (273772bp)
+Best alignment score: 273772.0 (LEN: 273772, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2128371 2402134 | 1 273772 | 273764 273772 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_18_length_273772_cov_372.690063
+
+CONTIG: NODE_74_length_43740_cov_466.256770 (43740bp)
+Best alignment score: 41580.0 (LEN: 41580, IDY: 100.00), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 43484.0, number of alignments: 2, unaligned bases: 232
+		This contig is misassembled.
+			Real Alignment 1: 296666 298593 | 1 1928 | 1928 1928 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_74_length_43740_cov_466.256770
+			  Gap between these two alignments (local misassembly). Inconsistency = -210
+			Real Alignment 2: 298612 340189 | 2157 43736 | 41578 41580 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_74_length_43740_cov_466.256770
+
+CONTIG: NODE_125_length_3667_cov_325.807586 (3667bp)
+Best alignment score: 3667.0 (LEN: 3667, IDY: 100.00), Total number of alignments: 3
+		This contig has 3 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 2123514 2127180 | 3667 1 | 3667 3667 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_125_length_3667_cov_325.807586
+			Skipping alignment 2402799 2406465 | 3667 1 | 3667 3667 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_125_length_3667_cov_325.807586
+			Skipping alignment 1748909 1752575 | 3667 1 | 3667 3667 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_125_length_3667_cov_325.807586
+
+CONTIG: NODE_130_length_2854_cov_1597.293676 (2854bp)
+Best alignment score: 2854.0 (LEN: 2854, IDY: 100.00), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 293867 296720 | 1 2854 | 2854 2854 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_130_length_2854_cov_1597.293676
+			Skipping alignment 786493 789346 | 1 2854 | 2854 2854 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_130_length_2854_cov_1597.293676
+
+CONTIG: NODE_145_length_1229_cov_297.142249 (1229bp)
+Best alignment score: 1229.0 (LEN: 1229, IDY: 100.00), Total number of alignments: 3
+		This contig has 3 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 2127126 2128354 | 1229 1 | 1229 1229 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_145_length_1229_cov_297.142249
+			Skipping alignment 1752521 1753749 | 1229 1 | 1229 1229 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_145_length_1229_cov_297.142249
+			Skipping alignment 2406411 2407639 | 1229 1 | 1229 1229 | 99.92 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_145_length_1229_cov_297.142249
+
+CONTIG: NODE_156_length_716_cov_411.688351 (716bp)
+Best alignment score: 716.0 (LEN: 716, IDY: 100.00), Total number of alignments: 3
+		This contig has 3 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 2402138 2402853 | 716 1 | 716 716 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_156_length_716_cov_411.688351
+			Skipping alignment 2122853 2123568 | 716 1 | 716 716 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_156_length_716_cov_411.688351
+			Skipping alignment 1748248 1748963 | 716 1 | 716 716 | 100.0 | Kocuria_rhizophila_ATCC_9341_NC_010617.1 NODE_156_length_716_cov_411.688351
+
+Analyzing coverage...
+Writing SNPs into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/contigs_reports/minimap_output/piMDA-D_2.used_snps.gz
+
+Analysis is finished!
+Founded SNPs were written into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/contigs_reports/minimap_output/piMDA-D_2.used_snps.gz
+
+Results:
+	Local Misassemblies: 5
+	Misassemblies: 0
+		Relocations: 0
+		Translocations: 0
+		Inversions: 0
+	Scaffold gap extensive misassemblies: 0
+	Scaffold gap local misassemblies: 0
+	Misassembled Contigs: 0
+	Misassembled Contig Bases: 0
+	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
+Unaligned Contigs: 0 + 0 part
+Half Unaligned Contigs with Misassemblies: 0
+Unaligned Bases in Fully and Partially Unaligned Contigs: 0
+
+Ambiguously Mapped Contigs: 4
+Total Bases in Ambiguously Mapped Contigs: 8466
+"Extra" Aligned Bases in Ambiguously Mapped Contigs: 0
+Note that --allow-ambiguity option was set to "one" and only first alignment per each of these contigs was used (there is no "extra" aligned bases).
+
+	Covered Bases in Reference: 2682916
+	Raw Aligned Bases in Assembly: 2683280
+	Total Aligned Bases in Assembly (with "Extras"): 2683280
+
+	SNPs: 28
+	Insertions: 214
+	Deletions: 81
+

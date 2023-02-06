@@ -1,0 +1,525 @@
+Aligning contigs to reference...
+	Aligning contigs to the reference
+Filtering alignments...
+Parsing coords...
+Loading reference...
+	Loaded [GCF_000005845.2_ASM584v2_genomic_NC_000913.3]
+	Total Regions: 1
+	Total Region Length: 4641652
+Analyzing contigs...
+CONTIG: NODE_4_length_418864_cov_8.156909 (418864bp)
+Best alignment score: 169.0 (LEN: 185, IDY: 91.35), Total number of alignments: 5
+			Looking for the best set of alignments (out of 5 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 1992042 1992119 | 346880 346803 | 78 78 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_4_length_418864_cov_8.156909
+		Skipping redundant alignment 4392472 4392549 | 346805 346882 | 78 78 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_4_length_418864_cov_8.156909
+		Skipping redundant alignment 4392360 4392437 | 346805 346882 | 78 78 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_4_length_418864_cov_8.156909
+		Skipping redundant alignment 4392583 4392661 | 346805 346883 | 79 79 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_4_length_418864_cov_8.156909
+			The best set is below. Score: 169.0, number of alignments: 1, unaligned bases: 418679
+		This contig is partially unaligned. (Aligned 185 out of 418864 non-N bases (0.04%))
+		Alignment: 2402182 2402366 | 202253 202437 | 185 185 | 91.35 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_4_length_418864_cov_8.156909
+		Unaligned bases: 1 to 202252 (202252)
+		Unaligned bases: 202438 to 418864 (216427)
+
+CONTIG: NODE_7_length_269698_cov_120.811521 (269698bp)
+Best alignment score: 269647.0 (LEN: 269647, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1708848 1978494 | 269698 52 | 269647 269647 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_7_length_269698_cov_120.811521
+
+CONTIG: NODE_8_length_268491_cov_105.553957 (268491bp)
+Best alignment score: 268491.0 (LEN: 268491, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 781392 1049882 | 268491 1 | 268491 268491 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_8_length_268491_cov_105.553957
+
+CONTIG: NODE_13_length_204644_cov_96.995533 (204644bp)
+Best alignment score: 204644.0 (LEN: 204644, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2521473 2726116 | 204644 1 | 204644 204644 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_13_length_204644_cov_96.995533
+
+CONTIG: NODE_15_length_178214_cov_111.964352 (178214bp)
+Best alignment score: 129460.1 (LEN: 129486, IDY: 99.98), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 178135.2, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 191 between Alignment 1 and 2: 2947495 2996413 | 48919 1 | 48919 48919 --> 2947686 2996413 | 48728 1 | 48728 48728
+			Real Alignment 1: 2947686 2996413 | 48728 1 | 48728 48728 | 99.99 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_15_length_178214_cov_111.964352
+			  Gap between these two alignments (local misassembly). Inconsistency = 110
+			Real Alignment 2: 2818090 2947575 | 178214 48729 | 129486 129486 | 99.98 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_15_length_178214_cov_111.964352
+
+CONTIG: NODE_16_length_171950_cov_113.858070 (171950bp)
+Best alignment score: 171950.0 (LEN: 171950, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4326284 4498234 | 1 171950 | 171951 171950 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_16_length_171950_cov_113.858070
+
+CONTIG: NODE_20_length_148124_cov_90.428077 (148124bp)
+Best alignment score: 148070.0 (LEN: 148070, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 20510 168579 | 148124 55 | 148070 148070 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_20_length_148124_cov_90.428077
+
+CONTIG: NODE_22_length_141056_cov_123.613932 (141056bp)
+Best alignment score: 141005.0 (LEN: 141005, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3765775 3906779 | 1 141005 | 141005 141005 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_22_length_141056_cov_123.613932
+
+CONTIG: NODE_23_length_132867_cov_99.699372 (132867bp)
+Best alignment score: 132867.0 (LEN: 132867, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 392918 525784 | 1 132867 | 132867 132867 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_23_length_132867_cov_99.699372
+
+CONTIG: NODE_24_length_132556_cov_101.025743 (132556bp)
+Best alignment score: 132556.0 (LEN: 132556, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2997640 3130195 | 132556 1 | 132556 132556 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_24_length_132556_cov_101.025743
+
+CONTIG: NODE_29_length_117595_cov_130.400927 (117595bp)
+Best alignment score: 117595.0 (LEN: 117595, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2171374 2288970 | 117595 1 | 117597 117595 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_29_length_117595_cov_130.400927
+
+CONTIG: NODE_31_length_116557_cov_105.363307 (116557bp)
+Best alignment score: 102141.8 (LEN: 102152, IDY: 99.99), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 116432.9, number of alignments: 2, unaligned bases: 53
+		This contig is misassembled.
+			Excluding internal overlap of size 429 between Alignment 1 and 2: 2290059 2304839 | 1 14781 | 14781 14781 --> 2290059 2304410 | 1 14352 | 14352 14352
+			Real Alignment 1: 2290059 2304410 | 1 14352 | 14352 14352 | 99.91 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_31_length_116557_cov_105.363307
+			  Gap between these two alignments (local misassembly). Inconsistency = 226
+			Real Alignment 2: 2304637 2406788 | 14353 116504 | 102152 102152 | 99.99 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_31_length_116557_cov_105.363307
+
+CONTIG: NODE_32_length_112765_cov_103.331461 (112765bp)
+Best alignment score: 83202.7 (LEN: 83211, IDY: 99.99), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 112696.9, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 488 between Alignment 1 and 2: 4295948 4325987 | 82724 112765 | 30040 30042 --> 4296434 4325987 | 83212 112765 | 29554 29554
+			Real Alignment 1: 4213112 4296322 | 1 83211 | 83211 83211 | 99.99 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_32_length_112765_cov_103.331461
+			  Gap between these two alignments (local misassembly). Inconsistency = 111
+			Real Alignment 2: 4296434 4325987 | 83212 112765 | 29554 29554 | 99.96 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_32_length_112765_cov_103.331461
+
+CONTIG: NODE_33_length_112343_cov_90.067843 (112343bp)
+Best alignment score: 112343.0 (LEN: 112343, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3471140 3583481 | 1 112343 | 112342 112343 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_33_length_112343_cov_90.067843
+
+CONTIG: NODE_34_length_107980_cov_111.156349 (107980bp)
+Best alignment score: 95401.0 (LEN: 95401, IDY: 100.00), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 107724.2, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 4 between Alignment 1 and 2: 1286916 1299498 | 107980 95398 | 12583 12583 --> 1286916 1299494 | 107980 95402 | 12579 12579
+			Real Alignment 1: 1300694 1396094 | 95401 1 | 95401 95401 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_34_length_107980_cov_111.156349
+			  Extensive misassembly (relocation, inconsistency = 1199) between these two alignments
+			Real Alignment 2: 1286916 1299494 | 107980 95402 | 12579 12579 | 99.97 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_34_length_107980_cov_111.156349
+
+CONTIG: NODE_35_length_107600_cov_118.017369 (107600bp)
+Best alignment score: 107548.0 (LEN: 107548, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2406780 2514327 | 53 107600 | 107548 107548 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_35_length_107600_cov_118.017369
+
+CONTIG: NODE_38_length_102484_cov_112.024466 (102484bp)
+Best alignment score: 102431.0 (LEN: 102431, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1105375 1207805 | 102431 1 | 102431 102431 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_38_length_102484_cov_112.024466
+
+CONTIG: NODE_39_length_102129_cov_100.295452 (102129bp)
+Best alignment score: 102078.0 (LEN: 102078, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3263529 3365606 | 52 102129 | 102078 102078 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_39_length_102129_cov_100.295452
+
+CONTIG: NODE_46_length_88325_cov_97.131449 (88325bp)
+Best alignment score: 88325.0 (LEN: 88325, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3946895 4035219 | 88325 1 | 88325 88325 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_46_length_88325_cov_97.131449
+
+CONTIG: NODE_47_length_87015_cov_144.927909 (87015bp)
+Best alignment score: 86960.0 (LEN: 86960, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1979271 2066230 | 56 87015 | 86960 86960 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_47_length_87015_cov_144.927909
+
+CONTIG: NODE_48_length_86682_cov_121.211424 (86682bp)
+Best alignment score: 86682.0 (LEN: 86682, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2731431 2818112 | 86682 1 | 86682 86682 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_48_length_86682_cov_121.211424
+
+CONTIG: NODE_51_length_78604_cov_104.330278 (78604bp)
+Best alignment score: 78604.0 (LEN: 78604, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 609297 687900 | 78604 1 | 78604 78604 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_51_length_78604_cov_104.330278
+
+CONTIG: NODE_52_length_76219_cov_107.893847 (76219bp)
+Best alignment score: 76165.0 (LEN: 76165, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3187373 3263537 | 76219 55 | 76165 76165 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_52_length_76219_cov_107.893847
+
+CONTIG: NODE_55_length_71674_cov_120.320739 (71674bp)
+Best alignment score: 71674.0 (LEN: 71674, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4542636 4614309 | 71674 1 | 71674 71674 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_55_length_71674_cov_120.320739
+
+CONTIG: NODE_56_length_69779_cov_104.535641 (69779bp)
+Best alignment score: 69691.1 (LEN: 69726, IDY: 99.95), Total number of alignments: 1
+		One align captures most of this contig: 3667382 3737141 | 69779 54 | 69760 69726 | 99.95 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_56_length_69779_cov_104.535641
+
+CONTIG: NODE_58_length_67330_cov_108.241308 (67330bp)
+Best alignment score: 67330.0 (LEN: 67330, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2102894 2170223 | 1 67330 | 67330 67330 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_58_length_67330_cov_108.241308
+
+CONTIG: NODE_66_length_60768_cov_157.185496 (60768bp)
+Best alignment score: 60768.0 (LEN: 60768, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1571847 1632614 | 1 60768 | 60768 60768 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_66_length_60768_cov_157.185496
+
+CONTIG: NODE_68_length_59545_cov_143.434090 (59545bp)
+Best alignment score: 59545.0 (LEN: 59545, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1209603 1269147 | 59545 1 | 59545 59545 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_68_length_59545_cov_143.434090
+
+CONTIG: NODE_70_length_57777_cov_150.366446 (57777bp)
+Best alignment score: 57777.0 (LEN: 57777, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1470462 1528238 | 57777 1 | 57777 57777 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_70_length_57777_cov_150.366446
+
+CONTIG: NODE_71_length_57624_cov_131.673904 (57624bp)
+Best alignment score: 57573.0 (LEN: 57573, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1651135 1708708 | 57573 1 | 57574 57573 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_71_length_57624_cov_131.673904
+
+CONTIG: NODE_72_length_56613_cov_107.328265 (56613bp)
+Best alignment score: 56613.0 (LEN: 56613, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3366701 3423313 | 56613 1 | 56613 56613 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_72_length_56613_cov_107.328265
+
+CONTIG: NODE_74_length_54996_cov_88.800422 (54996bp)
+Best alignment score: 54945.0 (LEN: 54945, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 168575 223519 | 52 54996 | 54945 54945 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_74_length_54996_cov_88.800422
+
+CONTIG: NODE_75_length_54855_cov_101.290383 (54855bp)
+Best alignment score: 54855.0 (LEN: 54855, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3131292 3186146 | 1 54855 | 54855 54855 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_75_length_54855_cov_101.290383
+
+CONTIG: NODE_76_length_53786_cov_124.473526 (53786bp)
+Best alignment score: 53786.0 (LEN: 53786, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4040791 4094576 | 1 53786 | 53786 53786 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_76_length_53786_cov_124.473526
+
+CONTIG: NODE_86_length_44880_cov_113.354066 (44880bp)
+Best alignment score: 44730.9 (LEN: 44825, IDY: 99.79), Total number of alignments: 2
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 736627 737061 | 1 436 | 435 436 | 94.04 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_86_length_44880_cov_113.354066
+		One align captures most of this contig: 736302 781122 | 56 44880 | 44821 44825 | 99.79 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_86_length_44880_cov_113.354066
+
+CONTIG: NODE_88_length_43804_cov_119.457656 (43804bp)
+Best alignment score: 43804.0 (LEN: 43804, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1050495 1094298 | 1 43804 | 43804 43804 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_88_length_43804_cov_119.457656
+
+CONTIG: NODE_90_length_42727_cov_104.292581 (42727bp)
+Best alignment score: 27286.0 (LEN: 27286, IDY: 100.00), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 42727.0, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Real Alignment 1: 1 15441 | 15441 1 | 15441 15441 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_90_length_42727_cov_104.292581
+			  Not a misassembly [linear representation of circular genome] between these two alignments
+			Real Alignment 2: 4614367 4641652 | 42727 15442 | 27286 27286 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_90_length_42727_cov_104.292581
+
+CONTIG: NODE_92_length_42482_cov_72.176374 (42482bp)
+Best alignment score: 42432.0 (LEN: 42432, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4123922 4166353 | 42432 1 | 42432 42432 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_92_length_42482_cov_72.176374
+
+CONTIG: NODE_94_length_41605_cov_163.792732 (41605bp)
+Best alignment score: 41596.7 (LEN: 41605, IDY: 99.98), Total number of alignments: 1
+		One align captures most of this contig: 1529120 1570724 | 1 41605 | 41605 41605 | 99.98 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_94_length_41605_cov_163.792732
+
+CONTIG: NODE_96_length_41279_cov_120.051232 (41279bp)
+Best alignment score: 41279.0 (LEN: 41279, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3428940 3470218 | 41279 1 | 41279 41279 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_96_length_41279_cov_120.051232
+
+CONTIG: NODE_99_length_40867_cov_126.432544 (40867bp)
+Best alignment score: 28954.1 (LEN: 28957, IDY: 99.99), Total number of alignments: 2
+			Looking for the best set of alignments (out of 2 total alignments)
+			The best set is below. Score: 40833.7, number of alignments: 2, unaligned bases: 0
+		This contig is misassembled.
+			Excluding internal overlap of size 8 between Alignment 1 and 2: 258676 270593 | 28950 40867 | 11918 11918 --> 258684 270593 | 28958 40867 | 11910 11910
+			Real Alignment 1: 228951 257907 | 1 28957 | 28957 28957 | 99.99 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_99_length_40867_cov_126.432544
+			  Gap between these two alignments (local misassembly). Inconsistency = 776
+			Real Alignment 2: 258684 270593 | 28958 40867 | 11910 11910 | 99.98 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_99_length_40867_cov_126.432544
+
+CONTIG: NODE_100_length_40794_cov_96.267213 (40794bp)
+Best alignment score: 40794.0 (LEN: 40794, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 688997 729790 | 40794 1 | 40794 40794 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_100_length_40794_cov_96.267213
+
+CONTIG: NODE_103_length_40160_cov_127.435008 (40160bp)
+Best alignment score: 40160.0 (LEN: 40160, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 526666 566825 | 40160 1 | 40160 40160 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_103_length_40160_cov_127.435008
+
+CONTIG: NODE_114_length_35263_cov_89.998267 (35263bp)
+Best alignment score: 35263.0 (LEN: 35263, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 339880 375142 | 35263 1 | 35263 35263 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_114_length_35263_cov_89.998267
+
+CONTIG: NODE_115_length_35183_cov_88.505409 (35183bp)
+Best alignment score: 35183.0 (LEN: 35183, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3584145 3619327 | 35183 1 | 35183 35183 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_115_length_35183_cov_88.505409
+
+CONTIG: NODE_116_length_35140_cov_174.008266 (35140bp)
+Best alignment score: 35125.9 (LEN: 35140, IDY: 99.96), Total number of alignments: 1
+		One align captures most of this contig: 1397189 1432328 | 35140 1 | 35140 35140 | 99.96 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_116_length_35140_cov_174.008266
+
+CONTIG: NODE_120_length_34064_cov_117.599518 (34064bp)
+Best alignment score: 34064.0 (LEN: 34064, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4508627 4542690 | 1 34064 | 34064 34064 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_120_length_34064_cov_117.599518
+
+CONTIG: NODE_123_length_32326_cov_130.343621 (32326bp)
+Best alignment score: 32296.9 (LEN: 32326, IDY: 99.91), Total number of alignments: 1
+		One align captures most of this contig: 575736 608061 | 32326 1 | 32326 32326 | 99.91 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_123_length_32326_cov_130.343621
+
+CONTIG: NODE_125_length_31809_cov_117.811709 (31809bp)
+Best alignment score: 31786.7 (LEN: 31809, IDY: 99.93), Total number of alignments: 1
+		One align captures most of this contig: 1434682 1466490 | 31809 1 | 31809 31809 | 99.93 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_125_length_31809_cov_117.811709
+
+CONTIG: NODE_127_length_31581_cov_143.963681 (31581bp)
+Best alignment score: 31581.0 (LEN: 31581, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2070219 2101799 | 31581 1 | 31581 31581 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_127_length_31581_cov_143.963681
+
+CONTIG: NODE_130_length_30843_cov_92.754287 (30843bp)
+Best alignment score: 30843.0 (LEN: 30843, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4177055 4207897 | 1 30843 | 30843 30843 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_130_length_30843_cov_92.754287
+
+CONTIG: NODE_135_length_29351_cov_113.315299 (29351bp)
+Best alignment score: 29301.0 (LEN: 29301, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4094628 4123928 | 1 29301 | 29301 29301 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_135_length_29351_cov_113.315299
+
+CONTIG: NODE_136_length_29301_cov_138.859673 (29301bp)
+Best alignment score: 29280.5 (LEN: 29301, IDY: 99.93), Total number of alignments: 1
+		One align captures most of this contig: 3622784 3652084 | 29301 1 | 29301 29301 | 99.93 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_136_length_29301_cov_138.859673
+
+CONTIG: NODE_142_length_26744_cov_85.615984 (26744bp)
+Best alignment score: 26637.0 (LEN: 26637, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3906770 3933406 | 26690 54 | 26637 26637 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_142_length_26744_cov_85.615984
+
+CONTIG: NODE_147_length_25236_cov_112.665621 (25236bp)
+Best alignment score: 25183.0 (LEN: 25183, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3737136 3762318 | 25183 1 | 25183 25183 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_147_length_25236_cov_112.665621
+
+CONTIG: NODE_150_length_23933_cov_108.697420 (23933bp)
+Best alignment score: 23933.0 (LEN: 23933, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 291351 315283 | 1 23933 | 23933 23933 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_150_length_23933_cov_108.697420
+
+CONTIG: NODE_152_length_23382_cov_105.175891 (23382bp)
+Best alignment score: 23382.0 (LEN: 23382, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 316429 339810 | 23382 1 | 23382 23382 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_152_length_23382_cov_105.175891
+
+CONTIG: NODE_175_length_16323_cov_91.433243 (16323bp)
+Best alignment score: 16323.0 (LEN: 16323, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1270440 1286762 | 16323 1 | 16323 16323 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_175_length_16323_cov_91.433243
+
+CONTIG: NODE_177_length_15930_cov_180.412850 (15930bp)
+Best alignment score: 15930.0 (LEN: 15930, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1634968 1650897 | 1 15930 | 15930 15930 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_177_length_15930_cov_180.412850
+
+CONTIG: NODE_194_length_13078_cov_148.905552 (13078bp)
+Best alignment score: 13078.0 (LEN: 13078, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 3653182 3666259 | 1 13078 | 13078 13078 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_194_length_13078_cov_148.905552
+
+CONTIG: NODE_203_length_10811_cov_87.296858 (10811bp)
+Best alignment score: 10811.0 (LEN: 10811, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 279878 290688 | 1 10811 | 10811 10811 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_203_length_10811_cov_87.296858
+
+CONTIG: NODE_214_length_9223_cov_123.690554 (9223bp)
+Best alignment score: 9223.0 (LEN: 9223, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 382540 391762 | 9223 1 | 9223 9223 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_214_length_9223_cov_123.690554
+
+CONTIG: NODE_225_length_8086_cov_174.573279 (8086bp)
+Best alignment score: 8033.0 (LEN: 8033, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1097348 1105380 | 8086 54 | 8033 8033 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_225_length_8086_cov_174.573279
+
+CONTIG: NODE_226_length_8055_cov_150.381000 (8055bp)
+Best alignment score: 8055.0 (LEN: 8055, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4499458 4507512 | 1 8055 | 8055 8055 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_226_length_8055_cov_150.381000
+
+CONTIG: NODE_247_length_6660_cov_159.899167 (6660bp)
+Best alignment score: 6660.0 (LEN: 6660, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 567981 574640 | 6660 1 | 6660 6660 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_247_length_6660_cov_159.899167
+
+CONTIG: NODE_258_length_6042_cov_105.678637 (6042bp)
+Best alignment score: 6042.0 (LEN: 6042, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 375271 381312 | 6042 1 | 6042 6042 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_258_length_6042_cov_105.678637
+
+CONTIG: NODE_265_length_5544_cov_140.289488 (5544bp)
+Best alignment score: 5513.0 (LEN: 5544, IDY: 99.44), Total number of alignments: 1
+		One align captures most of this contig: 2515564 2521105 | 5544 1 | 5542 5544 | 99.44 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_265_length_5544_cov_140.289488
+
+CONTIG: NODE_307_length_4223_cov_122.916987 (4223bp)
+Best alignment score: 4223.0 (LEN: 4223, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 4171911 4176133 | 4223 1 | 4223 4223 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_307_length_4223_cov_122.916987
+
+CONTIG: NODE_315_length_4122_cov_94.029752 (4122bp)
+Best alignment score: 4122.0 (LEN: 4122, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 275095 279216 | 4122 1 | 4122 4122 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_315_length_4122_cov_94.029752
+
+CONTIG: NODE_331_length_3778_cov_85.222401 (3778bp)
+Best alignment score: 3725.0 (LEN: 3725, IDY: 100.00), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 3725.0, number of alignments: 1, unaligned bases: 53
+		Alignment: 3937772 3941496 | 54 3778 | 3725 3725 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_331_length_3778_cov_85.222401
+
+CONTIG: NODE_342_length_3566_cov_249.709484 (3566bp)
+Best alignment score: 3559.9 (LEN: 3566, IDY: 99.83), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 3619273 3622838 | 1 3566 | 3566 3566 | 99.83 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_342_length_3566_cov_249.709484
+			Skipping alignment 3762264 3765829 | 1 3566 | 3566 3566 | 99.66 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_342_length_3566_cov_249.709484
+
+CONTIG: NODE_362_length_3171_cov_115.112965 (3171bp)
+Best alignment score: 3171.0 (LEN: 3171, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 16678 19848 | 1 3171 | 3171 3171 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_362_length_3171_cov_115.112965
+
+CONTIG: NODE_364_length_3141_cov_1124.566429 (3141bp)
+Best alignment score: 3133.1 (LEN: 3141, IDY: 99.75), Total number of alignments: 7
+		This contig has 7 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 225739 228880 | 3141 1 | 3142 3141 | 99.75 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 3423663 3426803 | 1 3141 | 3141 3141 | 99.75 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 3943684 3946824 | 3141 1 | 3141 3141 | 99.68 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 4037499 4040641 | 3141 1 | 3143 3141 | 99.68 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 4210023 4213164 | 3141 1 | 3142 3141 | 99.59 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 4168621 4171761 | 3141 1 | 3141 3141 | 99.52 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+			Skipping alignment 2726064 2729204 | 1 3141 | 3141 3141 | 99.49 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_364_length_3141_cov_1124.566429
+
+CONTIG: NODE_410_length_2463_cov_408.171512 (2463bp)
+Best alignment score: 2460.0 (LEN: 2463, IDY: 99.88), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 1432274 1434736 | 2463 1 | 2463 2463 | 99.88 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_410_length_2463_cov_408.171512
+			Skipping alignment 1632560 1635022 | 1 2463 | 2463 2463 | 99.55 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_410_length_2463_cov_408.171512
+
+CONTIG: NODE_428_length_2303_cov_96.440391 (2303bp)
+Best alignment score: 2303.0 (LEN: 2303, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 271707 274009 | 2303 1 | 2303 2303 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_428_length_2303_cov_96.440391
+
+CONTIG: NODE_479_length_1907_cov_139.633909 (1907bp)
+Best alignment score: 1829.0 (LEN: 1829, IDY: 100.00), Total number of alignments: 1
+			Looking for the best set of alignments (out of 1 total alignments)
+			The best set is below. Score: 1829.0, number of alignments: 1, unaligned bases: 78
+		Alignment: 1207790 1209618 | 1868 40 | 1829 1829 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_479_length_1907_cov_139.633909
+
+CONTIG: NODE_521_length_1692_cov_159.634087 (1692bp)
+Best alignment score: 1692.0 (LEN: 1692, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 2067303 2068994 | 1692 1 | 1692 1692 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_521_length_1692_cov_159.634087
+
+CONTIG: NODE_548_length_1567_cov_171.937831 (1567bp)
+Best alignment score: 1567.0 (LEN: 1567, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1095449 1097015 | 1567 1 | 1567 1567 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_548_length_1567_cov_171.937831
+
+CONTIG: NODE_560_length_1493_cov_722.687065 (1493bp)
+Best alignment score: 1493.0 (LEN: 1493, IDY: 100.00), Total number of alignments: 7
+		This contig has 7 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 4208001 4209493 | 1 1493 | 1493 1493 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 4166513 4168005 | 1 1493 | 1493 1493 | 99.93 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 4035385 4036877 | 1 1493 | 1493 1493 | 99.87 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 3941662 3943154 | 1 1493 | 1493 1493 | 99.6 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 2729811 2731303 | 1493 1 | 1493 1493 | 99.46 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 3427416 3428908 | 1493 1 | 1493 1493 | 99.4 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+			Skipping alignment 223625 225117 | 1 1493 | 1493 1493 | 99.4 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_560_length_1493_cov_722.687065
+
+CONTIG: NODE_596_length_1345_cov_353.454264 (1345bp)
+Best alignment score: 1345.0 (LEN: 1345, IDY: 100.00), Total number of alignments: 3
+		This contig has 3 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 608007 609351 | 1 1345 | 1345 1345 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_596_length_1345_cov_353.454264
+			Skipping alignment 15387 16731 | 1 1345 | 1345 1345 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_596_length_1345_cov_353.454264
+			Skipping alignment 2514273 2515617 | 1 1345 | 1345 1345 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_596_length_1345_cov_353.454264
+
+CONTIG: NODE_619_length_1255_cov_650.048333 (1255bp)
+Best alignment score: 1255.0 (LEN: 1255, IDY: 100.00), Total number of alignments: 5
+		This contig has 5 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 315229 316483 | 1 1255 | 1255 1255 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_619_length_1255_cov_650.048333
+			Skipping alignment 566780 568034 | 1 1255 | 1255 1255 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_619_length_1255_cov_650.048333
+			Skipping alignment 391709 392963 | 1255 1 | 1255 1255 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_619_length_1255_cov_650.048333
+			Skipping alignment 2170174 2171428 | 1 1255 | 1255 1255 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_619_length_1255_cov_650.048333
+			Skipping alignment 1094245 1095499 | 1255 1 | 1255 1255 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_619_length_1255_cov_650.048333
+
+CONTIG: NODE_621_length_1232_cov_281.008496 (1232bp)
+Best alignment score: 1232.0 (LEN: 1232, IDY: 100.00), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 3666205 3667436 | 1 1232 | 1232 1232 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_621_length_1232_cov_281.008496
+			Skipping alignment 1570670 1571901 | 1 1232 | 1232 1232 | 99.27 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_621_length_1232_cov_281.008496
+
+CONTIG: NODE_645_length_1163_cov_132.870036 (1163bp)
+Best alignment score: 1163.0 (LEN: 1163, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 1466801 1467963 | 1163 1 | 1163 1163 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_645_length_1163_cov_132.870036
+
+CONTIG: NODE_676_length_1095_cov_382.960577 (1095bp)
+Best alignment score: 1095.0 (LEN: 1095, IDY: 100.00), Total number of alignments: 3
+		This contig has 3 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 1469296 1470390 | 1095 1 | 1095 1095 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_676_length_1095_cov_382.960577
+			Skipping alignment 4507585 4508679 | 1 1095 | 1095 1095 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_676_length_1095_cov_382.960577
+			Skipping alignment 270541 271635 | 1095 1 | 1095 1095 | 99.73 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_676_length_1095_cov_382.960577
+
+CONTIG: NODE_693_length_1031_cov_215.634221 (1031bp)
+Best alignment score: 1030.0 (LEN: 1031, IDY: 99.90), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 4176079 4177109 | 1031 1 | 1031 1031 | 99.9 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_693_length_1031_cov_215.634221
+			Skipping alignment 3470164 3471194 | 1 1031 | 1031 1031 | 99.9 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_693_length_1031_cov_215.634221
+
+CONTIG: NODE_705_length_1004_cov_74.632244 (1004bp)
+Best alignment score: 1004.0 (LEN: 1004, IDY: 100.00), Total number of alignments: 1
+		One align captures most of this contig: 733199 734202 | 1 1004 | 1004 1004 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_705_length_1004_cov_74.632244
+
+CONTIG: NODE_708_length_991_cov_238.679487 (991bp)
+Best alignment score: 991.0 (LEN: 991, IDY: 100.00), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 1528184 1529174 | 1 991 | 991 991 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_708_length_991_cov_238.679487
+			Skipping alignment 525730 526720 | 1 991 | 991 991 | 99.6 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_708_length_991_cov_238.679487
+
+CONTIG: NODE_715_length_972_cov_1342.280262 (972bp)
+Best alignment score: 972.0 (LEN: 972, IDY: 100.00), Total number of alignments: 6
+		This contig has 6 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 381260 382231 | 1 972 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+			Skipping alignment 4498181 4499152 | 1 972 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+			Skipping alignment 2996720 2997691 | 972 1 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+			Skipping alignment 2069300 2070271 | 972 1 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+			Skipping alignment 1468269 1469240 | 972 1 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+			Skipping alignment 3186096 3187067 | 1 972 | 972 972 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_715_length_972_cov_1342.280262
+
+CONTIG: NODE_761_length_867_cov_232.407635 (867bp)
+Best alignment score: 860.0 (LEN: 867, IDY: 99.19), Total number of alignments: 2
+		This contig has 2 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 1269093 1269959 | 867 1 | 867 867 | 99.19 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_761_length_867_cov_232.407635
+			Skipping alignment 1269628 1270494 | 867 1 | 867 867 | 98.39 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_761_length_867_cov_232.407635
+
+CONTIG: NODE_822_length_718_cov_879.950226 (718bp)
+Best alignment score: 718.0 (LEN: 718, IDY: 100.00), Total number of alignments: 7
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 1049828 1050545 | 1 718 | 718 718 | 98.89 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+			Skipping alignment 290634 291351 | 718 1 | 718 718 | 98.75 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+			Skipping alignment 279163 279880 | 718 1 | 718 718 | 98.75 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+		This contig has 4 significant alignments. [An ambiguously mapped contig]
+		Using only first of these alignment (option --ambiguity-usage is set to "one"):
+			Alignment: 257908 258625 | 718 1 | 718 718 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+			Skipping alignment 19796 20513 | 718 1 | 718 718 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+			Skipping alignment 3583478 3584195 | 1 718 | 718 718 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+			Skipping alignment 1978503 1979220 | 718 1 | 718 718 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_822_length_718_cov_879.950226
+
+CONTIG: NODE_902_length_520_cov_408.701075 (520bp)
+Best alignment score: 520.0 (LEN: 520, IDY: 100.00), Total number of alignments: 3
+		Skipping these alignments as insignificant (option --ambiguity-score is set to "0.99"):
+			Skipping alignment 225272 225791 | 520 1 | 520 520 | 98.85 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_902_length_520_cov_408.701075
+			Skipping alignment 3426751 3427261 | 1 520 | 511 520 | 97.31 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_902_length_520_cov_408.701075
+		One align captures most of this contig: 4037032 4037551 | 520 1 | 520 520 | 100.0 | GCF_000005845.2_ASM584v2_genomic_NC_000913.3 NODE_902_length_520_cov_408.701075
+
+Analyzing coverage...
+Writing SNPs into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/GCF_000005845.2_ASM584v2_genomic/contigs_reports/minimap_output/Phi29-RP_2.used_snps.gz
+
+Analysis is finished!
+Founded SNPs were written into /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/GCF_000005845.2_ASM584v2_genomic/contigs_reports/minimap_output/Phi29-RP_2.used_snps.gz
+
+Results:
+	Local Misassemblies: 4
+	Misassemblies: 1
+		Relocations: 1
+		Translocations: 0
+		Inversions: 0
+	Scaffold gap extensive misassemblies: 0
+	Scaffold gap local misassemblies: 0
+	Misassembled Contigs: 1
+	Misassembled Contig Bases: 107980
+	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
+Unaligned Contigs: 0 + 1 part
+Half Unaligned Contigs with Misassemblies: 0
+Unaligned Bases in Fully and Partially Unaligned Contigs: 418679
+
+Ambiguously Mapped Contigs: 13
+Total Bases in Ambiguously Mapped Contigs: 20169
+"Extra" Aligned Bases in Ambiguously Mapped Contigs: 0
+Note that --allow-ambiguity option was set to "one" and only first alignment per each of these contigs was used (there is no "extra" aligned bases).
+
+	Covered Bases in Reference: 4554634
+	Raw Aligned Bases in Assembly: 4555827
+	Total Aligned Bases in Assembly (with "Extras"): 4555827
+
+	SNPs: 291
+	Insertions: 23
+	Deletions: 55
+

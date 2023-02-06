@@ -1,0 +1,1221 @@
+<style>
+    body .main-container {
+        max-width: 800px;
+    }
+</style>
+---
+title: "Comparison of MDA methods"
+author: "Modesto"
+date: "`r Sys.Date()`"
+toc: true 
+toc_float: true
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 5
+    number-sections: true
+    code-overflow: wrap
+    css: piMDA.css
+
+---
+
+------------------------------------------------------------------------
+
+```{r wrap-hook, include=FALSE}
+#Markdown options
+library(knitr)
+library(formatR)
+opts_chunk$set(tidy.opts=list(width.cutoff=90),tidy=TRUE,fig.cap = "", fig.path = "Plot")
+
+#Loading packages
+paquetes <- c("ggplot2","data.table","ggbreak","ggh4x","car","stringr","gdata","ggrepel","pzfx","gridExtra","kableExtra","corrplot","heatmaply","reshape2","patchwork","geomtextpath","plotly","Biostrings","dplyr")
+unavailable <- setdiff(paquetes, rownames(installed.packages()))
+invisible(install.packages(unavailable))
+invisible(lapply(paquetes, library, character.only = TRUE))
+
+#Determine the output format of the document
+outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
+
+#Figure and Table Caption Numbering, for HTML do it manually
+capTabNo = 1; capFigNo = 1;
+
+#Function to add the Table Number
+capTab = function(x){
+  if(outputFormat == 'html'){
+    x = paste0("Table ",capTabNo,". ",x)
+    capTabNo <<- capTabNo + 1
+  }; x
+}
+
+#Function to add the Figure Number
+figuritas <- data.frame()
+capFig = function(x){
+  if(outputFormat == 'html'){
+    x = paste0("Figure ",capFigNo,". ",x)
+    capFigNo <<- capFigNo + 1
+  }; x
+ figuritas[(capFigNo-1),1] <<- x
+}
+
+```
+
+## Disclaimer {data-link="Disclaimer"}
+
+This data analysis is preliminar and will be soon published in a manuscript authored by Carlos D. Ordóñez, Conceçao Egas and [Modesto Redrejo-Rodríguez](https://orcid.org/0000-0003-0014-4162){target="_blank"}. The [GitHub repo](https://github.com/mredrejo/pimda){target="_blank"} contains the original result files from all the analyses. Raw reads will be available in a suitable repository along with the manuscript.
+
+Data is shared under creative common license (CC BY-NC-ND 3.0 ES). Contact [modesto.redrejo\@uam.es](mailto:modesto.redrejo@uam.es) for further info.
+
+## Input sample
+
+The input DNA to be amplified is a mock metagenome made up of equal mass of purified genomes from 4 different bacteria, spanning Gram+ and Gram- species, and genomes with high and low GC, as detailed in the Table 1. Note that the used reference genomes were selected later on, using top hits of Blast searches perfomed the longest contigs from each assembly as query.
+
+```{r mda, warning=FALSE}
+#Define color palette for the whole report to facilitate future modifications
+colorines <- c("NA"="grey", "NA2"="grey","RP-MDA"="palegreen4","RP-MDA2"="palegreen4", "PrimPol-MDA"="orangered4", "piPolB"="gold","piPolB+D"="darkgoldenrod1", "piMDA"="deepskyblue3","piMDA2"="deepskyblue3","piMDA+D"="blue4","piMDA+D2"="blue4","B. subtilis"="orange2","E. coli"="gold1","K. rhizophila"="skyblue1","P. aeruginosa"="slateblue2")
+
+#load data 
+samples <- read.table("amplification_yield/input_sample.csv",header=TRUE, sep=";")
+names(samples)= c("Strain","Model strain","Reference genome","Length (MB)","GC content")
+kbl(samples, align="c",caption="Table 1. Composition of the amplified mock-metagenome") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, italic = T) 
+# %>% save_kable("figures/samples.pdf")
+```
+
+## DNA amplification assays (MDA)
+
+DNA amplification was carried out by six different protocols. (1) Random-primer hexamers-based MDA (RP-MDA) was carried out with REPLIg (Qiagen) and (2) TruePrime (4basebio) was used for a control primer-less MDA (PrimPol-MDA). In both cases, amplification protocols followed the manufacturer's instructions, including the routine alkaline denaturation step. Recombinant piPolB ([Redrejo-Rodríguez et al. 2017](https://pubmed.ncbi.nlm.nih.gov/29117562/ "piPolB description paper"){target="_blank"}) was used for a single-enzyme, primer-free DNA amplification in a single step MDA protocol (3) or an alternative protocol (4) with a previous alkaline denaturation step (piPolB+D). Finally, a new method based on the combination of piPolB and Φ29 DNA polymerases was developed. Two alternative protocols were used, (5) a single-step primer-independent MDA (piMDA) and a modification (6) with a previous alkaline denaturation of input DNA (piMDA+D).
+
+Amplification yield was assessed by absolute measure of DNA amplification product was performed by fluorescence quantitation of dilutions from each sample (triplicates) with the AccuBlue High Sensitivity dsDNA Quantitation Kit ([Biotum, #31006](https://biotium.com/product/accublue-high-sensitivity-dsdna-quantitation-kit-with-8-dna-standards/){target="_blank"}) using a FLUOstar Omega (BMG Labtech) fluorimeter. AccuBlue High Sensitivity dsDNA Standards ([Biotum, #31006C](https://biotium.com/product/accublue-high-sensitivity-dsdna-standards-set-of-eight/){target="_blank"}) were used to do the range standard curve in each experiment.
+
+### Buffer optimization
+
+Some chemicals or biomolecules have been reported to enhance DNA polymerase proficiency and amplification yield, such as salts, reducing agents, BSA, or glycerol, among others ([Gao et al. 2019](https://pubmed.ncbi.nlm.nih.gov/30617407/){target="_blank"}, [Jan and Kim, 2022](https://pubmed.ncbi.nlm.nih.gov/35909465/){target="_blank"}). In our study, we decided to assess the effect of DTT, BSA and glycerol on the piMDA protocol.
+
+```{r, optimization, fig.cap=capFig("Optimization of piMDA buffer components."),fig.width=6,fig.height=11,fig.align = 'left',warning=FALSE}
+#read table
+opt <- read.csv2("amplification_yield/buffer_optimization.csv")
+bsa <- opt[opt$Chem=="BSA",]
+bsa$Conc[bsa$Conc==0] <- 0.001
+dtt <- opt[opt$Chem=="DTT",]
+gly <- opt[opt$Chem=="Glycerol",]
+#plots
+p1 <-  ggplot(bsa, aes(x=Conc, y=Yield, alpha=0.05)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",alpha=0.25) + scale_x_log10(breaks=c(0.001,0.01,0.1,1,10),labels=c(0,0.01,0.1,1,10)) + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))   + geom_jitter(width=0.1, pch = 21,  color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  
+    theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
+     xlab("BSA (mg/mL)") + ylab("DNA product (%)") 
+p2 <- ggplot(dtt, aes(x=Conc, y=Yield, alpha=0.1)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",alpha=0.25)  + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))  + geom_jitter(pch = 21, width=0.1, color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  
+    theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
+     xlab("DTT (mM)") + ylab("DNA product (%)") 
+  
+p3 <- ggplot(gly, aes(x=Conc, y=Yield, alpha=0.1)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",method = 'loess',fullrange=TRUE, span=5,alpha=0.25)  + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))  + geom_jitter(pch = 21, width=0.1, color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  scale_x_continuous(breaks=c(0,2,4,6,8,10,12,14,16), labels=c(0,2,4,6,8,10,12,14,16))+ 
+     theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
+     xlab("Glycerol (%)") + ylab("DNA product (%)") 
+
+
+optimization <- p1/ p3/ p2
+optimization
+#ggsave("figures/opti.svg",optimization,width=6,height=11)
+```
+
+The presence of BSA does not affect the yield of the amplification up to 1 mg/mL. However, BSA is being highly inhibitory at high concentration, likewise increasing concentration of glycerol. Surprisingly, DTT results strongly stimulatory, an effect that seems generalized for reducing agents (see Carlos PhD's Thesis).
+
+![External Figure 1. Effect of different reducing agents on piPolB-MDA assays.](images/reducing.png "Effect of different reducing agents on piPolB-MDA assays")
+
+### Methods comparison
+
+```{r,  warning=FALSE}
+#read GraphPad Prism file from Carlos experiment
+df <- read_pzfx("amplification_yield/Exp34_Datos.pzfx",table=4)
+free <- reshape2::melt(df[,-2], id.vars = "ROWTITLE")
+free$variable <- as.character(free$variable)
+#recode variable factor for consistent nomenclature
+for (i in 1:nrow(free)){
+  free$variable[i] <- substr(free$variable[i],1,(nchar(free$variable[i])-2))
+  free$variable[i] <-  switch(free$variable[i],
+           "REPLI-g" = "RP-MDA",
+           "TruePrime" = "PrimPol-MDA",
+           "pi-mgDNA one-step" = "piMDA",
+           "pi-mgDNA alk. denat."  = "piMDA+D") 
+}
+#change decimal separator
+free$value <- as.numeric(gsub(",", ".", free$value)) 
+#reorder
+free$variable <- factor(free$variable,levels=c("RP-MDA","PrimPol-MDA","piMDA","piMDA+D"))
+```
+
+We plot first the DNA input vs. the product yield for the four methods.
+
+```{r sensitivity, fig.cap=capFig("DNA amplification yield comparison. All reactions were carried out in 50 µL and incubated at 30ºC for 3 h, except those of RP-MDA protocol that were incubated for 16 h. Shown are results from 4 independent experiments."),fig.width=11,fig.height=7,fig.align = 'left', warning=FALSE}
+
+p <-  ggplot(free,aes(x=as.factor(ROWTITLE), y=value,color=variable,fill=variable, alpha=0.12)) +  
+  geom_boxplot() +  scale_y_continuous(limits = c(0,30), expand = c(0, 0))  +
+  guides(alpha="none",color="none")+
+  geom_point(pch = 21, position = position_jitterdodge(),alpha=0.5) +
+  facet_grid(~variable) + theme_bw() +  
+  theme(text=element_text(size=15)) + 
+  xlab("Input DNA (ng)") + ylab("DNA product (µg)") + labs(fill = "MDA protocol") +
+  scale_fill_manual(values = colorines[c(3,5,8,10)]) + scale_color_manual(values = colorines)
+ggplotly(p)
+#ggsave("figures/yieldplot.svg",p,width=8,height=5)
+```
+
+In order to analyze statistically the differences among samples, we will first test normality and homogeneous variance to decide if we should use parametric tests. As shown below, the p-values \<0.05 indicate that data are not suitable for parametric tests, leading us to the use of non-parametric pairwise Wilcox comparisons.
+
+```{r}
+#statistics comparison of yield/input
+res_aov <- aov(value/ROWTITLE ~ variable,  data = free)
+shapiro.test(res_aov$residuals) #normality test
+leveneTest(value/ROWTITLE ~ variable,  data = free) #NO homogeneus variance
+kruskal.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric multiple groups comparison
+pairwise.wilcox.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric pairwise
+```
+
+Statistical analysis indicate that yield differences among MDA methods are statistically significant, particularly the piMDA+D protocol respect to RP-MDA and piPolB. Let's see about time-course experiments:
+
+```{r time_course, fig.cap=capFig("DNA amplification time-course. All the amplification assays contained 10 ng of input DNA sample. Shown is the total DNA product in 50 µL reactions. Amplification yield from 2-4 experiments are shown"),fig.width=11,fig.height=7, fig.align = 'left'}
+
+df <- read_pzfx("amplification_yield/Exp34_Datos.pzfx",table=1)
+free <- melt(df[,-2], id.vars = "ROWTITLE")
+free$variable <- as.character(free$variable)
+#recode variable factor
+for (i in 1:nrow(free)){
+  free$variable[i] <- substr(free$variable[i],1,(nchar(free$variable[i])-2))
+  free$variable[i] <-  switch(free$variable[i],
+           'piDNA Denat.'  = 'piMDA+D',
+           'piDNA Not denat.' = 'piMDA',
+           'Repli-g' = 'RP-MDA',
+           'TruePrime' = 'PrimPol-MDA') 
+}
+
+#add results from exp42
+df42 <-  read_pzfx("amplification_yield/Exp42_Datos.pzfx",table=3)
+df42 <- df42[-c(1,4,7),] #remove -DNA controls from plot
+df42 <- df42[,-c(3,4,7)] #remove NAs
+
+#rename
+for (i in 1:nrow(df42)){
+  df42$ROWTITLE[i] <-  switch(df42$ROWTITLE[i],
+           'piPolB D'  = 'piPolB+D',
+           'piPolB ND' = 'piPolB',
+           'pi-gAmp D' = 'piMDA+D',
+           'pi-gAmp ND' = 'piMDA',
+           'TruePrime' = 'PrimPol-MDA')
+}
+free42 <- melt(df42, id.vars="ROWTITLE")
+free42 <- free42[,c(2,1,3)]
+
+free42$variable <- gsub(" h_1", "", free42$variable) #change format
+free42$variable <- gsub(" h_2", "", free42$variable) #change format
+free42$variable <- as.numeric(free42$variable)
+names(free42) <- names(free)
+
+free$value <- as.numeric(gsub(",", ".", free$value)) #change decimal separator
+free$variable <- factor(free$variable,levels=c("RP-MDA","PrimPol-MDA","piPolB","piPolB+D", "piMDA","piMDA+D"))
+free42$value <- as.numeric(gsub(",", ".", free42$value)) #change decimal separator
+free42$variable <- factor(free42$variable,levels=c("RP-MDA","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA+D"))
+
+free <- rbind(free,free42)
+#plot
+free <- na.omit(free)
+q <- ggplot(free, aes(x=as.factor(ROWTITLE), y=value,colour=variable,fill=variable, alpha=0.12)) +  
+  geom_boxplot() +  scale_y_continuous(limits = c(-0.8,40), expand = c(0, 0))  +
+  guides(alpha="none",color="none")+
+  geom_point(pch = 21, position = position_jitterdodge(),alpha=0.5) +
+  facet_grid(~variable, scales="free") + theme_bw() +  
+  force_panelsizes(cols = c(1.5, 3, 1.5, 1.5, 3 ,3 ), TRUE) +
+  theme(text=element_text(size=15)) + 
+  theme(strip.text.x = element_text(size = 11)) +
+  xlab("Reaction time (h)") + ylab("DNA product (µg)") + labs(fill = "MDA protocol")+
+  scale_fill_manual(values = colorines[c(3,5,6,7,8,10)]) + scale_color_manual(values = colorines)
+ggplotly(q)
+#ggsave("figures/timecourse.svg",q,width=9,height=5)
+
+
+#statistics comparison of yield/hour
+res_aov <- aov(value/ROWTITLE ~ variable,  data = free)
+shapiro.test(res_aov$residuals) #normality test - NOPE
+leveneTest(value/ROWTITLE ~ variable,  data = free) #NO homogeneus variance
+kruskal.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric multiple groups comparison
+pairwise.wilcox.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric pairwise
+```
+
+These results show that the piMDA method is comparable with other MDA alternatives in terms of sensitivity and DNA production. Moreover, its yield can be increased with the addition of a DNA denaturation step, obtaining statistically significant more amount of DNA per time unit than the RP-MDA protocol.
+
+It should be also considered that these results apply specifically to this particular sample, and the reduced yield of RP-MDA respect to the other methods is likely by the presence of high GC content sequences, as discussed below.
+
+## Illumina raw data processing
+
+Samples from independent amplification experiments, as well as the control non-amplified metagenome (NA), were sequenced by Illumina NextSeq V2.5 High Output, 2x75 bp paired ends sequencing. To reduce the sequencing-derived bias, the sequencing libraries were prepared using TruSeq DNA PCR-Free Low Throughput Library Prep kit (Illumina), at Conceição Egas' lab ([GENOINSEQ - BIOCANT](http://www.genoinseq.com/en/home/){target="_blank"}, Portugal). As shown below, NA, RP-MDA, piMDA and piMDA+D were sequenced from duplicated independent experiments.
+
+
+
+### QC stats and trimming
+
+The raw files were first analyzed for basic statistics with [Seqkit](https://bioinf.shenwei.me/seqkit/){target="_blank"} v.2.3 (Table 2).
+
+```{r}
+samples <- read.table("qc/raw_stats.csv",header=TRUE, sep=";", na.strings = "")
+for (i in 1:nrow(samples)){
+  samples$file[i] <- gsub("freeDNA_data/","",samples$file[i]) 
+}
+kbl(samples, align="c",caption="Table 2. Stats of raw Illumina data") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, bold = T) 
+```
+
+Then, a detailed quality check (QC) was performed with FastQC v0.11.9 for each sample, and reports aggregated with [MultiQC 1.11](https://multiqc.info/){target="_blank"}. Reads were subsequently trimmed with [Trimmomatic](https://github.com/usadellab/Trimmomatic){target="_blank"} 0.39, using a customized script, based on [I-Shell-Do-This Github Repo](https://github.com/lakhujanivijay/I-Shell-Do-This){target="_blank"} (parameters: LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:35). A post-trimming QC report was obtained as above. Due to size limitations, Trimmomatic output files are not available in this repository, they'll be deposited along with the raw reads. Individual QC reports as well as MultiQC-merged reports [before](qc/multiqc_report.html){target="_blank"} and [after](qc/multiqc_report_1.html){target="_blank"} Trimmomatic are available in the *qc* folder of the [GitHub repository](https://github.com/mredrejo/pimda){target="_blank"}. We include in Figures 4-6 some of the QC results. First, we will have a look to the duplication level of the reads, which is a good indicative of overamplification of some sequences, a common bias source in exponential DNA amplification.
+
+```{r raw_reads_duplication, fig.cap=capFig("Reads duplication level before (top) and after (bottom) trimming"),fig.width=12,fig.height=12,fig.align = 'left',warning=FALSE}
+
+#Duplicated reads
+duplication <- read.table("qc/fastqc_sequence_duplication_levels_plot.tsv",header=TRUE, sep="\t", na.strings = "")
+#reorder
+duplication <- duplication[c(1:11,20,21,22,23,12:19)]
+dupli_table <- melt(duplication)
+dupli_table[,2] <- sub("RepliG","RP-MDA",dupli_table[,2])
+dupli_table[,2] <- sub("TruePrime","PrimPol-MDA",dupli_table[,2])
+dupli_table[,2] <- sub("piDNA","piMDA",dupli_table[,2])
+dupli_table[,2] <- sub("piMDA.D","piMDA+D",dupli_table[,2])
+dupli_table[,2] <- sub("piPolB.D","piPolB+D",dupli_table[,2])
+dupli_table$Sequence.Duplication.Level <- factor(dupli_table$Sequence.Duplication.Level, levels=c("1","2","3","4","5","6","7","8","9",">10",">50",">100",">500",">1k",">5k",">10k+"))
+
+#plot
+
+p <-   ggplot(dupli_table,aes(x=Sequence.Duplication.Level, y=value,colour=variable,fill=variable, label=variable,alpha=0.8)) +  
+  geom_point(pch = 21, size=3,position =  position_dodge(width = .5),alpha=0.8) +  
+   geom_text_repel(max.overlaps = 15) +
+    theme(text = element_text(size=13)) +
+  theme_bw() +   ggtitle("Duplication level in Raw Reads") +
+  xlab("Duplication level") + ylab("Reads (%)")  +
+   scale_fill_manual(values=rep(unname(colorines[c(1,2,8,10,11,9,6,7,5,3,4)]), each=2)) +
+   scale_color_manual(values=rep(unname(colorines[c(1,2,8,10,11,9,6,7,5,3,4)]), each=2)) +
+guides(alpha=FALSE,color=FALSE,fill=guide_legend(ncol=2,title="MDA Method"))
+#ggsave("figures/duplication.svg",p,width=9,heigh=5)
+
+#Duplication level post-trimming
+post_duplication <- read.table("qc/post_fastqc_sequence_duplication_levels_final.tsv",header=TRUE, sep="\t", na.strings = "")
+post_dupli_table <- melt(post_duplication)
+post_dupli_table[,2] <- sub("piPolB.D","piPolB+D",post_dupli_table[,2])
+post_dupli_table[,2] <- sub("piMDA.D","piMDA+D",post_dupli_table[,2])
+post_dupli_table$Sequence.Duplication.Level <- factor(post_dupli_table$Sequence.Duplication.Level, levels=c("1","2","3","4","5","6","7","8","9",">10",">50",">100",">500",">1k",">5k",">10k+"))
+q <-   ggplot(post_dupli_table, aes(x=Sequence.Duplication.Level, y=value,colour=variable,fill=variable, label=variable,alpha=0.8)) +  
+  geom_point(pch = 21, size=3,position =  position_dodge(width = .5),alpha=0.8) +  
+   scale_fill_manual(values=rep(unname(colorines[c(1,2,8,9,10,11,6,7,5,3,4)]), each=4)) +
+   scale_color_manual(values=rep(unname(colorines[c(1,2,8,9,10,11,6,7,5,3,4)]), each=4)) +
+   geom_text_repel(max.overlaps = 20,fontface="bold") +
+  theme_bw() +  
+  theme(text=element_text(size=13,face="bold")) + ggtitle("Duplication level post-trimming") +
+  xlab("Duplication level") + ylab("Reads (%)") + 
+  guides(alpha=FALSE,color=FALSE,fill=guide_legend(ncol=2,title="MDA Method"))
+
+#ggsave("figures/duplication_post.svg",q,width=12,heigh=5)
+
+p/q
+
+```
+
+*Random-primer based MDA* (RP-MDA) gave rise to a higher level of duplicated reads than *PrimPol-MDA* and both *piMDA protocols*. That suggests a greater level of overamplification of the same sequences. The piPolB *solo* MDA gave rise to a great level of highly duplicated reads, many of them removed after trimming. However, these overrepresented reads might be of interest as they could represent regions of favored initiation (i.e. DNA priming) events.
+
+```{r trimmo-report, fig.cap=capFig("Paired reads after trimming"),fig.width=5,fig.height=4,fig.align = 'left',warning=FALSE}
+
+trimmo <- read.csv2("trimmo/trimmo_stats_percentage.csv",header=TRUE, na.strings = "")
+trimmo$sample <-  factor(trimmo$sample, levels=c("NA","NA2", "RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2"))
+g_t <- ggplot(trimmo) + 
+  geom_point(aes(x=sample, y=as.numeric(Both),color=sample,fill=sample),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  scale_shape_manual(values = c(22,23,24,25)) + 
+  geom_point(aes(x=sample, y=as.numeric(Dropped),fill=sample), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Both reads surviving (%)",limits = c(0,
+    100), sec.axis = sec_axis(~ ., name="Dropped reads (%)")) +
+ theme_bw() +  
+  scale_fill_manual(values=colorines[1:11]) + 
+  scale_color_manual(values=colorines[1:11]) + 
+  theme(text=element_text(size=15)) +  ggtitle("Reads pairing stats") +
+  xlab("Sample") + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+g_t
+```
+
+```{r}
+#table
+tablita_trimmo <- trimmo[order(trimmo$sample),-2]
+kbl(tablita_trimmo, align = "c", row.names=F, caption = "Table 3. Trimmomatic stats (%)") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+    column_spec(1, italic = T)  #  %>% save_kable('figures/trimmo_table.pdf')
+```
+
+Quality filtering of the samples show that piPolB and piPolB+D samples contain lower quality reads, with less paired reads survival and more dropped reads. Also (Table 3), as expected only-forward survival reads were more (15,89% and 26,41%, respectively) than only-reverse reads (9,06% and 11,12%, respectively). This results indicate a possible library prep or sequencing problem that hinders the analysis of those samples, likely due to the hyperbranched structure of the piPolB-synthesized DNA.
+
+### Reads per GC content
+
+DNA amplification as well as library generation and the sequencing itself may give rise to uneven or poor sequence coverage of GC-poor or rich sequences (see for instance [Marine et al. 2014](https://pubmed.ncbi.nlm.nih.gov/24475755/){target="_blank"}, [Jamal et al. 2021](https://pubmed.ncbi.nlm.nih.gov/33493489/){target="_blank"}, [Benjamini et al. 2022](https://pubmed.ncbi.nlm.nih.gov/22323520/){target="_blank"}). Thus, the ideal MDA method should reflex the real GC pattern of the sample or at least do not neglect DNA sequences with extreme GC composition. GC-bias will be analyzed also in terms of impact on the assembly, but this preliminar analysis is also very informative from a general point of view.
+
+```{r GC-content-raw-reads, fig.cap=capFig("Reads' GC content plot. GC content is indicated in the plot leyend for the post-trimming reads"),fig.width=12,fig.height=12,fig.align = 'left'}
+
+#GC content
+
+gc_reads <- read.table("qc/fastqc_per_sequence_gc_content_plot.tsv",header=TRUE, sep="\t", na.strings = "")
+gc_table <- melt(gc_reads, id.vars = "X..GC")
+gc_table[,2] <- sub("RepliG","RP-MDA",gc_table[,2])
+gc_table[,2] <- sub("Ctrl","NA",gc_table[,2])
+gc_table[,2] <- sub("TruePrime","PrimPol-MDA",gc_table[,2])
+gc_table[,2] <- sub("piDNA","piMDA",gc_table[,2])
+gc_table[,2] <- sub("piMDA.D","piMDA+D",gc_table[,2])
+gc_table[,2] <- sub("piPolB.D","piPolB+D",gc_table[,2])
+
+post_gc_reads <- read.table("qc/post_fastqc_per_sequence_gc_content_plot.tsv",header=TRUE, sep="\t", na.strings = "")
+post_gc_table <- melt(post_gc_reads,id.vars = "X..GC")
+post_gc_table[,2] <- sub("RepliG","RP-MDA",post_gc_table[,2])
+post_gc_table[,2] <- sub("Ctrl","NA",post_gc_table[,2])
+post_gc_table[,2] <- sub("TruePrime","PrimPol-MDA",post_gc_table[,2])
+
+p <-   ggplot(gc_table,aes(x=X..GC, y=value,colour=variable,fill=variable, label=variable)) +  
+  scale_color_manual(values=rep(unname(colorines[c(1,2,8,9,10,11,6,7,5,3,4)]), each=2)) +
+  geom_path(linejoin="round",size=1) +
+    theme(text = element_text(size=15)) +
+  theme_bw() + 
+  ggtitle("GC content in Raw Reads") +
+  xlab("GC") + ylab("Reads (%)") + labs(color = "Method") 
+p <- p + guides(color=guide_legend(ncol=2))
+
+#ggsave("figures/gc_profile.svg", p, width=9,heigh=5)
+
+#And the post-trimming plot
+#add the average GC%
+post_gc_table$p <- post_gc_table$X..GC * post_gc_table$value
+gc_sample <- by(post_gc_table$p,INDICES = post_gc_table$variable,FUN=mean)
+leyenda <- c()
+for (i in 1:length(levels(as.factor(post_gc_table$variable)))){
+  leyenda[i] <- paste0(levels(as.factor(post_gc_table$variable))[i]," (",round(gc_sample[i],1),"%)")
+}
+q <-   ggplot(post_gc_table,aes(x=X..GC, y=value,colour=variable,fill=variable, label=variable)) +  
+  scale_color_manual(values=rep(unname(colorines[c(1,2,8,9,10,11,6,7,5,3,4)]), each=4),labels=leyenda) +
+  geom_path(linejoin="round",size=1) +
+  theme_bw() +  theme(text=element_text(size=15)) + ggtitle("GC content per sample (post-trimming)") +
+  xlab("GC") + ylab("Reads (%)") + labs(color = "Sample (Average GC %)") + guides(color=guide_legend(ncol=2)) +  theme(text = element_text(size=17),legend.text=element_text(size=9,face="bold"),legend.key.height = unit(0.4,"cm"))
+
+
+#ggsave("figures/gc_profile_post.svg", q, width=12,heigh=6)
+p/q
+```
+
+As shown in Figure 6, the control *non-amplified* (NA) samples show a bimodal curve respect to the GC content, in agreement with the selection of the species in the mock-metagenome (see [Disclaimer] and Table 1). None of the MDA protocols achieve a similar curve. The samples from *RP-MDA* and *Primpol-MDA* show a similar curve, centered in \~44% and \~48% GC content, respectively, and very few reads (\<1%) in regions of GC content above 60%.
+
+The *piPolB* protocols show a slim peak of about 10% of reads around 40-45% GC that increases to \~47% in the *piPolB+D* protocol, although it also shows a "shoulder" at 38-40%. Given the limited processivity of piPolB, this pattern suggests that low GC content DNA sequences facilitate DNA priming by piPolB.
+
+On the contrary, the *piMDA* and *piMDA+D* methods gave rise to a peak around 68-70% GC, although the raise of the curve is very slow with a good number of reads in the range of the first peak of the NA samples, reaching a 1% at GC content of 40%. Thus, *piMDA* protocols provide most of their reads of higher GC-content sequences, but that bias is less severe than in the case of the other MDA methods, which centered on 40-50% GC content and seem to neglect high GC sequences.
+
+### Metagenomes profiling
+
+Metagenomes profiling is usually the first approach to measure alpha diversity. In our case, profiling prior to assembly can be very useful to detect contamination. In this case, the trimmed reads were profiled using [Metaphlan](https://www.biorxiv.org/content/10.1101/2022.08.22.504593v1){target="_blank"} v.4.0.0 installed via Conda. Note that we used the `--unclassified_estimation` to include the estimation of genomic sequences not identified in the database.
+
+```{r profiling, fig.cap=capFig("Metagenomic samples reads profiling of amplified DNA by different MDA protocols"),fig.width=9, fig.height=5,fig.align = 'left'}
+
+# read tsv, select and transform table
+meta<-read.table(file = 'metaphlan_results/merge_profiled_4.tsv', sep = '\t', header = TRUE)
+
+short_meta<-meta[c(1,21,22,23,20),]
+short_meta[,1]<-c("Unclassified","Kokuria rhizophila","Pseudomonas aeruginosa","Escherichia coli","Bacillus sp")
+short_meta<-short_meta[,c(1,6,5,11,7,4,9,8,10,3,12,2)]
+
+colnames(short_meta)<-c("Genome","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+
+
+meta2<-melt(short_meta,id.vars="Genome",na.rm=F)
+meta2[,4]<-grepl(2, meta2$variable)
+meta2$V4[meta2$V4=="TRUE"]<-"2"
+meta2$V4[meta2$V4=="FALSE"]<-"1"
+
+#reorder variables 
+meta2$variable <- factor(meta2$variable, levels=c("NA","NA2", "RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2"))
+meta2$Species <- factor(meta2$Genome, levels=c("Unclassified","Kokuria rhizophila","Pseudomonas aeruginosa","Escherichia coli","Bacillus sp"))
+# plot
+
+profiling <- ggplot(meta2,aes(y=value, x=Species, group=variable, fill=variable)) + 
+  geom_bar(stat="identity", position="dodge", alpha=0.8) + ylab("Reads (%)") +
+  geom_text(aes(label=round(value, digits=2), group=variable), position=position_dodge(width=0.9), angle= 90, hjust=0,vjust=0.5) +   theme_bw() +
+  theme(axis.text.x = element_text(face = "italic",size=14)) + 
+  theme(text = element_text(size=19)) + labs(color = "Sample") +
+   theme(axis.text.y = element_text(size=17)) +
+  scale_fill_manual(values=colorines[1:11], name="") + 
+  scale_y_continuous(limits = c(0, 100), expand = c(0.08, -0.5)) 
+
+profiling
+#ggsave("figures/profiling_v4.svg", profiling, width=9,heigh=5)
+```
+
+As shown in Figure 7, the amount of unknown (or junk) DNA is very high in piPolB samples, particularly without denaturation step, but not in piMDA. However, in any of the samples we detected sequences from other organisms than the expected bacteria, downplaying the presence of contaminant DNA. This suggest that, rather than contaminant DNA, piPolB might be performing *ab initio* DNA synthesis.
+
+```{r}
+res_aov <- aov(value ~ variable,  data = meta2)
+shapiro.test(res_aov$residuals) #normality test
+leveneTest(value ~ variable,  data = meta2) #homogeneus variance
+kruskal.test(value ~ variable,  data = meta2)
+```
+
+Although due to the limited number of samples, the differences are not statistically significant, we represent these results as an interactive heatmap.
+
+```{r profiling_heatmap, fig.cap=capFig("Clustering of samples by the metagenomic profiling results"),fig.width=9,fig.height=10,fig.align = 'left', warning=FALSE}
+
+short<-as.matrix(short_meta[,-1])
+row.names(short)<-short_meta[,1]
+
+heatmaply(t(short), k_row = 3, k_col = 3, fontsize_row = 14) 
+
+```
+
+Interestingly, in terms of relative representativity of reads from each reference genome, both NA samples cluster with the *piMDA/piMDA+D* amplification products. As mentioned above, we found an increased amount of unknown reads in the piPolB(+D) samples. As samples have been quality-trimmed, we only can suggest that those sequences arose from *ab initio* DNA synthesis.
+
+On the other hand, *RP-MDA* and *PrimPol-MDA* contain an overrepresentation of *B. subtilis* reads, as compared with the NA reads. The *piMDA* amplified samples, particularly the *piMDA+D* reads form the first experiment, show a moderate overrepresentation of high GC sequences (*K. rhizophyla*), in agreement with the GC content profile of these samples (see Figure 6).
+
+## Assembly-independent coverage of reference genomes
+
+### Reference genomes breadth and coverage
+
+Reads were mapped against the reference genomes with Bowtie2 v2.3.5.1 and further analyzed with [Weesam](https://bioinformatics.cvr.ac.uk/weesam-version-1-5/){target="_blank"} v1.6 and [Alfred](https://www.gear-genomics.com/docs/alfred/){target="_blank"} v0.1.16. The Weesam reports can be accessed in a merged [webpage](weeSam/weesam_full.html){target="_blank"}. Alfred reports are accesible as a *csv* [table](alfred/merded/merged_alfred.csv){target="_blank"}.
+
+Mean values per reference genome are shown in Table 4.
+
+```{r}
+#WeeSam html files were merged by copy/paste from the source file by hand and then exported into csv 
+weesam <- read.table("weeSam/weesam_merged.csv",header=TRUE, na.strings = "",sep=";")
+#change names
+weesam <- data.frame(lapply(weesam, function(x) {
+                 gsub("RepliG", "RP-MDA", x)
+              }))
+weesam <- data.frame(lapply(weesam, function(x) {
+                 gsub("TruePrime", "PrimPol-MDA", x)
+              }))
+#fix variable types
+weesam$Bam_File <-   factor(weesam$Bam_File,levels=c("NA","RP-MDA","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA+D"))
+weesam <- weesam %>% mutate(across(c(Ref_Genome,Ref_Name), as.factor))
+weesam <- weesam %>% mutate(across(c(Avg_Depth,Experiment,Mapped_Reads,Breadth,Std_Dev,Variation_Coefficient, covered), as.numeric))
+
+#add Bowtie2 overall alignment rate values
+Bam_File <- c("NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
+alignment <- c(97.85, 97.99, 99.31, 99.24,  99.25, 7.67, 73.15, 94.22, 93.76, 97.68, 97.18)
+bowtie <- data.frame(Bam_File,alignment)
+weesam <- merge(weesam, bowtie, by = "Bam_File")
+
+```
+
+Among the different parameters that WeeSAM provide, we are going to represent the *Alignment Rate, Breadth*, *Coverage* and the *Variation Coeficient* (Figures 9 and 10). The overall alignment rate is clearly better using selected reference genomes than in the profiling with a reference database (Figures 7 & 8). However, piPolB and piPolB+D samples still show lower alignment rates, suggesting unfaithful DNA amplification (see below).
+
+Breadth and Coverage are good general indicators of very poor amplification of some of the sequences, usually with extreme high or low GC content. On the other hand, the *Variation Coeficient* indicates variability in coverage. A coefficient of variation \< 1 would suggest that the coverage has low-variance, which is good, while a coefficient \> 1 would be considered high-variance.
+
+```{r depth, fig.cap=capFig("Reference genomes coverage depth by diverse MDA methods"),fig.width=12,fig.height=14,fig.align = 'left', warning=FALSE}
+
+
+p1 <- ggplot(weesam, aes(x=Bam_File, y=log(Avg_Depth,10), group=Ref_Name, color=Ref_Name,fill=Ref_Name,shape=Ref_Name)) + 
+geom_pointrange(aes(ymin=log(Avg_Depth,10), ymax=log(Avg_Depth+Std_Dev,10)), size=1, alpha=0.7,position=position_dodge(width=0.5))+ 
+  theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  theme(text=element_text(size=15)) +  ggtitle("Coverage Depth") +
+  scale_shape_manual(values = c(21, 22,23,24)) +  
+   xlab("Sample") + ylab("Depth (Log10)") + labs(color = "Reference genome") + 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))
+p2 <- ggplot(weesam) + 
+  geom_point(aes(x=Bam_File, y=as.numeric(covered), group=Ref_Name, color=Ref_Name,fill=Ref_Name, shape=Ref_Name), size=4, alpha=0.7, position=position_dodge(width=0.5)) + 
+  theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15])+ 
+   scale_shape_manual(values = c(21, 22,23,24)) + 
+  theme(text=element_text(size=15)) +  ggtitle("Coverage Breadth") + xlab("Sample") +
+  labs(color = "Reference genome") + 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  scale_y_continuous(name = "Coverage (%)",breaks = seq(80, 100, 5), limit=c(80,100))
+
+p3 <- ggplot(weesam, aes(x=Bam_File, y=Variation_Coefficient, group=Ref_Name, color=Ref_Name,fill=Ref_Name,shape=Ref_Name)) + 
+  geom_point(size=4, alpha=0.7,position=position_dodge(width=0.5)) +
+ theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  theme(text=element_text(size=15)) +  ggtitle("Variation Coefficient") +
+  xlab("Sample") + ylab("Coefficient") + labs(color = "Reference genome")+ 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))
+p4 <- ggplot(weesam) + 
+  geom_point(aes(x=Bam_File, y=as.numeric(alignment), color=Bam_File), alpha=0.4, size=4, shape=19) +
+  theme_bw() +  
+  scale_color_manual(values=colorines[1:11])+ 
+  theme(text=element_text(size=15)) +  ggtitle("Overall alignment rate") + xlab("Sample") +
+  labs(color = "Method") + 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  scale_y_continuous(name = "Alignment rate (%)",breaks = seq(0, 100, 20), limit=c(0,100))
+
+grid <- grid.arrange(p4, p2, p1, p3, nrow = 2)
+grid
+#version to export
+#
+# ggsave("figures/depth_plot.svg",grid,width=12,height=12)
+```
+
+The samples of RP-MDA and, to a lesser extent the PrimPol-MDA, show a clear decrease in the sequences of high GC in the profiling (Figures 7 & 8). In agreement with that, they show lower coverage and breadth and higher variation coefficient than all the other samples for those species and higher depth for *B. subtilis* and *E. coli.* Interestingly, the piMDA and piMDA+D reads contain a somewhat higher coverage for high GC genomes but lower for *B. subtilis* and *E. coli.* In the case of the samples from the piMDA protocol, this lower coverage depth of moderate GC genomes is consequence of a lower alignment rate and it is also in agreement with a higher variation coefficient in the case of *B. subtilis*, although the coverage depth for this genome is the same for all the samples*.*
+
+In conclusion, the RP-MDA and, to a lesser extent, the PrimPol-MDA amplification methods show a strong bias against very high GC-content sequences and, on the contrary samples from piMDA methods show an overrepresentation of high GC sequences which, in the case of the piMDA protocol (not in the piMDA+D), may give rise to an overall uneven depth.
+
+Another version in a single plot with two axis in the Figure 10 that allow us to see that the very high coverage depth in RP and PrimPol-MDA for intermediate-low GC content genomes correlates with a very high variation coefficient in high GC content genomes, which is not the case for piMDA and specially piMDA+D reads.
+
+```{r depth3, fig.cap=capFig("Reference genomes coverage depth (left axis) and variation coefficient (small points, right axis) by MDA methods"),fig.width=10,fig.height=7,fig.align = 'left'}
+
+pp <-  ggplot(weesam, aes(x=Bam_File, y=log(Avg_Depth,10), group=Ref_Name, color=Ref_Name,fill=Ref_Name,shape=Ref_Name)) + 
+geom_pointrange(aes(ymin=log(Avg_Depth,10), ymax=log(Avg_Depth+Std_Dev,10)), size=2, alpha=0.7,position=position_dodge(width=0.5))+ 
+     geom_point(aes(x=Bam_File, y=Variation_Coefficient/10,fill=Ref_Name), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+    scale_y_continuous(name = "Average Depth (Log10)",breaks = seq(0, 5, 1),limits=c(0,4),sec.axis = sec_axis(~ 10*., name="Variation Coefficient",breaks = seq(0,40,10))) +
+  theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  theme(text=element_text(size=15)) +  ggtitle("Coverage Depth") +
+  scale_shape_manual(values = c(21, 22,23,24)) +  
+   xlab("Sample") + labs(color = "Reference genome") + 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))  +
+  geom_hline(yintercept=1, linetype="dashed", color = "black")
+ggplotly(pp)
+#ggsave("figures/depth.svg",pp,width=8,height=5)
+```
+
+Alfred stats from Bowtie alignment files allowed us to analyze the mismatch rate in the raw reads mapping (Figure 11). Individual merged tables were re-merged using the script *merge_alfred_samples.R.*.
+
+```{r missmtach, fig.cap=capFig("Reads Mismatch rate"),fig.width=12,fig.height=14,fig.align = 'left', warning=FALSE}
+
+alfred <- fread("alfred/merged/merged_alfred.csv",header=TRUE, na.strings = "")
+#order samples
+alfred$sample <-   factor(alfred$sample,levels=c("NA","RP-MDA","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA+D"))
+
+#plot
+g1 <- ggplot(alfred, aes(x=sample, y=as.numeric(MismatchRate), group=ref, color=ref,fill=ref,shape=ref)) + 
+  geom_point(size=4, alpha=0.7,position=position_dodge(width=0.5)) +
+ theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  scale_y_continuous(breaks = seq(0, 0.05, 0.01),minor_breaks = seq(0, 0.05, by = 0.002))+
+  theme(text=element_text(size=15)) +  ggtitle("Mismatch rate") +
+  xlab("Sample") + ylab("Mismatch Rate") + labs(color = "Reference genome")+ 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(panel.grid.minor.y = element_line(linetype = 2))
+g2 <- ggplot(alfred) + 
+  geom_point(aes(x=sample, y=as.numeric(InsertionRate),color=ref,fill=ref),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  scale_shape_manual(values = c(22,23,24,25)) + 
+  geom_point(aes(x=sample, y=as.numeric(HomopolymerContextIns)/500,fill=ref), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Insertions",breaks = seq(0, 0.002, 0.0005),sec.axis = sec_axis(~ 500*., name="Homopolymeric context insertions",breaks = seq(0,1,0.2))) +
+ theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  theme(text=element_text(size=15)) +  ggtitle("Insertions rate") +
+  xlab("Sample") + ylab("Insertions Rate") + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE,scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+g3 <- ggplot(alfred) + 
+  geom_point(aes(x=sample, y=as.numeric(DeletionRate),color=ref,fill=ref),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  scale_shape_manual(values = c(22,23,24,25)) + 
+  geom_point(aes(x=sample, y=as.numeric(HomopolymerContextDel)/500,fill=ref), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Deletions",breaks = seq(0, 0.001, 0.0002),sec.axis = sec_axis(~ 500*., name="Homopolymeric context deletions",breaks = seq(0,0.5,0.2))) +
+ theme_bw() +  
+  scale_fill_manual(values=colorines[12:15]) + 
+  scale_color_manual(values=colorines[12:15]) + 
+  theme(text=element_text(size=15)) +  ggtitle("Deletion rate") +
+  xlab("Sample") + ylab("Insertions Rate") + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE,scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(legend.text = element_text(face = "italic")) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+(grid3 <- g1 / (g2+ g3))
+
+#ggsave("figures/mismtaches.svg",grid3,width=10,height=11)
+```
+
+```{r}
+#Table
+mismas <- alfred[,c(18,37)]
+colnames(mismas) <- c("MismatchRate","Bam_File")
+weesam <- merge(weesam,mismas, by="Bam_File")
+weesam$MismatchRate <- weesam$MismatchRate * 100
+tablita <- aggregate(cbind(weesam$Mapped_Reads, weesam$Breadth,
+    weesam$covered, weesam$Avg_Depth, weesam$Variation_Coefficient, weesam$MismatchRate),
+    by = list(Sample = weesam$Bam_File, Experiment = weesam$Experiment),
+    FUN = mean)
+colnames(tablita) <- c("Sample", "Experiment", "Mapped reads",
+    "Breadth", "Reference covered (%)", "Average Depth",
+    "Variation coefficient", "Mismatch Rate (%)")
+tablita <- tablita[order(tablita$Sample), ]
+
+tablita[, 5:7] <- round(tablita[, 5:7], digits = 2)
+tablita[, 8] <- round(tablita[, 8], digits = 4)
+tablita <- tablita %>% mutate(`Mapped reads` = format(`Mapped reads`, scientific = FALSE, big.mark = ","))
+tablita <- tablita %>% mutate(Breadth = format(Breadth, scientific = FALSE, big.mark = ","))
+
+kbl(tablita, align = "c", row.names=F, caption = "Table 4. Mean mapping and coverage parameters per reference genome at high sequencing depth") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+    column_spec(1, italic = T)  #  %>% save_kable('figures/aligned2.pdf')
+```
+
+Similarly to the previous results, Figures 11 and 12 show that the RP-MDA and, to a lesser extent the PrimPol-MDA protocols gave rise to a higher mismatch rate in the *P. aeruginosa* and *K. rhizophila* genomes. This is mostly due to misinsertions and deletions. Thus, in our metagenome sample, the RP-MDA protocol generate an amplification product with uneven coverage breadth and higher mismatch rate for high GC-sequences.
+
+The samples generated by the piPolB and piPolB+D protocols also contain a higher mismatch rate, but in this case, the mistmaches are mostly in the *B. subtilis* sequences and contain a high rate of insertions.
+
+Interestingly, the piMDA and piMDA+D protocols gave rise to similar mismatch rates than NA samples, only with a minor increase in the insertions in moderate GC genomes, mostly in homopolymeric sequence contexts (as expected).
+
+### Analysis of unclassfied reads
+
+The piPolB and specially piPolB+D samples showed a higher rate of unknown sequences in the profiling (Figure 7) and lower rate of reads mapping against the reference genomes (Figure 9A). After the trimming step, those unmapped reads may correspond either to contaminant amplified DNA or *ab initio* DNA synthesis (see [Zyrina et al. 2013](https://academic.oup.com/femsle/article/351/1/1/500774)){target="_blank"}. Since the profiling with Metaphlan only considers mapped reads, as well as our *Bowtie2* mapping against the reference, we decided to map the trimmed reads without the `–-no-unal` option against the Metaphlan database (vJan21), and then extract the unaligned reads an convert to fasta using *samtools* *f -4* for further analysis. We used the following bash script:
+
+`for sample in A2 B2 F2 C3 D3 Ctrl Ctrl2 N1 N2 N4 N6;`
+
+`do` `bowtie2 --very-sensitive -p 32 -x /home/modesto/anaconda3/envs/mpa/lib/python3.7/site-packages/metaphlan/metaphlan_databases/mpa_vJan21_CHOCOPhlAnSGB_202103 -1 ../trimmo/"$sample"_R1_pair.fastq.gz -2 ../trimmo/"$sample"_R2_pair.fastq.gz -U ../trimmo/"$sample"_R1_unpair.fastq.gz,../trimmo/"$sample"_R2_unpair.fastq.gz | samtools view -bS - | samtools sort -@ 32 -o "$sample"_metaphlan_sorted.bam;`
+
+`samtools view -u -f 4 "$sample"_metaphlan_sorted.bam > "$sample"_metaphlan_unmapped.sam;`
+
+`samtools fasta "$sample"_metaphlan_unmapped.sam > "$sample"_metaphlan_unmapped.fasta;` `rm "$sample"_metaphlan_unmapped.sam;`
+
+`rm "$sample"_metaphlan_sorted.bam;`
+
+`done`
+
+We then analyzed the presence of low complexity sequences using BBduk (from [BBtools](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/){target="_blank"}) to detect sequences with entropy \<0.5. The proportion of filtered low entropy reads was vary low (\<0.25%) for all the samples, except for the **piPolB-MDA sample (12.58%)**, supporting the presence of ab initio DNA synthesis (see [Zyrina et al., 2014](https://pubmed.ncbi.nlm.nih.gov/24965874/){target="_blank"}). Moreover, the presence of *ab initio* DNA synthesis capacity in piPolB could be confirmed in long incubation MDA assays (≥ 9h), as shown in the figure below.
+
+![External Figure 2. Ab initio DNA synthesis by piPolB. Time-course experiments were carried out in the standard conditions in the presence of 0, 2 and 20 ng of metagenomic DNA.](images/abinitio.png){fig-alt="Ab initio DNA synthesis by piPolB"}
+
+### GC content bias
+
+GC content bias of sequenced reads was analyzed in detail with [Picard](https://broadinstitute.github.io/picard/){target="_blank"} v.2.25.0 (*CollectGcBiasMetrics*). This allow us to see, for the whole metagenome and for each reference genome, the frequency of sequences at each GC content window (100 bp). All data is available in the folder *gc* in the [GitHub repo](https://github.com/mredrejo/pimda){target="_blank"}.
+
+Note that, contrary to the previous result in Figure 4, the coverage is normalized by the frequency of each GC window in the reference metagenome. According to the [Picard definition](https://gatk.broadinstitute.org/hc/en-us/articles/360037593931-CollectGcBiasMetrics-Picard-){target="_blank"}:
+
+*NORMALIZED_COVERAGE is a relative measure of sequence coverage by the reads at a particular GC content. For each run, the corresponding reference sequence is divided into bins or windows based on the percentage of G + C content ranging from 0 - 100%. The percentages of G + C are determined from a defined length of sequence; in this case we used the default value (100 bases).*
+
+Therefore, if the reference metagenome have higher number of sequences at a particular GC content, the normalized coverage should be also higher at that GC content value.
+
+#### GC bias per MDA sample
+
+Data from Picard output was merged to generate a combined plot with homogeneous scale. Original individual data tables are available in the *gc* folder of the [GitHub repository](https://github.com/mredrejo/pimda){target="_blank"}.
+
+```{r GCbias_meta_normalized, fig.cap=capFig("Comparative Normalized coverage by GC distribution of sequence and reads. Sequence coverage (red) is normalized by the GC range frequency in 100 bp windows (blue). The average GC content of each sample mapped reads is also indicated in the leyend"),fig.height=5,fig.width=10,warning=FALSE }
+
+#load all the files as a list of dataframes
+gc_picard=c("ctrl","ctrl2","N4","D3","C3","N1","F2","N2","B2","N6","A2")
+gc <- lapply(gc_picard, function(x) read.csv2(paste("gc/",x,"_gc_bias_metagenome.txt",sep=""), skip=6,header=TRUE,sep="\t", colClasses=c("NULL","NULL","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric")))
+
+
+cor_matrix <- data.frame(11,3)
+names(gc) <- c("NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+#create all the plots in a list
+
+gc_cov <- gc[[1]][,1:2]
+
+for (i in 1:length(gc)){
+  gc_cov <- cbind(gc_cov,gc[[i]]$NORMALIZED_COVERAGE)
+}
+colnames(gc_cov) <- c("GC","W","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+gc_cov <- as.data.frame(gc_cov)
+gc_cov_melted <- data.table::melt(gc_cov,id.vars=c("GC","W"),na.rm=FALSE)
+colnames(gc_cov_melted) <- c("GC","W","Sample","Nor_cov")
+#mean GC content of mapped reads
+gc_mapped <- list()
+gc_mapped <- lapply(1:length(gc), FUN = function(i) {
+  mean(gc[[i]]$NORMALIZED_COVERAGE[gc[[i]]$NORMALIZED_COVERAGE>0] * gc[[i]]$GC[gc[[i]]$NORMALIZED_COVERAGE>0])
+})
+#paste in legend
+leyenda <- c()
+for (i in 1:length(levels(gc_cov_melted$Sample))){
+  leyenda[i] <- paste0(levels(gc_cov_melted$Sample)[i]," (",round(gc_mapped[[i]],1),"%)")
+}
+
+p <- ggplot(gc_cov_melted, aes(x = GC)) + 
+    geom_bar(aes(y=W/1000000),stat="identity",fill="steelblue", alpha=0.5)+
+  geom_line(aes(y = Nor_cov,color = Sample), size = 1.5) + 
+   theme_bw(base_size=14) +
+   scale_y_continuous("Normalized coverage",  sec.axis=sec_axis(~.*1000000,name="Frequency at GC")) +
+  theme(axis.text.y.right = element_text(colour = "steelblue"),axis.title.y.right = element_text(colour = "steelblue"),axis.line.y.right = element_line(color = rgb(0.275, 0.51, 0.706,0.55),linewidth = 2)) +
+  scale_color_manual(values = colorines[1:11],labels=leyenda) +
+  geom_hline(yintercept=1, linetype="dashed", color = "black")
+p
+
+#ggsave('figures/normalized_gc_all_2.svg', p,  width=8,heigh=5)
+```
+
+And the interactive plot for detail analysis:
+
+```{r}
+ggplotly(p)
+```
+
+Notwithstanding the difference in the method, this results are overall in agreement with the Figure 2. The control samples show a mild decrease in the coverage at GC values over 50%, with values always near to 1 (right Y axis). However, the **normalized coverage of RP-MDA and PrimPol-MDA samples span a wide range at different GC content**, with a very high normalized coverage of low GC sequences (\>2.5, with peaks up to 4-5) sharply decreasing the coverage for GC content values over 50-60%, down to near negligible coverage. Strikingly, the piPolB and piPolB+D reads show a lower coverage, with some scattered peaks within the range of 30-50%. This may be due to the preference for that GC content in the piPolB initiation events, which would be in agreement with a higher rate of over-represented sequences.
+
+However, the piMDA samples show less variability in the coverage, with a low coverage (around 0.3-0.5) at GC\<50 and a strong increase in the coverage at values over 50-60%, up to 1-2. The piMDA and piMDA+D protocols show a very similar profile, although the piMDA+D reaches higher coverage levels for extremely high GC content values( \>75%)
+
+##### Statistic comparisons of GC bias
+
+Normality test prompted us to non-parametrics group difference tests. We remove common outliers values, i.e., GC values below 15% and above 85%.
+
+```{r}
+
+gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$GC>14 & gc_cov_melted$GC<86,]
+
+#test for normality and homogeneous variance intra groups
+res_aov <- aov(Nor_cov~Sample,data=gc_cov_melted2)
+shapiro.test(res_aov$residuals) #NO normality 
+leveneTest(Nor_cov~Sample,data=gc_cov_melted2) #NO homogeneus variance
+#non parametric, pairwise (paired) tests
+kk <- pairwise.wilcox.test(x=gc_cov_melted2$Nor_cov,g=gc_cov_melted2$Sample,paired=TRUE)
+kk$p.value <- format(kk$p.value,scientific=FALSE)
+
+as.data.frame(kk$p.value) %>% 
+      replace(., .<0, "") %>%
+    mutate_all(~cell_spec(.x, color = ifelse(.x < 0.01, "firebrick",ifelse(.x <0.05,"steelblue", "black")))) %>%
+  kable(escape = F) %>%
+  column_spec(1, bold = TRUE) %>%
+    kable_styling(bootstrap_options = "striped", full_width = F, font_size = 12, position = "left") 
+```
+
+Only piPolB(+D) and RP-MDA are significantly different than controls samples.
+
+##### Correlations: GC content vs. Normalized Coverage
+
+Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we are trimming out data without common outliers (GC \>=15% and =\<85%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+
+```{r GCbias_cor, fig.cap=capFig("Correlations between GC content and normalized coverage with all data"),fig.height=7,fig.width=7 }
+#multiple correlation
+
+cor_matrix2 <- gc[[1]]$GC
+for (i in 1:length(gc)){
+  gc[[i]] <- gc[[i]][gc[[i]]$GC>14 & gc[[i]]$GC<86,] #remove outliers
+  cor_matrix2 <-cbindX(as.data.frame(cor_matrix2),as.data.frame(gc[[i]]$NORMALIZED_COVERAGE))
+}
+colnames(cor_matrix2) <-c("GC","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+testRes <-  cor.mtest(cor_matrix2, conf.level = 0.99)
+
+corrplot(cor(cor_matrix2, use="complete.obs"),tl.col="black",  p.mat = testRes$p, number.cex = 1,addCoef.col = "grey60",type="upper", col = viridis(100))
+```
+
+In agreement with Figure 12, the GC content bias shows an moderate negative correlation with the NA samples. However, there is a clear difference between the two experiments. Thus, the coverage from one of the samples (from the first batch sequenced) show a strong negative correlation with the GC content (first row, R^2^=-0.93), whereas in the other sample the bias was less clear (R^2^=-0.53). This difference could be an artifact from the libraries preparation, as has been already pointed out ([Benjamini et al. 2022](https://pubmed.ncbi.nlm.nih.gov/22323520/){target="_blank"}).
+
+Regarding the amplified samples, which is stronger with the RP and PrimPol-MDA reads (R^2^=-0.91 to -0.95), whereas piMDA samples overall show positive correlation (R^2^≃0.9). In line with this, there is a significant and positive correlation among NA, RP and PrimPol samples and among piMDA samples.
+
+#### GC bias detailed per reference genome
+
+```{r,  GCbias_per_genome, fig.cap=capFig("GC distribution of sequence and reads for each reference genome. Sequence coverage (red) is normalized by the GC range frequency in 100 bp windows (blue). The average base quality is also shown (grey)"),fig.height=90,fig.width=10}
+#load all the files as a list of dataframes
+gc_picard=c("ctrl_gc_bias_coli", "ctrl_gc_bias_subtilis","ctrl_gc_bias_PAE","ctrl_gc_bias_kocuria",
+            "ctrl2_gc_bias_coli", "ctrl2_gc_bias_subtilis","ctrl2_gc_bias_PAE","ctrl2_gc_bias_kocuria",
+            "N4_gc_bias_coli", "N4_gc_bias_subtilis","N4_gc_bias_PAE","N4_gc_bias_kocuria",
+            "D3_gc_bias_coli", "D3_gc_bias_subtilis","D3_gc_bias_PAE","D3_gc_bias_kocuria",
+            "C3_gc_bias_coli", "C3_gc_bias_subtilis","C3_gc_bias_PAE","C3_gc_bias_kocuria",
+            "N1_gc_bias_coli", "N1_gc_bias_subtilis","N1_gc_bias_PAE","N1_gc_bias_kocuria",
+            "F2_gc_bias_coli", "F2_gc_bias_subtilis","F2_gc_bias_PAE","F2_gc_bias_kocuria",
+            "N2_gc_bias_coli", "N2_gc_bias_subtilis","N2_gc_bias_PAE","N2_gc_bias_kocuria",
+            "B2_gc_bias_coli", "B2_gc_bias_subtilis","B2_gc_bias_PAE","B2_gc_bias_kocuria",
+            "N6_gc_bias_coli", "N6_gc_bias_subtilis","N6_gc_bias_PAE","N6_gc_bias_kocuria",
+            "A2_gc_bias_coli", "A2_gc_bias_subtilis","A2_gc_bias_PAE","A2_gc_bias_kocuria")
+gc <- lapply(gc_picard, function(x) read.csv2(paste("gc/",x,".txt",sep=""), skip=6,header=TRUE,sep="\t", colClasses=c("NULL","NULL","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric")))
+
+#plot all the samples using a loop
+
+cor_matrix <- data.frame(44,3)
+
+samples <- c("NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+templates <- c("E. coli","B. subtilis 110NA", "P. aeruginosa PAER4","K. rhizophila")
+genomas <- merge(templates, samples ,all=TRUE)
+#subset color palette for genomes and replicate for each sample (subtitles of each plot)
+col_genomes <- rep(colorines[12:15], times=11)
+#create the plot list
+plot_list2 <- list()
+plot_list2 <- lapply(1:length(gc), FUN = function(i) {
+  plot_list2[[i]]  <- ggplot(data=gc[[i]],aes(x=gc[[i]]$GC,y=gc[[i]]$WINDOWS)) + 
+    geom_bar(stat="identity",fill="steelblue")+
+    geom_line(aes(y=gc[[i]]$MEAN_BASE_QUALITY*15000), color="grey")+
+    geom_point(aes(y=gc[[i]]$NORMALIZED_COVERAGE*200000), color="firebrick")+
+    scale_y_continuous("Frequency at GC",  sec.axis=sec_axis(~./200000,name="Normalized coverage"))+
+    scale_color_manual(name="",values=colors)+
+    xlab("GC content") +
+    ggtitle(paste(genomas[i,2]),subtitle= paste(genomas[i,1])) +
+    theme_bw(base_size=14) + 
+     theme(plot.title = element_text(color = colorines[ceiling(i/4)], hjust = 0.5, size = 15, face = "bold"), plot.subtitle = element_text(color = col_genomes[i], hjust = 0.5, face = "italic") )
+})
+do.call("grid.arrange", c(plot_list2, ncol=2))
+```
+
+##### Correlations: GC content vs. Normalized Coverage per reference genome
+
+Again, we are trimming out data without common outliers (GC \>=15% and =\<85%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+
+```{r,GCbias_cor_genome, fig.cap=capFig("Correlations among normalized coverage by GC content per reference genome"),fig.height=7,fig.width=7,warning=FALSE,fig.height=8,fig.width=12}
+
+cor_matrix <- data.frame(44, 3)
+for (i in 1:length(gc)) {
+    gc[[i]] <- gc[[i]][gc[[i]]$GC > 14 & gc[[i]]$GC < 86, ]  #remove <.5 values 
+    cor_matrix[i, 1] <- gc_picard[i]
+    tmp <- cor.test(gc[[i]]$GC, gc[[i]]$NORMALIZED_COVERAGE)
+    cor_matrix[i, 2] <- tmp$estimate
+    cor_matrix[i, 3] <- tmp$p.value
+}
+
+corr_frame <- data.frame(matrix(ncol = 11, nrow = 4))
+
+# split the data to genome vs sample GC vs Normalized Coverage
+for (i in 1:ncol(corr_frame)) {
+    if (i == 1) {
+        corr_frame[1:4, i] <- cor_matrix[1:4, 2]
+    } else {
+        corr_frame[1:4, i] <- cor_matrix[((4 * i) - 3):(4 * i), 2]
+    }
+}
+corr_frame <- sapply(corr_frame, as.numeric)
+colnames(corr_frame) <- c("NA", "NA2", "RP-MDA", "RP-MDA2", "PrimPol-MDA",
+    "piPolB", "piPolB+D", "piMDA", "piMDA2", "piMDA+D", "piMDA+D2")
+row.names(corr_frame) <- c("E. coli", "B. subtilis 110NA", "P. aeruginosa PAER4",
+    "K. rhizophila")
+# plot
+
+# include the p-values
+corr_frame2 <- data.frame(matrix(ncol = 11, nrow = 4))
+
+for (i in 1:ncol(corr_frame2)) {
+    if (i == 1) {
+        corr_frame2[1:4, i] <- cor_matrix[1:4, 3]
+    } else {
+        corr_frame2[1:4, i] <- cor_matrix[((4 * i) - 3):(4 * i), 3]
+    }
+}
+corr_frame2 <- sapply(corr_frame2, as.numeric)
+colnames(corr_frame2) <- colnames(corr_frame)
+row.names(corr_frame2) <- row.names(corr_frame)
+
+corrplot(as.matrix(corr_frame), tl.col = "black", p.mat = corr_frame2,
+    number.cex = 1.6, addCoef.col = "grey60",col=viridis(100))
+
+```
+
+## Assemblies
+
+### Assembly basic stats
+
+Assemblies were obtained with [MetaSpades](https://github.com/ablab/spades){target="_blank"}. The piPolB sample could not be assembled due to a high proportion of low complexity reads, particularly in the R2 file (see <https://www.seqme.eu/en/magazine/sequencing-low-diversity-libraries-on-illumina>){target="_blank"}. We tried to bypass this problem using different trimming alternatives, like [PRINSEQ++](https://github.com/Adrian-Cantu/PRINSEQ-plus-plus){target="_blank"}, [FastP](https://github.com/OpenGene/fastp){target="_blank"} or [Atropos](https://github.com/jdidion/atropos){target="_blank"}. Only after using FastP for trimming out reads with complexity \<70 (option -Y 70), we could assembly the piPolB sample (N1 raw reads), but the assembly was poor and non comparable with the other samples. Therefore, the piPolB sample was not included in the following analysis.
+
+The assemblies were evaluated with [MetaQuast](https://github.com/ablab/quast){target="_blank"} v. 5.1.0rc1. A comparative analysis of all the samples was performed without the reads to save computational resources (check full report [here](quast_results/results_2022_03_10_13_57_32/combined_reference/report.html){target="_blank"}). A full analysis including the reads were performed independently for each sample but due to size limitations it will be available along with the raw reads. All data is available in the repo folder *quast_results* and individual tables from detailed reports were merged using the script [*merge_quast_reports.R*](scripts/merge_quast_reports.R){target="_blank"}.
+
+```{r asssemblies, fig.cap=capFig("Assembly basic stats in samples amplified by all the different MDA methods tested"),fig.width=8,fig.height=4,fig.align = 'left', warning=FALSE}
+
+quast <- fread("quast_results/merged_quast.csv",header=TRUE, na.strings = "",strip.white = TRUE)
+tquast <- t(quast)
+colnames(tquast) <- tquast[1,]
+tquast <- tquast[-1,]
+muestras <- rownames(tquast)
+tquast <- cbind(muestras,tquast)
+tquast <- as.data.frame(tquast)
+#order samples
+tquast[5,1] <- "piPolB+D"
+tquast$muestras  <-   factor(tquast$muestras,levels=c("NA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA+D"))
+
+#plots
+contigs <-ggplot(tquast) + 
+  geom_point(aes(x=muestras, y=as.numeric(tquast[,4]),color=muestras,fill=muestras,group=Experiment),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  
+  geom_point(aes(x=muestras, y=as.numeric(tquast[,21])*30,fill=muestras), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Contigs >1kb",breaks = seq(0, 2000, 250),sec.axis = sec_axis(~ ./30, name="L50",breaks = seq(0,50,5))) +
+ theme_bw() +  
+ scale_color_manual(values = colorines) + 
+  scale_fill_manual(values = colorines) +   
+  theme(text=element_text(size=15)) +  ggtitle("Assembly contigs") +
+  xlab("Sample")  + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE,scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+mismatches <-ggplot(tquast) + 
+  geom_point(aes(x=muestras, y=as.numeric(tquast[,47]),color=muestras,fill=muestras,group=Experiment),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  
+  geom_point(aes(x=muestras, y=as.numeric(tquast[,48])*16,fill=muestras), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Mismatches per 100 kbp",breaks = seq(0, 225, 25),limit=c(0,230),sec.axis = sec_axis(~ ./16, name="InDels per 100 kbp",breaks = seq(0,20,5))) +
+ theme_bw() +  
+ scale_color_manual(values = colorines) + 
+  scale_fill_manual(values = colorines) +   
+  theme(text=element_text(size=15)) +  ggtitle("Assembly mismatches") +
+  xlab("Sample")  + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE,scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+#misassemblies report
+misas<- read.table("quast_results/results_2022_03_10_13_57_32/combined_reference/contigs_reports/transposed_report_misassemblies.tsv",head=TRUE, comment.char="@",sep="\t",na.strings = "")
+for (i in 1:nrow(misas)){
+ misas$Assembly[i] <- gsub("_2","",misas$Assembly[i]) 
+}
+misas$Assembly[3:4] <- "RP-MDA"
+misas$Assembly[5] <- "PrimPol-MDA"
+misas$Assembly  <-   factor(misas$Assembly,levels=c("NA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA+D"))
+
+misas_plot <- ggplot(misas) + 
+  geom_point(aes(x=Assembly, y=as.numeric(misas[,2]),color=Assembly,fill=Assembly),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  
+  geom_point(aes(x=Assembly, y=as.numeric(misas[,17])/4,fill=Assembly), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  scale_y_continuous(name = "Contig misassemblies",breaks = seq(0, 150, 20),limit=c(0,100),sec.axis = sec_axis(~ .*4, name="Local misassemblies",breaks = seq(0,400,50))) +
+ theme_bw() +  
+  scale_color_manual(values = colorines) + 
+  scale_fill_manual(values = colorines) +   
+  theme(text=element_text(size=15)) +  ggtitle("Misassemblies") +
+  xlab("Sample")  + 
+  scale_shape_manual(values = c(21, 22,23,24)) + 
+  guides(shape=FALSE,fill=FALSE, color=FALSE,scale="none") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=16)) +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+
+grid_contigs <- grid.arrange(contigs, mismatches, misas_plot, nrow = 1)
+grid_contigs
+# ggsave("figures/contigs.svg",grid_contigs,width=12,height=5)
+
+```
+
+### Stats per individual reference genome
+
+Given the high background of mismatches in the *P aeruginosa* reference, we decided to normalize the number of mismatches to the first NA sample.
+
+```{r assemblies_per_ref, fig.cap=capFig("Assembly basic stats per reference genome"),fig.width=8,fig.height=6,fig.align = 'left'}
+
+quast_ref <- read.table("quast_results/results_2022_03_10_13_57_32/summary/TSV/num_contigs.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
+names(quast_ref) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
+quast_ref[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned")
+
+quast_ref_melted <-  cbind(Category = quast_ref[[1]], stack(quast_ref[-1]))
+#fix names
+quast_ref_melted <- data.frame(lapply(quast_ref_melted, function(x) {gsub("A.1", "A", x)}))
+quast_ref_melted <- data.frame(lapply(quast_ref_melted, function(x) {gsub("D.1", "D", x)}))
+color_ref <- c(colorines[12:15],"Not_aligned"="grey")
+quast_ref_melted$ind <- factor(quast_ref_melted$ind, levels = c("NA",
+    "RP-MDA", "PrimPol-MDA", "piPolB+D", "piMDA", "piMDA+D"))
+quast_ref_melted$Category <- factor(quast_ref_melted$Category, levels = c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned"))
+plot <- ggplot(quast_ref_melted) + geom_point(aes(x = ind,
+    y = as.numeric(values), group = Category, color = Category,
+    fill = Category, shape = Category), size = 4, alpha = 0.7,
+    position = position_dodge(width = 0.5)) + 
+    theme_bw()  +
+    scale_fill_manual(values = color_ref) +
+    scale_color_manual(values = color_ref) +
+    scale_shape_manual(values = c(21, 22, 23, 24,20)) +
+    theme(text = element_text(size = 15)) + ggtitle("Number of contigs per reference") +
+    xlab("Sample") + labs(color = "Reference genome") +
+    guides(shape=FALSE,color=FALSE, fill=FALSE, scale = "none") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1,
+        size = 16)) + theme(legend.text = element_text(face = "italic")) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    scale_y_continuous(name = "Contigs")
+
+quast_ref_mism <- read.table("quast_results/results_2022_03_10_13_57_32/summary/TSV/num_mismatches_per_100_kbp.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
+names(quast_ref_mism) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
+quast_ref_mism[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila")
+#normalize data
+quast_ref_mism[,2:11] <- quast_ref_mism[,2:11] /quast_ref_mism[,2]
+#melt
+quast_ref_mism_melted <-  cbind(Category = quast_ref_mism[[1]], stack(quast_ref_mism[-1]))
+#fix names
+quast_ref_mism_melted <- data.frame(lapply(quast_ref_mism_melted, function(x) {gsub("A.1", "A", x)}))
+quast_ref_mism_melted <- data.frame(lapply(quast_ref_mism_melted, function(x) {gsub("D.1", "D", x)}))
+quast_ref_mism_melted$ind <- factor(quast_ref_mism_melted$ind, levels = c("NA",
+    "RP-MDA", "PrimPol-MDA", "piPolB+D", "piMDA", "piMDA+D"))
+quast_ref_mism_melted$Category <- factor(quast_ref_mism_melted$Category, levels = c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned"))
+plot2 <- ggplot(quast_ref_mism_melted) + geom_point(aes(x = ind,
+    y = as.numeric(values), group = Category, color = Category,
+    fill = Category, shape = Category), size = 4, alpha = 0.7,
+    position = position_dodge(width = 0.5)) + 
+    theme_bw() +
+    scale_fill_manual(values = colorines[12:15]) +
+    scale_color_manual(values = colorines[12:15]) +
+    scale_shape_manual(values = c(21, 22, 23, 24)) +
+    theme(text = element_text(size = 14)) + ggtitle("Normalized mismatches per sample") +
+    xlab("Sample") + labs(color = "Reference genome") +
+    guides(shape = FALSE, fill = FALSE, color=FALSE,scale = "none") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1,
+        size = 16)) + theme(legend.text = element_text(face = "italic")) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    scale_y_continuous(name = "Normalized mismatches per 100 kbp")
+grid_contigs_refs <- grid.arrange(plot, plot2,nrow = 1)
+grid_contigs_refs
+#ggsave('figures/quast_refs.svg',grid_contigs_refs,width=8,height=5)
+
+```
+
+### Number of contigs by GC-content
+
+```{r contigs_by_GC, fig.cap=capFig("Number of contigs by GC content in all samples"),fig.width=11,fig.height=7,fig.align = 'left', warning=FALSE}
+gc_contigs<- read.table("quast_results/gc_contigs_distributions.csv",head=FALSE,sep=",",na.strings = "")
+gc_contigs <- t(gc_contigs)
+colnames(gc_contigs) <- gc_contigs[1,]
+gc_contigs <- gc_contigs[-1,]
+gc_contigs <- as.data.frame(gc_contigs,row.names=FALSE)
+gc_melt <-melt(gc_contigs,id.vars="GC",na.rm=F)
+
+gc_melt$value <- as.numeric(gc_melt$value)
+gc_melt$GC <- as.numeric(gc_melt$GC)
+#full version
+gc_melt$variable  <-   factor(gc_melt$variable,levels=c("NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2"))
+
+contigs_gc2 <- ggplot(gc_melt, aes(y=value, x=GC, fill=variable,label=variable)) +
+    scale_y_continuous(limits=c(0,1500))+
+    geom_bar(stat="identity", position="dodge", alpha=0.8) + 
+    scale_fill_manual(values = colorines[1:11]) + 
+    scale_color_manual(values = colorines[1:11]) + 
+    ylab("Number of contigs") +
+    xlab("GC content") +
+    theme_bw() +
+    scale_y_break(c(75, 200), scales=.5,ticklabels=c(200,600,1000,1400), space=0) +
+    scale_x_continuous(limit=c(30,80), expand = c(0, 0.1)) +
+    theme(text = element_text(size=18)) +
+    labs(fill = "Sample") 
+contigs_gc2
+
+# ggsave("figures/GC_contigs2.svg", contigs_gc2, width=10, height=6)
+
+```
+
+The coverage by the GC content can be also represented by Circos plots. The outer circle represents reference sequences with GC (%) heatmap, from 25% (white) to 79% (black). Color bars help to distinguish between different references. Assembly tracks are combined with mismatches visualization: green contigs indicate perfect assembly, whereas red contigs contains misassemblies, higher black columns indicate larger mismatch rate. Finally, the inner circle represents read coverage histogram.
+
+![External Figure 3. Circos plots of all samples by the four reference genomes.](images/circos_all.png "Circos plots of all samples by the four reference genomes")
+
+The analysis of assemblies show that for all the samples *P. aeruginosa* genome seems different to the reference genome. On the other hand, *B. subtilis 110NA* is a 168 derivative with a deletion spanning Spo0A gene (see [Michel, J.F. y Cami, B., Ann. Inst. Pasteur 116(N1), 3-18 (1969)](https://gallica.bnf.fr/ark:/12148/bpt6k6436891f/f9.item){target="_blank"}). On the contrary the assemblies of *E. coli* and *K. rhizophila* fit with the reference genomes in most samples.
+
+### Assembly binning
+
+With [MetacoAG](https://github.com/Vini2/MetaCoAG){target="_blank"} 1.0. MetacoAG uses the information of assembly graphs as well as composition (*k*-mers), gene markers and coverage information. Obtained bins were then assigned to the reference genomes by the mash distances, selecting those with coverage \>5% and p-value \< 10^-10^. Results are available in the folder *binning* in the repo.
+
+```{r binning, fig.cap=capFig("Metagenome Binning"),fig.width=7,fig.height=6,fig.align = 'left'}
+#read data
+dist <- read.csv(file = 'binning/all_distances.csv', sep=";",header=T)
+#rename references and samples
+dist$reference <- gsub("../refs/NC_000913.3.fasta","E. coli",dist$reference)
+dist$reference <- gsub("../refs/NC_000964.3.fasta","B. subtilis",dist$reference)
+dist$reference <- gsub("../refs/CP013113.1_PAER4.fasta","P. aeruginosa",dist$reference)
+dist$reference <- gsub("../refs/Kocuria_rhizophila_ATCC_9341.fasta","K. rhizophila",dist$reference)
+
+
+dist$sample <- substr(dist$bin,1,5)
+dist$sample <- gsub("Ctrl/","NA",dist$sample)
+dist$sample <- gsub("Ctrl2","NA2",dist$sample)
+dist$sample <- gsub("A2/bi","piMDA+D2",dist$sample)
+dist$sample <- gsub("B2/bi","piMDA2",dist$sample)
+dist$sample <- gsub("F2/bi","piPolB+D",dist$sample)
+dist$sample <- gsub("C3/bi","PrimPol-MDA",dist$sample)
+dist$sample <- gsub("D3/bi","RP-MDA2",dist$sample)
+dist$sample <- gsub("N2/bi","piMDA",dist$sample)
+dist$sample <- gsub("N4/bi","RP-MDA",dist$sample)
+dist$sample <- gsub("N6/bi","piMDA+D",dist$sample)
+
+dist$bin <- gsub(".fasta","",dist$bin)
+dist$bin <- substr(dist$bin,nchar(dist$bin)-5,nchar(dist$bin))
+dist$bin <- gsub("/","",dist$bin)
+dist$length <- substr(dist$length,1,nchar(dist$length)-5)
+dist$length <- as.integer(dist$length)/10
+
+#select the bins 
+selection <- dist[dist$length>5,]
+selection$sample <-  factor(selection$sample, levels=c("NA","NA2", "RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2"))
+
+g <- ggplot(selection, aes(fill=reference, y=length, x=sample, label=paste(length,"%"))) +     geom_bar(position="stack", stat="identity", colour="black")  + scale_fill_manual(values=colorines[12:15]) + 
+  ylab("Cumulative bin length (%)") +
+  theme_bw() 
+g+ geom_text(size = 3, position = position_stack(vjust = 0.5)) + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1,size=14),axis.text.y = element_text(size=14)) 
+```
+
+Try the same but with different MetaCoAG parameters: `–mg_threshold 0.4 –bin_mg_threshold 0.2`
+
+```{r binning2, fig.cap=capFig("Assembly bins extracted and color-coded by the reference genome"),fig.width=7, fig.height=6,fig.align = 'left'}
+dist <- read.csv(file = 'binning/all_distances_final.csv', sep=";",header=T)
+
+dist$reference <- gsub("../refs/NC_000913.3.fasta","E. coli",dist$reference)
+dist$reference <- gsub("../refs/NC_000964.3.fasta","B. subtilis",dist$reference)
+dist$reference <- gsub("../refs/CP013113.1_PAER4.fasta","P. aeruginosa",dist$reference)
+dist$reference <- gsub("../refs/Kocuria_rhizophila_ATCC_9341.fasta","K. rhizophila",dist$reference)
+
+
+
+dist$sample <- substr(dist$bin,1,5)
+dist$sample <- gsub("Ctrlb","NA",dist$sample)
+dist$sample <- gsub("Ctrl2","NA2",dist$sample)
+dist$sample <- gsub("A2b/b","piMDA+D2",dist$sample)
+dist$sample <- gsub("B2b/b","piMDA2",dist$sample)
+dist$sample <- gsub("F2b/b","piPolB+D",dist$sample)
+dist$sample <- gsub("C3b/b","PrimPol-MDA",dist$sample)
+dist$sample <- gsub("D3b/b","RP-MDA2",dist$sample)
+dist$sample <- gsub("N2b/b","piMDA",dist$sample)
+dist$sample <- gsub("N4b/b","RP-MDA",dist$sample)
+dist$sample <- gsub("N6b/b","piMDA+D",dist$sample)
+
+dist$bin <- gsub(".fasta","",dist$bin)
+dist$bin <- substr(dist$bin,nchar(dist$bin)-5,nchar(dist$bin))
+dist$bin <- gsub("/","",dist$bin)
+dist$length <- substr(dist$length,1,nchar(dist$length)-5)
+dist$length <- as.integer(dist$length)/10
+
+#select the bins 
+dist <- dist[-184,]
+selection <- dist[dist$length>5,]
+selection$sample <-  factor(selection$sample, levels=c("NA","NA2", "RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2"))
+#plot
+
+g <- ggplot(selection, aes(fill=reference, y=length, x=sample, label=paste(length,"%"))) +     geom_bar(position="stack", stat="identity", colour="black", alpha=0.8)  +
+  ggtitle("Assembly binning by reference") +
+  labs(fill="Reference genome") + ylab("Cumulative bin length (%)") + 
+  scale_fill_manual(values=colorines[12:15]) + 
+  geom_text(size = 3, position = position_stack(vjust = 0.5))+ theme_bw() +
+  theme(axis.title=element_text(size=15),axis.text.x = element_text(angle = 45, hjust = 1,size=14),axis.text.y = element_text(size=14)) 
+g +  theme(legend.text = element_text(face = "italic"))
+
+#ggsave("figures/binning.svg", g, width=8, height=5)
+```
+
+Despite the low coverage, the piPolB+D assembly surprisingly good in the binning analysis and extraction.
+
+Interestingly, despite containing more contigs in the assemblies (Figures 16 and 18), piMDA outperforms the piMDA+D protocol in the binning of *B. subtilis* sequences, suggesting that the alkaline denaturation step may somewhat reduce the overall quality of the MAGs from (pi)MDA samples.
+
+## Index of Figures
+
+```{r}
+names(figuritas) <- "List of Plots captions"
+kbl(figuritas, align="l",caption="") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F, font_size = 12, position = "left") 
+```
+
+## Acknowledments and Funding
+We are indebted to Professor Margarita Salas for her longtime support and contributions to the discovery of piPolB and to the early development of this project.
+This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R.
+C. Egas laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No 685474, the METAFLUIDICS project.
+CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665. 
+
+## Session Info
+
+```{r}
+
+sessionInfo()
+```

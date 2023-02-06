@@ -1,0 +1,10 @@
+## htsjdk.samtools.metrics.StringHeader
+# CollectGcBiasMetrics CHART_OUTPUT=/home/modesto/data/freeDNA/gc/B2_gc_bias_subtilis.pdf SUMMARY_OUTPUT=/home/modesto/data/freeDNA/gc/B2_gc_bias_subtilis_summary_metrics.txt INPUT=/home/modesto/data/freeDNA/bowtie2/mapping_B2_result_subtilis_sorted.bam OUTPUT=/home/modesto/data/freeDNA/gc/B2_gc_bias_subtilis.txt REFERENCE_SEQUENCE=/home/modesto/data/freeDNA/refs/NC_000964.3.fasta    SCAN_WINDOW_SIZE=100 MINIMUM_GENOME_FRACTION=1.0E-5 IS_BISULFITE_SEQUENCED=false METRIC_ACCUMULATION_LEVEL=[ALL_READS] ALSO_IGNORE_DUPLICATES=false ASSUME_SORTED=true STOP_AFTER=0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+## htsjdk.samtools.metrics.StringHeader
+# Started on: Tue Feb 08 16:13:22 CET 2022
+
+## METRICS CLASS	picard.analysis.GcBiasSummaryMetrics
+ACCUMULATION_LEVEL	READS_USED	WINDOW_SIZE	TOTAL_CLUSTERS	ALIGNED_READS	AT_DROPOUT	GC_DROPOUT	GC_NC_0_19	GC_NC_20_39	GC_NC_40_59	GC_NC_60_79	GC_NC_80_100	SAMPLE	LIBRARY	READ_GROUP
+All Reads	ALL	100	5340084	10236939	3,773732	0,000095	1,078102	0,879892	1,042962	1,283378	0			
+
+

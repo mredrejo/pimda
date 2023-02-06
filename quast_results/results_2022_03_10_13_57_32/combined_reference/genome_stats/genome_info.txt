@@ -1,0 +1,26 @@
+reference chromosomes:
+	NC_000964.3_NC_000964.3 (total length: 4215606 bp, total length without N's: 4215606 bp, maximal covered length: 4069782 bp)
+	GCF_000005845.2_ASM584v2_genomic_NC_000913.3 (total length: 4641652 bp, total length without N's: 4641652 bp, maximal covered length: 4621825 bp)
+	Kocuria_rhizophila_ATCC_9341_NC_010617.1 (total length: 2696980 bp, total length without N's: 2696980 bp, maximal covered length: 2696499 bp)
+	GCF_000006765.1_ASM676v1_genomic_NC_002516.2 (total length: 6264404 bp, total length without N's: 6264404 bp, maximal covered length: 6042694 bp)
+
+total genome size: 17818642
+
+gap min size: 50
+partial gene/operon min size: 100
+
+
+
+assembly                 | genome    | duplication | gaps      | genes     | partial   | operons   | partial   |
+                         | fraction  | ratio       | number    |           | genes     |           | operons   |
+========================================================================================================================
+NA                       | 97.773    | 1.001       | 151       | -         | -         | -         | -         |
+NA_2                     | 97.709    | 1.001       | 152       | -         | -         | -         | -         |
+Phi29_RP                 | 75.445    | 1.006       | 2090      | -         | -         | -         | -         |
+Phi29_RP_2               | 96.044    | 1.000       | 762       | -         | -         | -         | -         |
+PrimPol_Phi29            | 97.564    | 1.001       | 159       | -         | -         | -         | -         |
+piPolB_D                 | 97.624    | 1.001       | 182       | -         | -         | -         | -         |
+piMDA                    | 97.732    | 1.003       | 156       | -         | -         | -         | -         |
+piMDA_2                  | 97.722    | 1.004       | 154       | -         | -         | -         | -         |
+piMDA_D                  | 97.634    | 1.001       | 156       | -         | -         | -         | -         |
+piMDA_D_2                | 97.752    | 1.001       | 150       | -         | -         | -         | -         |
