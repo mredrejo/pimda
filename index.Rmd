@@ -1,8 +1,10 @@
+```{=html}
 <style>
     body .main-container {
-        max-width: 800px;
+        max-width: 1200px;
     }
 </style>
+```
 ---
 title: "Comparison of MDA methods"
 author: "Modesto"
@@ -17,7 +19,6 @@ format:
     number-sections: true
     code-overflow: wrap
     css: piMDA.css
-
 ---
 
 ------------------------------------------------------------------------
@@ -29,7 +30,7 @@ library(formatR)
 opts_chunk$set(tidy.opts=list(width.cutoff=90),tidy=TRUE,fig.cap = "", fig.path = "Plot")
 
 #Loading packages
-paquetes <- c("ggplot2","data.table","ggbreak","ggh4x","car","stringr","gdata","ggrepel","pzfx","gridExtra","kableExtra","corrplot","heatmaply","reshape2","patchwork","geomtextpath","plotly","Biostrings","dplyr")
+paquetes <- c("ggplot2","data.table","ggbreak","ggh4x","car","stringr","gdata","ggrepel","pzfx","gridExtra","kableExtra","corrplot","heatmaply","reshape2","patchwork","geomtextpath","plotly","dplyr")
 unavailable <- setdiff(paquetes, rownames(installed.packages()))
 invisible(install.packages(unavailable))
 invisible(lapply(paquetes, library, character.only = TRUE))
@@ -248,8 +249,6 @@ It should be also considered that these results apply specifically to this parti
 ## Illumina raw data processing
 
 Samples from independent amplification experiments, as well as the control non-amplified metagenome (NA), were sequenced by Illumina NextSeq V2.5 High Output, 2x75 bp paired ends sequencing. To reduce the sequencing-derived bias, the sequencing libraries were prepared using TruSeq DNA PCR-Free Low Throughput Library Prep kit (Illumina), at Conceição Egas' lab ([GENOINSEQ - BIOCANT](http://www.genoinseq.com/en/home/){target="_blank"}, Portugal). As shown below, NA, RP-MDA, piMDA and piMDA+D were sequenced from duplicated independent experiments.
-
-
 
 ### QC stats and trimming
 
@@ -689,7 +688,7 @@ Interestingly, the piMDA and piMDA+D protocols gave rise to similar mismatch rat
 
 ### Analysis of unclassfied reads
 
-The piPolB and specially piPolB+D samples showed a higher rate of unknown sequences in the profiling (Figure 7) and lower rate of reads mapping against the reference genomes (Figure 9A). After the trimming step, those unmapped reads may correspond either to contaminant amplified DNA or *ab initio* DNA synthesis (see [Zyrina et al. 2013](https://academic.oup.com/femsle/article/351/1/1/500774)){target="_blank"}. Since the profiling with Metaphlan only considers mapped reads, as well as our *Bowtie2* mapping against the reference, we decided to map the trimmed reads without the `–-no-unal` option against the Metaphlan database (vJan21), and then extract the unaligned reads an convert to fasta using *samtools* *f -4* for further analysis. We used the following bash script:
+The piPolB and specially piPolB+D samples showed a higher rate of unknown sequences in the profiling (Figure 7) and lower rate of reads mapping against the reference genomes (Figure 9A). After the trimming step, those unmapped reads may correspond either to contaminant amplified DNA or *ab initio* DNA synthesis (see [Zyrina et al. 2013](https://academic.oup.com/femsle/article/351/1/1/500774)){target="\_blank"}. Since the profiling with Metaphlan only considers mapped reads, as well as our *Bowtie2* mapping against the reference, we decided to map the trimmed reads without the `–-no-unal` option against the Metaphlan database (vJan21), and then extract the unaligned reads an convert to fasta using *samtools* *f -4* for further analysis. We used the following bash script:
 
 `for sample in A2 B2 F2 C3 D3 Ctrl Ctrl2 N1 N2 N4 N6;`
 
@@ -921,7 +920,7 @@ corrplot(as.matrix(corr_frame), tl.col = "black", p.mat = corr_frame2,
 
 ### Assembly basic stats
 
-Assemblies were obtained with [MetaSpades](https://github.com/ablab/spades){target="_blank"}. The piPolB sample could not be assembled due to a high proportion of low complexity reads, particularly in the R2 file (see <https://www.seqme.eu/en/magazine/sequencing-low-diversity-libraries-on-illumina>){target="_blank"}. We tried to bypass this problem using different trimming alternatives, like [PRINSEQ++](https://github.com/Adrian-Cantu/PRINSEQ-plus-plus){target="_blank"}, [FastP](https://github.com/OpenGene/fastp){target="_blank"} or [Atropos](https://github.com/jdidion/atropos){target="_blank"}. Only after using FastP for trimming out reads with complexity \<70 (option -Y 70), we could assembly the piPolB sample (N1 raw reads), but the assembly was poor and non comparable with the other samples. Therefore, the piPolB sample was not included in the following analysis.
+Assemblies were obtained with [MetaSpades](https://github.com/ablab/spades){target="_blank"}. The piPolB sample could not be assembled due to a high proportion of low complexity reads, particularly in the R2 file (see [https://www.seqme.eu/en/magazine/sequencing-low-diversity-libraries-on-illumina](https://www.seqme.eu/en/magazine/sequencing-low-diversity-libraries-on-illumina){target="_blank"}). We tried to bypass this problem using different trimming alternatives, like [PRINSEQ++](https://github.com/Adrian-Cantu/PRINSEQ-plus-plus){target="_blank"}, [FastP](https://github.com/OpenGene/fastp){target="_blank"} or [Atropos](https://github.com/jdidion/atropos){target="_blank"}. Only after using FastP for trimming out reads with complexity \<70 (option -Y 70), we could assembly the piPolB sample (N1 raw reads), but the assembly was poor and non comparable with the other samples. Therefore, the piPolB sample was not included in the following analysis.
 
 The assemblies were evaluated with [MetaQuast](https://github.com/ablab/quast){target="_blank"} v. 5.1.0rc1. A comparative analysis of all the samples was performed without the reads to save computational resources (check full report [here](quast_results/results_2022_03_10_13_57_32/combined_reference/report.html){target="_blank"}). A full analysis including the reads were performed independently for each sample but due to size limitations it will be available along with the raw reads. All data is available in the repo folder *quast_results* and individual tables from detailed reports were merged using the script [*merge_quast_reports.R*](scripts/merge_quast_reports.R){target="_blank"}.
 
@@ -978,7 +977,7 @@ misas$Assembly  <-   factor(misas$Assembly,levels=c("NA","RP-MDA","PrimPol-MDA",
 
 misas_plot <- ggplot(misas) + 
   geom_point(aes(x=Assembly, y=as.numeric(misas[,2]),color=Assembly,fill=Assembly),size=4, alpha=0.7,position=position_dodge(width=0.5)) +  
-  geom_point(aes(x=Assembly, y=as.numeric(misas[,17])/4,fill=Assembly), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
+  geom_point(aes(x=Assembly, y=as.numeric(misas[,17])/4,fill=Assembly), shape=21, color="black", size=2,position=position_dodge(width=0.8)) +
   scale_y_continuous(name = "Contig misassemblies",breaks = seq(0, 150, 20),limit=c(0,100),sec.axis = sec_axis(~ .*4, name="Local misassemblies",breaks = seq(0,400,50))) +
  theme_bw() +  
   scale_color_manual(values = colorines) + 
@@ -1097,13 +1096,79 @@ contigs_gc2
 
 # ggsave("figures/GC_contigs2.svg", contigs_gc2, width=10, height=6)
 
+#stats
+#test for normality and homogeneous variance intra groups
+res_aov <- aov(value~variable,data=gc_melt)
+shapiro.test(res_aov$residuals) #NO normality 
+leveneTest(value~variable,data=gc_melt) #NO homogeneus variance
+#non parametric, pairwise (paired) tests
+pairwise.wilcox.test(x=gc_melt$value,g=gc_melt$variable,paired=TRUE,p.adjust.method = "BH")
+#no significant differences
+
 ```
 
 The coverage by the GC content can be also represented by Circos plots. The outer circle represents reference sequences with GC (%) heatmap, from 25% (white) to 79% (black). Color bars help to distinguish between different references. Assembly tracks are combined with mismatches visualization: green contigs indicate perfect assembly, whereas red contigs contains misassemblies, higher black columns indicate larger mismatch rate. Finally, the inner circle represents read coverage histogram.
 
 ![External Figure 3. Circos plots of all samples by the four reference genomes.](images/circos_all.png "Circos plots of all samples by the four reference genomes")
 
-The analysis of assemblies show that for all the samples *P. aeruginosa* genome seems different to the reference genome. On the other hand, *B. subtilis 110NA* is a 168 derivative with a deletion spanning Spo0A gene (see [Michel, J.F. y Cami, B., Ann. Inst. Pasteur 116(N1), 3-18 (1969)](https://gallica.bnf.fr/ark:/12148/bpt6k6436891f/f9.item){target="_blank"}). On the contrary the assemblies of *E. coli* and *K. rhizophila* fit with the reference genomes in most samples.
+The analysis of assemblies shows that for all the samples *P. aeruginosa* genome seems different to the reference genome. On the other hand, *B. subtilis 110NA* is a 168 derivative with a deletion spanning Spo0A gene (see [Michel, J.F. y Cami, B., Ann. Inst. Pasteur 116(N1), 3-18 (1969)](https://gallica.bnf.fr/ark:/12148/bpt6k6436891f/f9.item){target="_blank"}). On the contrary the assemblies of *E. coli* and *K. rhizophila* fit with the reference genomes in most samples.
+
+### Assembly annotation
+
+[Bakta](https://github.com/oschwengers/bakta) v.1.5.1 with Bakta Database v.4.0. ([Schwengers et al, 2021](https://pubmed.ncbi.nlm.nih.gov/34739369/)). Results in *bakta_results* folder in the repo.
+
+```{r}
+samples=c("ctrl","ctrl2","N4","D3","C3","F2","N2","B2","N6","A2")
+bakta <- lapply(samples, function(x) read.csv(file=paste0("bakta_stats/",x,".txt"),sep=":", header=F, skip=1,col.names = c("V1",paste(x))))
+bakta_merged <- Reduce(function(x, y) merge(x, y, by="V1",all=TRUE), bakta)  
+bakta_final <- bakta_merged[c(3,4,15,16,20,21,24,25,26),]
+bakta_final = data.frame(bakta_final, row.names = NULL)
+ names(bakta_final) <- c("Parameter","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+kbl(bakta_final, align="c",caption="Table 5. Bakta annotation stats") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, italic = T) 
+```
+The annotation of all the metagenomes was very similar, except for those from RP-MDA and piPolB+D amplified DNA, which contain a high number of pseudogenes, most likely as consequence of poor assembly
+
+### Variant calling
+
+We performed short nucleotide variant (SNV) detection with [Snippy](https://github.com/tseemann/snippy) 4.6.0, which has been benchmarked as the top variant caller for microbial genomes,showing both strong and uniform performance across different species ([Bush et al. 2020](https://pubmed.ncbi.nlm.nih.gov/32025702/)).
+
+```{r}
+samples=c("Ctrl","Ctrl2","N4","D3","C3","N1","F2","N2","B2","N6","A2")
+snps <- lapply(samples, function(x) read.csv(file=paste0("snippy_results/",x,"_snps.csv"),sep=",", header=T))
+shared_samples_NA <- list()
+samples_NA <- list()
+NA_samples <- list()
+snps_table <- data.frame(matrix(NA,    # Create empty data frame
+                          nrow = 11,
+                          ncol = 9))
+snps_table[,1] <-  c("NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+`%notin%` <- Negate(`%in%`)
+for (i in 1:length(samples)){
+  shared_samples_NA[[i]] <- snps[[i]][snps[[i]]$POS %in% snps[[1]]$POS,]
+  samples_NA[[i]] <- snps[[i]][snps[[i]]$POS %notin% snps[[1]]$POS,]
+  NA_samples[[i]] <- snps[[1]][snps[[1]]$POS %notin% snps[[i]]$POS,]
+  snps_table[i,2] <- nrow(snps[[i]])
+  snps_table[i,3] <- c(nrow(shared_samples_NA[[i]]))
+  snps_table[i,4] <- c(nrow(samples_NA[[i]]))
+  snps_table[i,5] <- table(samples_NA[[i]]$TYPE=="snp")["TRUE"]
+  snps_table[i,6] <- table(samples_NA[[i]]$TYPE=="complex")["TRUE"]
+  snps_table[i,7] <- c(nrow(NA_samples[[i]]))
+  snps_table[i,8] <- table(NA_samples[[i]]$TYPE=="snp")["TRUE"]
+  snps_table[i,9] <- table(NA_samples[[i]]$TYPE=="complex")["TRUE"]
+}
+names(snps_table) <- c("Sample","Variants","Variants in NA","New Variants","New SNPS","New Complex","Missing Variants","Missing SNPS","Missing Complex")
+
+
+kbl(snps_table, align="c",caption="Table 6. Variant detection") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, italic = T) 
+```
+
+As shown in Table 6, variant calling capacity varies greatly samples. For example, RP-MDA and piPolB(+D) amplification result in poor variant detection of both single nucleotide polymorphisms (snps) and complex variants. It should be noted that with the exception of samples NA and NA2, which called the same SNVs, there are differences between the duplicates and the second batch of samples from RP-MDA. piMDA and especially piMDA+D allow better variant detection, with piMDA+D being identical to the control samples. Nevertheless, the PrimPol-MDA and piMDA(+D) methods show similar and good performance in variant detection, with up to 60-80% of variants overlapping with the non-amplified samples.
 
 ### Assembly binning
 
@@ -1208,10 +1273,8 @@ kbl(figuritas, align="l",caption="") %>%
 ```
 
 ## Acknowledments and Funding
-We are indebted to Professor Margarita Salas for her longtime support and contributions to the discovery of piPolB and to the early development of this project.
-This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R.
-C. Egas laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No 685474, the METAFLUIDICS project.
-CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665. 
+
+We are indebted to Professor Margarita Salas for her longtime support and contributions to the discovery of piPolB and to the early development of this project. This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R. C. Egas' laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No 685474, the METAFLUIDICS project. CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665.
 
 ## Session Info
 
