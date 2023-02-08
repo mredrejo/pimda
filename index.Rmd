@@ -1274,7 +1274,8 @@ kbl(figuritas, align="l",caption="") %>%
 
 ## Acknowledments and Funding
 
-We are indebted to Professor Margarita Salas for her longtime support and contributions to the discovery of piPolB and to the early development of this project. This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R. C. Egas' laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No 685474, the METAFLUIDICS project. CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665.
+We are indebted to Professor Margarita Salas for her longstanding support and contributions to the discovery of piPolB and to the early development of this project. We also thank Dr. Miguel de Vega for valuable suggestions and critical reading of the manuscript.
+This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R. C. Egas' laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No. 685474, the METAFLUIDICS project. CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665.
 
 ## Session Info
 
