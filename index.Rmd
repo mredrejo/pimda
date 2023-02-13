@@ -18,6 +18,8 @@ format:
     toc-depth: 5
     number-sections: true
     code-overflow: wrap
+    code-fold: true
+    code-summary: "Show the code"
     css: piMDA.css
 ---
 
@@ -69,7 +71,7 @@ Data is shared under creative common license (CC BY-NC-ND 3.0 ES). Contact [mode
 
 ## Input sample
 
-The input DNA to be amplified is a mock metagenome made up of equal mass of purified genomes from 4 different bacteria, spanning Gram+ and Gram- species, and genomes with high and low GC, as detailed in the Table 1. Note that the used reference genomes were selected later on, using top hits of Blast searches perfomed the longest contigs from each assembly as query.
+The input DNA to be amplified is a mock metagenome made up of equal mass of purified genomes from 4 different bacteria, spanning Gram+ and Gram- species, and genomes with high and low GC, as detailed in the Table 1^[JM83 assembly was published in July 2022, but it shares an ANI of 99.98 with MG1655, so we decided not to change the reference genome.]. Note that the used reference genomes were selected later on, using top hits of Blast searches performed the longest contigs from each assembly as query.
 
 ```{r mda, warning=FALSE}
 #Define color palette for the whole report to facilitate future modifications
@@ -84,6 +86,7 @@ kbl(samples, align="c",caption="Table 1. Composition of the amplified mock-metag
      column_spec(1, italic = T) 
 # %>% save_kable("figures/samples.pdf")
 ```
+
 
 ## DNA amplification assays (MDA)
 
@@ -415,7 +418,7 @@ On the contrary, the *piMDA* and *piMDA+D* methods gave rise to a peak around 68
 
 Metagenomes profiling is usually the first approach to measure alpha diversity. In our case, profiling prior to assembly can be very useful to detect contamination. In this case, the trimmed reads were profiled using [Metaphlan](https://www.biorxiv.org/content/10.1101/2022.08.22.504593v1){target="_blank"} v.4.0.0 installed via Conda. Note that we used the `--unclassified_estimation` to include the estimation of genomic sequences not identified in the database.
 
-```{r profiling, fig.cap=capFig("Metagenomic samples reads profiling of amplified DNA by different MDA protocols"),fig.width=9, fig.height=5,fig.align = 'left'}
+```{r profiling, fig.cap=capFig("Metagenomic samples reads profiling of amplified DNA by different MDA protocols. Note that both plots show the same data, with different representation"),fig.width=10, fig.height=13,fig.align = 'left'}
 
 # read tsv, select and transform table
 meta<-read.table(file = 'metaphlan_results/merge_profiled_4.tsv', sep = '\t', header = TRUE)
@@ -440,15 +443,26 @@ meta2$Species <- factor(meta2$Genome, levels=c("Unclassified","Kokuria rhizophil
 profiling <- ggplot(meta2,aes(y=value, x=Species, group=variable, fill=variable)) + 
   geom_bar(stat="identity", position="dodge", alpha=0.8) + ylab("Reads (%)") +
   geom_text(aes(label=round(value, digits=2), group=variable), position=position_dodge(width=0.9), angle= 90, hjust=0,vjust=0.5) +   theme_bw() +
-  theme(axis.text.x = element_text(face = "italic",size=14)) + 
+  theme(axis.text.x = element_text(face = "bold.italic",size=11,angle=45,hjust=1)) + 
   theme(text = element_text(size=19)) + labs(color = "Sample") +
    theme(axis.text.y = element_text(size=17)) +
   scale_fill_manual(values=colorines[1:11], name="") + 
   scale_y_continuous(limits = c(0, 100), expand = c(0.08, -0.5)) 
 
-profiling
+
 #ggsave("figures/profiling_v4.svg", profiling, width=9,heigh=5)
+
+#same plot in a different display
+profilin2 <- ggplot(meta2,aes(y=value, x=variable, group=Species, fill=Species,label=paste(round(value,1),"%"))) + 
+         geom_bar(stat="identity", position="stack", alpha=0.8) + ylab("Reads (%)") +xlab("Sample")+ theme_bw() +
+    theme(axis.text.x = element_text(face = "bold",size=13,angle=45,vjust=1,hjust=1)) + 
+    theme(text = element_text(size=15))  +
+    theme(axis.text.y = element_text(size=15)) +  
+    scale_fill_manual(values=c(Unclassified="grey80","Kokuria rhizophila"="skyblue1","Pseudomonas aeruginosa"="slateblue2","Escherichia coli"="gold1","Bacillus sp"="orange2"), name="Species") + 
+    scale_y_continuous(limits = c(0, 100), expand = c(0.08, -0.5)) 
+profiling / profilin2
 ```
+
 
 As shown in Figure 7, the amount of unknown (or junk) DNA is very high in piPolB samples, particularly without denaturation step, but not in piMDA. However, in any of the samples we detected sequences from other organisms than the expected bacteria, downplaying the presence of contaminant DNA. This suggest that, rather than contaminant DNA, piPolB might be performing *ab initio* DNA synthesis.
 
@@ -1129,6 +1143,7 @@ kbl(bakta_final, align="c",caption="Table 5. Bakta annotation stats") %>%
         position = "center") %>%
      column_spec(1, italic = T) 
 ```
+
 The annotation of all the metagenomes was very similar, except for those from RP-MDA and piPolB+D amplified DNA, which contain a high number of pseudogenes, most likely as consequence of poor assembly
 
 ### Variant calling
@@ -1274,8 +1289,7 @@ kbl(figuritas, align="l",caption="") %>%
 
 ## Acknowledments and Funding
 
-We are indebted to Professor Margarita Salas for her longstanding support and contributions to the discovery of piPolB and to the early development of this project. We also thank Dr. Miguel de Vega for valuable suggestions and critical reading of the manuscript.
-This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R. C. Egas' laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No. 685474, the METAFLUIDICS project. CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665.
+We are indebted to Professor Margarita Salas for her longstanding support and contributions to the discovery of piPolB and to the early development of this project. We also thank Dr. Miguel de Vega for valuable suggestions and critical reading of the manuscript. This work was supported by a grants PGC2018-093723-A-100 and PID2021-123403NB-I00 funded by MCIN/AEI/10.13039/501100011033/FEDER A way to make Europe to M.R.R. C. Egas' laboratory was funded by the European Union´s Horizon 2020 Research and Innovation Program under Grant Agreement No. 685474, the METAFLUIDICS project. CDO was holder of a Fellowship from the Spanish Ministry of University FPU16/02665.
 
 ## Session Info
 
