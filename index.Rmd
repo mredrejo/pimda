@@ -1,10 +1,3 @@
-```{=html}
-<style>
-    body .main-container {
-        max-width: 1200px;
-    }
-</style>
-```
 ---
 title: "Comparison of MDA methods"
 author: "Modesto"
@@ -21,8 +14,8 @@ format:
     code-fold: true
     code-summary: "Show the code"
     css: piMDA.css
----
 
+---
 ------------------------------------------------------------------------
 
 ```{r wrap-hook, include=FALSE}
@@ -178,7 +171,7 @@ pairwise.wilcox.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.ad
 
 Statistical analysis indicate that yield differences among MDA methods are statistically significant, particularly the piMDA+D protocol respect to RP-MDA and piPolB. Let's see about time-course experiments:
 
-```{r time_course, fig.cap=capFig("DNA amplification time-course. All the amplification assays contained 10 ng of input DNA sample. Shown is the total DNA product in 50 µL reactions. Amplification yield from 2-4 experiments are shown"),fig.width=11,fig.height=7, fig.align = 'left'}
+```{r time_course, fig.cap=capFig("DNA amplification time-course. All the amplification assays contained 10 ng of input DNA sample. Shown is the total DNA product in 50 µL reactions. Amplification yield from 2-4 experiments are shown."),fig.width=11,fig.height=7, fig.align = 'left'}
 
 df <- read_pzfx("amplification_yield/Exp34_Datos.pzfx",table=1)
 free <- melt(df[,-2], id.vars = "ROWTITLE")
@@ -196,7 +189,7 @@ for (i in 1:nrow(free)){
 #add results from exp42
 df42 <-  read_pzfx("amplification_yield/Exp42_Datos.pzfx",table=3)
 df42 <- df42[-c(1,4,7),] #remove -DNA controls from plot
-df42 <- df42[,-c(3,4,7)] #remove NAs
+df42 <- df42[,-c(3)] #remove NAs
 
 #rename
 for (i in 1:nrow(df42)){
@@ -209,9 +202,11 @@ for (i in 1:nrow(df42)){
 }
 free42 <- melt(df42, id.vars="ROWTITLE")
 free42 <- free42[,c(2,1,3)]
-
+free42 <- free42[-31,]
 free42$variable <- gsub(" h_1", "", free42$variable) #change format
 free42$variable <- gsub(" h_2", "", free42$variable) #change format
+free42$variable <- gsub(" h_3", "", free42$variable) #change format
+free42$variable <- gsub(" h_4", "", free42$variable) #change format
 free42$variable <- as.numeric(free42$variable)
 names(free42) <- names(free)
 
@@ -222,7 +217,7 @@ free42$variable <- factor(free42$variable,levels=c("RP-MDA","PrimPol-MDA","piPol
 
 free <- rbind(free,free42)
 #plot
-free <- na.omit(free)
+
 q <- ggplot(free, aes(x=as.factor(ROWTITLE), y=value,colour=variable,fill=variable, alpha=0.12)) +  
   geom_boxplot() +  scale_y_continuous(limits = c(-0.8,40), expand = c(0, 0))  +
   guides(alpha="none",color="none")+
@@ -236,16 +231,26 @@ q <- ggplot(free, aes(x=as.factor(ROWTITLE), y=value,colour=variable,fill=variab
 ggplotly(q)
 #ggsave("figures/timecourse.svg",q,width=9,height=5)
 
+```
 
+```{r}
 #statistics comparison of yield/hour
 res_aov <- aov(value/ROWTITLE ~ variable,  data = free)
 shapiro.test(res_aov$residuals) #normality test - NOPE
 leveneTest(value/ROWTITLE ~ variable,  data = free) #NO homogeneus variance
-kruskal.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric multiple groups comparison
-pairwise.wilcox.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH")#non-parametric pairwise
+kruskal.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH") #non-parametric multiple groups comparison
+pp <- pairwise.wilcox.test((free$value/free$ROWTITLE),free$variable,paired=FALSE, p.adjust.method = "BH",exact=FALSE) #non-parametric pairwise
+
+as.data.frame(format(pp$p.value,scientific=FALSE,digits=1)) %>%
+    replace(., .<0,"") %>%
+    mutate_all(~cell_spec(.x, color = ifelse(.x < 0.01, "firebrick", ifelse(.x < 0.05, "steelblue","black")))) %>%
+    kable(escape = F,align="c",caption="Table 2. P-value of pairwise comparison of time course assays") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, bold = T) 
 ```
 
-These results show that the piMDA method is comparable with other MDA alternatives in terms of sensitivity and DNA production. Moreover, its yield can be increased with the addition of a DNA denaturation step, obtaining statistically significant more amount of DNA per time unit than the RP-MDA protocol.
+These results show that the piMDA method is comparable with other MDA alternatives in terms of sensitivity and DNA production. Moreover, its yield can be increased with the addition of a DNA denaturation step, obtaining statistically significant more amount of DNA per time unit than all the other protocols, except PrimPol-MDA.
 
 It should be also considered that these results apply specifically to this particular sample, and the reduced yield of RP-MDA respect to the other methods is likely by the presence of high GC content sequences, as discussed below.
 
@@ -255,14 +260,14 @@ Samples from independent amplification experiments, as well as the control non-a
 
 ### QC stats and trimming
 
-The raw files were first analyzed for basic statistics with [Seqkit](https://bioinf.shenwei.me/seqkit/){target="_blank"} v.2.3 (Table 2).
+The raw files were first analyzed for basic statistics with [Seqkit](https://bioinf.shenwei.me/seqkit/){target="_blank"} v.2.3 (Table 3).
 
 ```{r}
 samples <- read.table("qc/raw_stats.csv",header=TRUE, sep=";", na.strings = "")
 for (i in 1:nrow(samples)){
   samples$file[i] <- gsub("freeDNA_data/","",samples$file[i]) 
 }
-kbl(samples, align="c",caption="Table 2. Stats of raw Illumina data") %>%
+kbl(samples, align="c",caption="Table 3. Stats of raw Illumina data") %>%
     kable_styling(bootstrap_options = "striped", full_width = F,
         position = "center") %>%
      column_spec(1, bold = T) 
@@ -347,13 +352,13 @@ g_t
 ```{r}
 #table
 tablita_trimmo <- trimmo[order(trimmo$sample),-2]
-kbl(tablita_trimmo, align = "c", row.names=F, caption = "Table 3. Trimmomatic stats (%)") %>%
+kbl(tablita_trimmo, align = "c", row.names=F, caption = "Table 4. Trimmomatic stats (%)") %>%
     kable_styling(bootstrap_options = "striped", full_width = F,
         position = "center") %>%
     column_spec(1, italic = T)  #  %>% save_kable('figures/trimmo_table.pdf')
 ```
 
-Quality filtering of the samples show that piPolB and piPolB+D samples contain lower quality reads, with less paired reads survival and more dropped reads. Also (Table 3), as expected only-forward survival reads were more (15,89% and 26,41%, respectively) than only-reverse reads (9,06% and 11,12%, respectively). This results indicate a possible library prep or sequencing problem that hinders the analysis of those samples, likely due to the hyperbranched structure of the piPolB-synthesized DNA.
+Quality filtering of the samples show that piPolB and piPolB+D samples contain lower quality reads, with less paired reads survival and more dropped reads. Also (Table 4), as expected only-forward survival reads were more (15,89% and 26,41%, respectively) than only-reverse reads (9,06% and 11,12%, respectively). This results indicate a possible library prep or sequencing problem that hinders the analysis of those samples, likely due to the hyperbranched structure of the piPolB-synthesized DNA.
 
 ### Reads per GC content
 
@@ -492,9 +497,7 @@ On the other hand, *RP-MDA* and *PrimPol-MDA* contain an overrepresentation of *
 
 ### Reference genomes breadth and coverage
 
-Reads were mapped against the reference genomes with Bowtie2 v2.3.5.1 and further analyzed with [Weesam](https://bioinformatics.cvr.ac.uk/weesam-version-1-5/){target="_blank"} v1.6 and [Alfred](https://www.gear-genomics.com/docs/alfred/){target="_blank"} v0.1.16. The Weesam reports can be accessed in a merged [webpage](weeSam/weesam_full.html){target="_blank"}. Alfred reports are accesible as a *csv* [table](alfred/merded/merged_alfred.csv){target="_blank"}.
-
-Mean values per reference genome are shown in Table 4.
+Reads were mapped against the reference genomes with Bowtie2 v2.3.5.1 and further analyzed with [Weesam](https://bioinformatics.cvr.ac.uk/weesam-version-1-5/){target="_blank"} v1.6 and [Alfred](https://www.gear-genomics.com/docs/alfred/){target="_blank"} v0.1.16. The Weesam reports can be accessed in a merged [webpage](weeSam/weesam_full.html){target="_blank"}. Alfred reports are accesible as a *csv* [table](alfred/merded/merged_alfred.csv){target="_blank"}. Mean values per sample are shown below in Table 5.
 
 ```{r}
 #WeeSam html files were merged by copy/paste from the source file by hand and then exported into csv 
@@ -688,7 +691,7 @@ tablita[, 8] <- round(tablita[, 8], digits = 4)
 tablita <- tablita %>% mutate(`Mapped reads` = format(`Mapped reads`, scientific = FALSE, big.mark = ","))
 tablita <- tablita %>% mutate(Breadth = format(Breadth, scientific = FALSE, big.mark = ","))
 
-kbl(tablita, align = "c", row.names=F, caption = "Table 4. Mean mapping and coverage parameters per reference genome at high sequencing depth") %>%
+kbl(tablita, align = "c", row.names=F, caption = "Table 5. Mean mapping and coverage parameters sample.") %>%
     kable_styling(bootstrap_options = "striped", full_width = F,
         position = "center") %>%
     column_spec(1, italic = T)  #  %>% save_kable('figures/aligned2.pdf')
@@ -802,17 +805,19 @@ shapiro.test(res_aov$residuals) #NO normality
 leveneTest(Nor_cov~Sample,data=gc_cov_melted2) #NO homogeneus variance
 #non parametric, pairwise (paired) tests
 kk <- pairwise.wilcox.test(x=gc_cov_melted2$Nor_cov,g=gc_cov_melted2$Sample,paired=TRUE)
-kk$p.value <- format(kk$p.value,scientific=FALSE)
 
-as.data.frame(kk$p.value) %>% 
-      replace(., .<0, "") %>%
-    mutate_all(~cell_spec(.x, color = ifelse(.x < 0.01, "firebrick",ifelse(.x <0.05,"steelblue", "black")))) %>%
-  kable(escape = F) %>%
-  column_spec(1, bold = TRUE) %>%
-    kable_styling(bootstrap_options = "striped", full_width = F, font_size = 12, position = "left") 
+as.data.frame(format(kk$p.value,scientific=FALSE,digits=1)) %>%
+    replace(., .<0,"") %>%
+    mutate_all(~cell_spec(.x, color = ifelse(.x < 0.01, "firebrick", ifelse(.x < 0.05, "steelblue","black")))) %>%
+    kable(escape = F,align="c",caption="Table 6. P-value of pairwise comparison of GC bias in the reference metagenome") %>%
+    kable_styling(bootstrap_options = "striped", full_width = F,
+        position = "center") %>%
+     column_spec(1, bold = T) 
+
+
 ```
 
-Only piPolB(+D) and RP-MDA are significantly different than controls samples.
+Only piMDA+D samples are not significantly different than controls samples.
 
 ##### Correlations: GC content vs. Normalized Coverage
 
@@ -1138,7 +1143,7 @@ bakta_merged <- Reduce(function(x, y) merge(x, y, by="V1",all=TRUE), bakta)
 bakta_final <- bakta_merged[c(3,4,15,16,20,21,24,25,26),]
 bakta_final = data.frame(bakta_final, row.names = NULL)
  names(bakta_final) <- c("Parameter","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
-kbl(bakta_final, align="c",caption="Table 5. Bakta annotation stats") %>%
+kbl(bakta_final, align="c",caption="Table 7. Bakta annotation stats") %>%
     kable_styling(bootstrap_options = "striped", full_width = F,
         position = "center") %>%
      column_spec(1, italic = T) 
@@ -1177,13 +1182,13 @@ for (i in 1:length(samples)){
 names(snps_table) <- c("Sample","Variants","Variants in NA","New Variants","New SNPS","New Complex","Missing Variants","Missing SNPS","Missing Complex")
 
 
-kbl(snps_table, align="c",caption="Table 6. Variant detection") %>%
+kbl(snps_table, align="c",caption="Table 8. Variant detection") %>%
     kable_styling(bootstrap_options = "striped", full_width = F,
         position = "center") %>%
      column_spec(1, italic = T) 
 ```
 
-As shown in Table 6, variant calling capacity varies greatly samples. For example, RP-MDA and piPolB(+D) amplification result in poor variant detection of both single nucleotide polymorphisms (snps) and complex variants. It should be noted that with the exception of samples NA and NA2, which called the same SNVs, there are differences between the duplicates and the second batch of samples from RP-MDA. piMDA and especially piMDA+D allow better variant detection, with piMDA+D being identical to the control samples. Nevertheless, the PrimPol-MDA and piMDA(+D) methods show similar and good performance in variant detection, with up to 60-80% of variants overlapping with the non-amplified samples.
+As shown in Table 8, variant calling capacity varies greatly samples. For example, RP-MDA and piPolB(+D) amplification result in poor variant detection of both single nucleotide polymorphisms (snps) and complex variants. It should be noted that with the exception of samples NA and NA2, which called the same SNVs, there are differences between the duplicates and the second batch of samples from RP-MDA. piMDA and especially piMDA+D allow better variant detection, with piMDA+D being identical to the control samples. Nevertheless, the PrimPol-MDA and piMDA(+D) methods show similar and good performance in variant detection, with up to 60-80% of variants overlapping with the non-amplified samples.
 
 ### Assembly binning
 
