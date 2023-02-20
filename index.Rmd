@@ -1190,6 +1190,25 @@ kbl(snps_table, align="c",caption="Table 8. Variant detection") %>%
 
 As shown in Table 8, variant calling capacity varies greatly samples. For example, RP-MDA and piPolB(+D) amplification result in poor variant detection of both single nucleotide polymorphisms (snps) and complex variants. It should be noted that with the exception of samples NA and NA2, which called the same SNVs, there are differences between the duplicates and the second batch of samples from RP-MDA. piMDA and especially piMDA+D allow better variant detection, with piMDA+D being identical to the control samples. Nevertheless, the PrimPol-MDA and piMDA(+D) methods show similar and good performance in variant detection, with up to 60-80% of variants overlapping with the non-amplified samples.
 
+### Assembly k-mer content
+We used KAT v.2.4.1 to compare the Illumina reads with their corresponding Spades assembly. 
+
+```{r kat_assembly, fig.cap=capFig("KAT k-mer plots comparing k-mer content of Illumina PCR-free reads with the corresponding assembly. The black dots of the graph represents the distribution of k-mers present in the reads but not in the assembly, and the red area represents the distribution of k-mers present in the reads and once in the assembly"),fig.width=11,fig.height=7,fig.align = 'left', warning=FALSE}
+reads <- c("Ctrl","Ctrl2","N4","D3","C3","F2","N2","B2","N6","A2")
+samples <- c("NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
+kat <- list()
+p_kat <- list()
+
+kat <- lapply(reads, function(x) read.csv(paste0("kat/sample_vs_assembly/",x,"_m16_pe_v_asm_test-main.mx"), sep=" ",header=FALSE, skip=12))
+
+
+p_kat <- lapply(1:length(reads), FUN = function(i) {
+  p_kat[[i]] <- ggplot(data=kat[[i]]) +   geom_point(aes_(x=1:length(kat[[i]][,5]),y=(kat[[i]][,5])),col="cyan",alpha=0.5) + geom_point(aes_(x=1:length(kat[[i]][,4]),y=(kat[[i]][,4])),col="green",alpha=0.5) + geom_point(aes_(x=1:length(kat[[i]][,3]),y=(kat[[i]][,3])),col="orange",alpha=0.5) + geom_point(aes_(x=1:length(kat[[i]][,2]),y=(kat[[i]][,2])),col="red",alpha=0.5) +  geom_point(aes_(x=1:length(kat[[i]][,1]),y=(kat[[i]][,1])),alpha=0.5) +  ylim(0,200000) + theme_bw() + theme(text = element_text(size=13)) + xlab("k-mer frequency") + ylab("Number of distinct k-mers") + ggtitle(samples[i])    
+})
+do.call("grid.arrange", c(p_kat, ncol=5))
+```
+The black line in piPolB+D has a larger extension along the x-axis, indicating a higher number of k-mers excluded from the assembly. The red area in all graphs represents a normal distribution of k-mers found in the reads and occurring once in the assembly. The presence of orange dots in some samples, namely RP-MDA, RP-MDA2, PrimPol-MDA and piPolB+D, reflects the presence of repetitive content throughout the assembly, with k-mers in the reads occurring >2 times in the assembly, in agreement with a higher level of biased overamplification (Figure 4).
+
 ### Assembly binning
 
 With [MetacoAG](https://github.com/Vini2/MetaCoAG){target="_blank"} 1.0. MetacoAG uses the information of assembly graphs as well as composition (*k*-mers), gene markers and coverage information. Obtained bins were then assigned to the reference genomes by the mash distances, selecting those with coverage \>5% and p-value \< 10^-10^. Results are available in the folder *binning* in the repo.
