@@ -1,8 +1,0 @@
-All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
-
-Assembly                       NA      NA_2    Phi29+RP  Phi29+RP_2  PrimPol+Phi29  piPolB+D  piMDA   piMDA_2  piMDA+D  piMDA+D_2
-# fully unaligned contigs      0       0       1         0           0              0         0       0        0        0        
-Fully unaligned length         0       0       605       0           0              0         0       0        0        0        
-# partially unaligned contigs  29      27      51        33          27             37        31      30       29       27       
-Partially unaligned length     546235  546756  426759    467211      467631         467349    552365  543578   552824   547719   
-# N's                          0       0       0         0           0              0         0       0        0        0        

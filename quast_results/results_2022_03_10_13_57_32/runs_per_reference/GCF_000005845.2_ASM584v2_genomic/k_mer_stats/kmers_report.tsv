@@ -1,8 +1,0 @@
-Assembly	NA	NA_2	Phi29+RP	Phi29+RP_2	PrimPol+Phi29	piPolB+D	piMDA	piMDA_2	piMDA+D	piMDA+D_2
-K-mer-based compl. (%)	99.23	99.22	98.26	99.18	99.20	99.12	99.19	98.96	99.22	99.21
-K-mer-based cor. length (%)	99.45	98.60	99.52	90.32	99.63	98.35	89.73	99.56	96.18	99.54
-K-mer-based mis. length (%)	0.00	0.94	0.00	0.86	0.00	1.11	0.00	0.00	3.41	0.00
-K-mer-based undef. length (%)	0.55	0.46	0.48	8.82	0.37	0.54	10.27	0.44	0.42	0.46
-# k-mer-based misjoins	0	1	0	1	0	1	0	0	2	0
-    # k-mer-based translocations	0	0	0	0	0	0	0	0	0	0
-    # k-mer-based 100kbp relocations	0	1	0	1	0	1	0	0	2	0

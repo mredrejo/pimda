@@ -1,1 +1,0 @@
-chr	-	Kocuria_rhizophila_ATCC_9341_NC_010617.1	Kocuria_rhizophila_ATCC_9341_NC_010617.1	0	2696980	lgrey

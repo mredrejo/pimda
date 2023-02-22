@@ -1,0 +1,26 @@
+Assembly;NA;NA2;RP-MDA;RP-MDA2;PrimPol-MDA;piPolB+D;piMDA;piMDA2;piMDA+D;piMDA+D
+# misassemblies;44;48;90;48;48;39;59;57;44;45
+  # contig misassemblies;44;48;90;48;48;39;59;57;44;45
+    # c. relocations;44;47;79;47;47;39;59;56;44;45
+    # c. translocations;0;0;0;0;0;0;0;0;0;0
+    # c. inversions;0;1;7;1;1;0;0;1;0;0
+    # c. interspecies translocations;0;0;4;0;0;0;0;0;0;0
+  # scaffold misassemblies;0;0;0;0;0;0;0;0;0;0
+    # s. relocations;0;0;0;0;0;0;0;0;0;0
+    # s. translocations;0;0;0;0;0;0;0;0;0;0
+    # s. inversions;0;0;0;0;0;0;0;0;0;0
+    # s. interspecies translocations;0;0;0;0;0;0;0;0;0;0
+# misassembled contigs;21;21;83;29;24;26;27;31;20;21
+Misassembled contigs length;5620046;6128343;5242973;4884253;6113493;4137348;7102098;7614770;5714473;7040174
+# possibly misassembled contigs;29;27;45;32;27;36;31;30;29;27
+    # possible misassemblies;116;117;77;111;115;109;116;115;119;113
+# local misassemblies;50;43;327;171;46;49;60;97;44;50
+# scaffold gap ext. mis.;0;0;0;0;0;0;0;0;0;0
+# scaffold gap loc. mis.;0;0;0;0;0;0;0;0;0;0
+# structural variations;10;17;5;16;15;9;9;12;19;8
+# unaligned mis. contigs;0;0;6;1;0;1;0;0;0;0
+# mismatches;31527;31498;22521;31629;31647;31433;31639;31499;31480;31462
+# indels;1154;1139;1654;1342;1159;1338;1148;1100;1117;1101
+# indels (<= 5 bp);1005;992;965;975;1014;1186;1003;959;969;958
+# indels (> 5 bp);149;147;689;367;145;152;145;141;148;143
+Indels length;4351;4262;24759;11583;4242;4802;;4075;4344;4221

@@ -1,133 +1,0 @@
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 27%Stage 2: 49%Stage 2: 68%Stage 2: 82%Stage 2: 92%Stage 2: 97%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 28%Stage 2: 51%Stage 2: 69%Stage 2: 83%Stage 2: 93%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-[M::mm_idx_gen::0.075*1.04] collected minimizers
-[M::mm_idx_gen::0.090*3.77] sorted minimizers
-[M::main::0.090*3.77] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.090*3.77] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.095*3.62] distinct minimizers: 671015 (99.83% are singletons); average occurrences: 1.002; average spacing: 5.997
-[M::worker_pipeline::0.104*3.84] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.110 sec; CPU: 0.406 sec
-[M::mm_idx_gen::0.076*1.04] collected minimizers
-[M::mm_idx_gen::0.091*3.98] sorted minimizers
-[M::main::0.091*3.98] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.091*3.98] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.096*3.81] distinct minimizers: 670980 (99.83% are singletons); average occurrences: 1.002; average spacing: 5.997
-[M::worker_pipeline::0.102*4.01] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.107 sec; CPU: 0.414 sec
-[M::mm_idx_gen::0.075*1.04] collected minimizers
-[M::mm_idx_gen::0.089*3.52] sorted minimizers
-[M::main::0.089*3.52] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.089*3.52] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.094*3.37] distinct minimizers: 670980 (99.57% are singletons); average occurrences: 1.005; average spacing: 5.997
-[M::worker_pipeline::0.102*3.75] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.107 sec; CPU: 0.387 sec
-[M::mm_idx_gen::0.076*1.04] collected minimizers
-[M::mm_idx_gen::0.091*3.21] sorted minimizers
-[M::main::0.091*3.21] loaded/built the index for 10 target sequence(s)
-[M::mm_mapopt_update::0.091*3.21] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 10
-[M::mm_idx_stat::0.097*3.09] distinct minimizers: 671001 (99.80% are singletons); average occurrences: 1.003; average spacing: 5.997
-[M::worker_pipeline::0.104*3.45] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.109 sec; CPU: 0.365 sec
-[M::mm_idx_gen::0.076*1.03] collected minimizers
-[M::mm_idx_gen::0.089*3.66] sorted minimizers
-[M::main::0.089*3.66] loaded/built the index for 14 target sequence(s)
-[M::mm_mapopt_update::0.089*3.66] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 14
-[M::mm_idx_stat::0.095*3.51] distinct minimizers: 671049 (99.83% are singletons); average occurrences: 1.002; average spacing: 5.997
-[M::worker_pipeline::0.100*3.78] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.105 sec; CPU: 0.384 sec
-[M::mm_idx_gen::0.075*1.04] collected minimizers
-[M::mm_idx_gen::0.090*3.81] sorted minimizers
-[M::main::0.090*3.81] loaded/built the index for 55 target sequence(s)
-[M::mm_mapopt_update::0.090*3.81] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 55
-[M::mm_idx_stat::0.095*3.65] distinct minimizers: 670958 (99.82% are singletons); average occurrences: 1.002; average spacing: 5.998
-[M::worker_pipeline::0.101*3.95] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.106 sec; CPU: 0.405 sec
-[M::mm_idx_gen::0.074*1.04] collected minimizers
-[M::mm_idx_gen::0.088*3.87] sorted minimizers
-[M::main::0.088*3.87] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.088*3.87] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.094*3.70] distinct minimizers: 670982 (99.83% are singletons); average occurrences: 1.002; average spacing: 5.997
-[M::worker_pipeline::0.100*4.02] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.105 sec; CPU: 0.408 sec
-[M::mm_idx_gen::0.076*1.04] collected minimizers
-[M::mm_idx_gen::0.090*4.43] sorted minimizers
-[M::main::0.090*4.43] loaded/built the index for 15 target sequence(s)
-[M::mm_mapopt_update::0.090*4.42] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 15
-[M::mm_idx_stat::0.095*4.22] distinct minimizers: 671013 (99.76% are singletons); average occurrences: 1.003; average spacing: 5.997
-[M::worker_pipeline::0.101*4.49] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.106 sec; CPU: 0.457 sec
-[M::mm_idx_gen::0.075*1.04] collected minimizers
-[M::mm_idx_gen::0.090*3.97] sorted minimizers
-[M::main::0.090*3.97] loaded/built the index for 16 target sequence(s)
-[M::mm_mapopt_update::0.090*3.97] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 16
-[M::mm_idx_stat::0.095*3.80] distinct minimizers: 670929 (99.84% are singletons); average occurrences: 1.002; average spacing: 5.997
-[M::worker_pipeline::0.103*4.14] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.108 sec; CPU: 0.431 sec
-[M::mm_idx_gen::0.076*1.04] collected minimizers
-[M::mm_idx_gen::0.090*3.33] sorted minimizers
-[M::main::0.090*3.33] loaded/built the index for 9 target sequence(s)
-[M::mm_mapopt_update::0.090*3.33] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 9
-[M::mm_idx_stat::0.096*3.19] distinct minimizers: 670944 (99.81% are singletons); average occurrences: 1.003; average spacing: 5.997
-[M::worker_pipeline::0.104*3.54] mapped 4186 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_NC_000964.3.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/NC_000964.3/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.109 sec; CPU: 0.372 sec

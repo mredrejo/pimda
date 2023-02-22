@@ -1,134 +1,0 @@
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 85%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 86%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 85%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 71%Stage 2: 93%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 43%Stage 2: 72%Stage 2: 88%Stage 2: 95%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 86%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 86%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 85%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 85%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 86%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-Error while reading suffix file
-**
-Stage 1: 0%Stage 1: 100%
-Stage 2: 0%Stage 2: 39%Stage 2: 68%Stage 2: 86%Stage 2: 94%Stage 2: 98%Stage 2: 99%Stage 2: 100%
-[M::mm_idx_gen::0.049*1.07] collected minimizers
-[M::mm_idx_gen::0.060*3.67] sorted minimizers
-[M::main::0.060*3.67] loaded/built the index for 16 target sequence(s)
-[M::mm_mapopt_update::0.060*3.67] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 16
-[M::mm_idx_stat::0.065*3.48] distinct minimizers: 446452 (99.89% are singletons); average occurrences: 1.001; average spacing: 6.004
-[M::worker_pipeline::0.069*3.78] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.074 sec; CPU: 0.264 sec
-[M::mm_idx_gen::0.050*1.06] collected minimizers
-[M::mm_idx_gen::0.061*3.75] sorted minimizers
-[M::main::0.061*3.75] loaded/built the index for 8 target sequence(s)
-[M::mm_mapopt_update::0.061*3.75] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 8
-[M::mm_idx_stat::0.065*3.57] distinct minimizers: 446484 (99.70% are singletons); average occurrences: 1.003; average spacing: 6.003
-[M::worker_pipeline::0.070*3.81] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/NA_2_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.075 sec; CPU: 0.271 sec
-[M::mm_idx_gen::0.017*1.19] collected minimizers
-[M::mm_idx_gen::0.026*10.08] sorted minimizers
-[M::main::0.027*10.07] loaded/built the index for 401 target sequence(s)
-[M::mm_mapopt_update::0.027*10.07] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 401
-[M::mm_idx_stat::0.028*9.64] distinct minimizers: 98308 (99.37% are singletons); average occurrences: 1.006; average spacing: 6.106
-[M::worker_pipeline::0.030*9.54] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.034 sec; CPU: 0.293 sec
-[M::mm_idx_gen::0.048*1.07] collected minimizers
-[M::mm_idx_gen::0.059*5.17] sorted minimizers
-[M::main::0.059*5.17] loaded/built the index for 661 target sequence(s)
-[M::mm_mapopt_update::0.059*5.17] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 661
-[M::mm_idx_stat::0.063*4.92] distinct minimizers: 399436 (99.86% are singletons); average occurrences: 1.001; average spacing: 6.046
-[M::worker_pipeline::0.067*5.12] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/Phi29-RP_2_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.071 sec; CPU: 0.347 sec
-[M::mm_idx_gen::0.053*1.06] collected minimizers
-[M::mm_idx_gen::0.063*4.17] sorted minimizers
-[M::main::0.063*4.17] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.063*4.17] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.068*3.97] distinct minimizers: 446482 (99.89% are singletons); average occurrences: 1.001; average spacing: 6.004
-[M::worker_pipeline::0.071*4.19] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/PrimPol-Phi29_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.076 sec; CPU: 0.305 sec
-[M::mm_idx_gen::0.051*1.05] collected minimizers
-[M::mm_idx_gen::0.062*3.63] sorted minimizers
-[M::main::0.062*3.63] loaded/built the index for 18 target sequence(s)
-[M::mm_mapopt_update::0.062*3.63] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 18
-[M::mm_idx_stat::0.066*3.45] distinct minimizers: 446441 (99.88% are singletons); average occurrences: 1.001; average spacing: 6.004
-[M::worker_pipeline::0.071*3.71] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piPolB-D_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.076 sec; CPU: 0.269 sec
-[M::mm_idx_gen::0.051*1.07] collected minimizers
-[M::mm_idx_gen::0.061*4.08] sorted minimizers
-[M::main::0.061*4.08] loaded/built the index for 30 target sequence(s)
-[M::mm_mapopt_update::0.061*4.08] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 30
-[M::mm_idx_stat::0.066*3.87] distinct minimizers: 446479 (99.60% are singletons); average occurrences: 1.005; average spacing: 6.003
-[M::worker_pipeline::0.070*4.15] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.074 sec; CPU: 0.294 sec
-[M::mm_idx_gen::0.051*1.06] collected minimizers
-[M::mm_idx_gen::0.062*3.89] sorted minimizers
-[M::main::0.062*3.89] loaded/built the index for 17 target sequence(s)
-[M::mm_mapopt_update::0.062*3.89] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 17
-[M::mm_idx_stat::0.067*3.69] distinct minimizers: 446574 (98.85% are singletons); average occurrences: 1.012; average spacing: 6.003
-[M::worker_pipeline::0.071*3.89] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA_2_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.076 sec; CPU: 0.282 sec
-[M::mm_idx_gen::0.048*1.08] collected minimizers
-[M::mm_idx_gen::0.060*4.02] sorted minimizers
-[M::main::0.060*4.02] loaded/built the index for 13 target sequence(s)
-[M::mm_mapopt_update::0.060*4.02] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 13
-[M::mm_idx_stat::0.064*3.81] distinct minimizers: 446463 (99.89% are singletons); average occurrences: 1.001; average spacing: 6.003
-[M::worker_pipeline::0.068*4.03] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.073 sec; CPU: 0.280 sec
-[M::mm_idx_gen::0.053*1.06] collected minimizers
-[M::mm_idx_gen::0.064*3.89] sorted minimizers
-[M::main::0.064*3.89] loaded/built the index for 10 target sequence(s)
-[M::mm_mapopt_update::0.064*3.88] mid_occ = 1000
-[M::mm_idx_stat] kmer size: 21; skip: 11; is_hpc: 0; #seq: 10
-[M::mm_idx_stat::0.068*3.70] distinct minimizers: 446473 (99.88% are singletons); average occurrences: 1.001; average spacing: 6.004
-[M::worker_pipeline::0.073*3.94] mapped 2677 sequences
-[M::main] Version: 2.11-r797
-[M::main] CMD: /home/modesto/Applications/quast-5.1rc/quast-5.1.0rc1/quast_libs/minimap2/minimap2 -cx sr -s202 --frag=no -t 32 /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/quast_corrected_input/piMDA-D_2_to_Kocuria_rhizophila_ATCC_9341.fasta /home/modesto/data/freeDNA/quast_results/results_2022_03_10_13_57_32/runs_per_reference/Kocuria_rhizophila_ATCC_9341/k_mer_stats/tmp/kmc.downsampled.txt
-[M::main] Real time: 0.078 sec; CPU: 0.292 sec

@@ -793,11 +793,11 @@ However, the piMDA samples show less variability in the coverage, with a low cov
 
 ##### Statistic comparisons of GC bias
 
-Normality test prompted us to non-parametrics group difference tests. We remove common outliers values, i.e., GC values below 15% and above 85%.
+Normality test prompted us to non-parametrics group difference tests. We remove common outliers values, i.e., GC values below 20% and above 80%.
 
 ```{r}
 
-gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$GC>14 & gc_cov_melted$GC<86,]
+gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$GC>19 & gc_cov_melted$GC<81,]
 
 #test for normality and homogeneous variance intra groups
 res_aov <- aov(Nor_cov~Sample,data=gc_cov_melted2)
@@ -821,14 +821,14 @@ Only piMDA+D samples are not significantly different than controls samples.
 
 ##### Correlations: GC content vs. Normalized Coverage
 
-Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we are trimming out data without common outliers (GC \>=15% and =\<85%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we are trimming out data without common outliers (GC \>=20% and =\<80%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r GCbias_cor, fig.cap=capFig("Correlations between GC content and normalized coverage with all data"),fig.height=7,fig.width=7 }
 #multiple correlation
 
 cor_matrix2 <- gc[[1]]$GC
 for (i in 1:length(gc)){
-  gc[[i]] <- gc[[i]][gc[[i]]$GC>14 & gc[[i]]$GC<86,] #remove outliers
+  gc[[i]] <- gc[[i]][gc[[i]]$GC>19 & gc[[i]]$GC<81,] #remove outliers
   cor_matrix2 <-cbindX(as.data.frame(cor_matrix2),as.data.frame(gc[[i]]$NORMALIZED_COVERAGE))
 }
 colnames(cor_matrix2) <-c("GC","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
@@ -870,7 +870,7 @@ col_genomes <- rep(colorines[12:15], times=11)
 #create the plot list
 plot_list2 <- list()
 plot_list2 <- lapply(1:length(gc), FUN = function(i) {
-  plot_list2[[i]]  <- ggplot(data=gc[[i]],aes(x=gc[[i]]$GC,y=gc[[i]]$WINDOWS)) + 
+  plot_list2[[i]]  <- ggplot(data=gc[[i]][gc[[i]]$WINDOWS > 5, ],aes(x=gc[[i]]$GC,y=gc[[i]]$WINDOWS)) + 
     geom_bar(stat="identity",fill="steelblue")+
     geom_line(aes(y=gc[[i]]$MEAN_BASE_QUALITY*15000), color="grey")+
     geom_point(aes(y=gc[[i]]$NORMALIZED_COVERAGE*200000), color="firebrick")+
@@ -886,13 +886,14 @@ do.call("grid.arrange", c(plot_list2, ncol=2))
 
 ##### Correlations: GC content vs. Normalized Coverage per reference genome
 
-Again, we are trimming out data without common outliers (GC \>=15% and =\<85%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Here we are removing outliers from each genome, using the Picard variable WINDOWS that represent the number of reference sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r,GCbias_cor_genome, fig.cap=capFig("Correlations among normalized coverage by GC content per reference genome"),fig.height=7,fig.width=7,warning=FALSE,fig.height=8,fig.width=12}
 
 cor_matrix <- data.frame(44, 3)
+
 for (i in 1:length(gc)) {
-    gc[[i]] <- gc[[i]][gc[[i]]$GC > 14 & gc[[i]]$GC < 86, ]  #remove <.5 values 
+    gc[[i]] <- gc[[i]][gc[[i]]$WINDOWS > 5, ]  #remove <5 values 
     cor_matrix[i, 1] <- gc_picard[i]
     tmp <- cor.test(gc[[i]]$GC, gc[[i]]$NORMALIZED_COVERAGE)
     cor_matrix[i, 2] <- tmp$estimate
