@@ -597,7 +597,7 @@ Another version in a single plot with two axis in the Figure 10 that allow us to
 pp <-  ggplot(weesam, aes(x=Bam_File, y=log(Avg_Depth,10), group=Ref_Name, color=Ref_Name,fill=Ref_Name,shape=Ref_Name)) + 
 geom_pointrange(aes(ymin=log(Avg_Depth,10), ymax=log(Avg_Depth+Std_Dev,10)), size=2, alpha=0.7,position=position_dodge(width=0.5))+ 
      geom_point(aes(x=Bam_File, y=Variation_Coefficient/10,fill=Ref_Name), shape=21, color="black", size=2,position=position_dodge(width=0.5)) +
-    scale_y_continuous(name = "Average Depth (Log10)",breaks = seq(0, 5, 1),limits=c(0,4),sec.axis = sec_axis(~ 10*., name="Variation Coefficient",breaks = seq(0,40,10))) +
+    scale_y_continuous(name = "Average Depth (Log10)",breaks = seq(0, 5, 1),limits=c(0,4),sec.axis = sec_axis(~ 10*., name="Variation Coefficient",breaks = seq(0,125,25))) +
   theme_bw() +  
   scale_fill_manual(values=colorines[12:15]) + 
   scale_color_manual(values=colorines[12:15]) + 
@@ -793,12 +793,12 @@ However, the piMDA samples show less variability in the coverage, with a low cov
 
 ##### Statistic comparisons of GC bias
 
-Normality test prompted us to non-parametrics group difference tests. We remove common outliers values, i.e., GC values below 20% and above 80%.
+Normality test prompted us to non-parametrics group difference tests. Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference metagenome sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r}
 
-gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$GC>19 & gc_cov_melted$GC<81,]
-
+#gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$GC>19 & gc_cov_melted$GC<81,]
+gc_cov_melted2 <- gc_cov_melted[gc_cov_melted$W > 5,]
 #test for normality and homogeneous variance intra groups
 res_aov <- aov(Nor_cov~Sample,data=gc_cov_melted2)
 shapiro.test(res_aov$residuals) #NO normality 
@@ -821,14 +821,15 @@ Only piMDA+D samples are not significantly different than controls samples.
 
 ##### Correlations: GC content vs. Normalized Coverage
 
-Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we are trimming out data without common outliers (GC \>=20% and =\<80%) and we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+
 
 ```{r GCbias_cor, fig.cap=capFig("Correlations between GC content and normalized coverage with all data"),fig.height=7,fig.width=7 }
 #multiple correlation
 
 cor_matrix2 <- gc[[1]]$GC
 for (i in 1:length(gc)){
-  gc[[i]] <- gc[[i]][gc[[i]]$GC>19 & gc[[i]]$GC<81,] #remove outliers
+  gc[[i]] <- gc[[i]][gc[[i]]$WINDOWS > 5,] #remove outliers
   cor_matrix2 <-cbindX(as.data.frame(cor_matrix2),as.data.frame(gc[[i]]$NORMALIZED_COVERAGE))
 }
 colnames(cor_matrix2) <-c("GC","NA","NA2","RP-MDA","RP-MDA2","PrimPol-MDA","piPolB","piPolB+D","piMDA","piMDA2","piMDA+D","piMDA+D2")
@@ -870,7 +871,7 @@ col_genomes <- rep(colorines[12:15], times=11)
 #create the plot list
 plot_list2 <- list()
 plot_list2 <- lapply(1:length(gc), FUN = function(i) {
-  plot_list2[[i]]  <- ggplot(data=gc[[i]][gc[[i]]$WINDOWS > 5, ],aes(x=gc[[i]]$GC,y=gc[[i]]$WINDOWS)) + 
+  plot_list2[[i]]  <- ggplot(data=gc[[i]],aes(x=gc[[i]]$GC,y=gc[[i]]$WINDOWS)) + 
     geom_bar(stat="identity",fill="steelblue")+
     geom_line(aes(y=gc[[i]]$MEAN_BASE_QUALITY*15000), color="grey")+
     geom_point(aes(y=gc[[i]]$NORMALIZED_COVERAGE*200000), color="firebrick")+
@@ -886,7 +887,7 @@ do.call("grid.arrange", c(plot_list2, ncol=2))
 
 ##### Correlations: GC content vs. Normalized Coverage per reference genome
 
-Here we are removing outliers from each genome, using the Picard variable WINDOWS that represent the number of reference sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r,GCbias_cor_genome, fig.cap=capFig("Correlations among normalized coverage by GC content per reference genome"),fig.height=7,fig.width=7,warning=FALSE,fig.height=8,fig.width=12}
 
@@ -987,7 +988,7 @@ mismatches <-ggplot(tquast) +
   theme(plot.title = element_text(hjust = 0.5))
 
 #misassemblies report
-misas<- read.table("quast_results/results_2022_03_10_13_57_32/combined_reference/contigs_reports/transposed_report_misassemblies.tsv",head=TRUE, comment.char="@",sep="\t",na.strings = "")
+misas<- read.table("quast_results/transposed_report_misassemblies.tsv",head=TRUE, comment.char="@",sep="\t",na.strings = "")
 for (i in 1:nrow(misas)){
  misas$Assembly[i] <- gsub("_2","",misas$Assembly[i]) 
 }
@@ -1023,7 +1024,7 @@ Given the high background of mismatches in the *P aeruginosa* reference, we deci
 
 ```{r assemblies_per_ref, fig.cap=capFig("Assembly basic stats per reference genome"),fig.width=8,fig.height=6,fig.align = 'left'}
 
-quast_ref <- read.table("quast_results/results_2022_03_10_13_57_32/summary/TSV/num_contigs.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
+quast_ref <- read.table("quast_results/num_contigs.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
 names(quast_ref) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
 quast_ref[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned")
 
@@ -1051,7 +1052,7 @@ plot <- ggplot(quast_ref_melted) + geom_point(aes(x = ind,
     theme(plot.title = element_text(hjust = 0.5)) +
     scale_y_continuous(name = "Contigs")
 
-quast_ref_mism <- read.table("quast_results/results_2022_03_10_13_57_32/summary/TSV/num_mismatches_per_100_kbp.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
+quast_ref_mism <- read.table("quast_results/num_mismatches_per_100_kbp.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
 names(quast_ref_mism) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
 quast_ref_mism[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila")
 #normalize data
