@@ -14,8 +14,8 @@ format:
     code-fold: true
     code-summary: "Show the code"
     css: piMDA.css
-
 ---
+
 ------------------------------------------------------------------------
 
 ```{r wrap-hook, include=FALSE}
@@ -58,13 +58,15 @@ capFig = function(x){
 
 ## Disclaimer {data-link="Disclaimer"}
 
-This data analysis is preliminar and will be soon published in a manuscript authored by Carlos D. Ordóñez, Conceçao Egas and [Modesto Redrejo-Rodríguez](https://orcid.org/0000-0003-0014-4162){target="_blank"}. The [GitHub repo](https://github.com/mredrejo/pimda){target="_blank"} contains the original result files from all the analyses. Raw reads will be available in a suitable repository along with the manuscript.
+This data analysis is preliminar and will be soon published in a manuscript authored by Carlos D. Ordóñez, Conceçao Egas and [Modesto Redrejo-Rodríguez](https://orcid.org/0000-0003-0014-4162){target="_blank"}. The [GitHub repo](https://github.com/mredrejo/pimda){target="_blank"} contains the original result files from all the analyses. Raw sequencing data has been deposited in the e-cienciaDatos repository with DOI: [10.21950/HCNDGF](https://doi.org/10.21950/HCNDGF)
 
-Data is shared under creative common license (CC BY-NC-ND 3.0 ES). Contact [modesto.redrejo\@uam.es](mailto:modesto.redrejo@uam.es) for further info.
+Data is shared under creative common license (CC BY-NC 3.0 ES). Contact [modesto.redrejo\@uam.es](mailto:modesto.redrejo@uam.es) for further info.
 
 ## Input sample
 
-The input DNA to be amplified is a mock metagenome made up of equal mass of purified genomes from 4 different bacteria, spanning Gram+ and Gram- species, and genomes with high and low GC, as detailed in the Table 1^[JM83 assembly was published in July 2022, but it shares an ANI of 99.98 with MG1655, so we decided not to change the reference genome.]. Note that the used reference genomes were selected later on, using top hits of Blast searches performed the longest contigs from each assembly as query.
+The input DNA to be amplified is a mini mock metagenome made up of equal mass of purified genomes from 4 different bacteria, spanning Gram+ and Gram- species, and genomes with high and low GC, as detailed in the Table 1[^1]. Note that the used reference genomes were selected later on, using top hits of BlastN searches performed with a subset longest contigs from each assembly as query.
+
+[^1]: JM83 assembly was published in July 2022, but it shares an ANI of 99.98 with MG1655, so we decided not to change the reference genome.
 
 ```{r mda, warning=FALSE}
 #Define color palette for the whole report to facilitate future modifications
@@ -80,45 +82,11 @@ kbl(samples, align="c",caption="Table 1. Composition of the amplified mock-metag
 # %>% save_kable("figures/samples.pdf")
 ```
 
-
 ## DNA amplification assays (MDA)
 
-DNA amplification was carried out by six different protocols. (1) Random-primer hexamers-based MDA (RP-MDA) was carried out with REPLIg (Qiagen) and (2) TruePrime (4basebio) was used for a control primer-less MDA (PrimPol-MDA). In both cases, amplification protocols followed the manufacturer's instructions, including the routine alkaline denaturation step. Recombinant piPolB ([Redrejo-Rodríguez et al. 2017](https://pubmed.ncbi.nlm.nih.gov/29117562/ "piPolB description paper"){target="_blank"}) was used for a single-enzyme, primer-free DNA amplification in a single step MDA protocol (3) or an alternative protocol (4) with a previous alkaline denaturation step (piPolB+D). Finally, a new method based on the combination of piPolB and Φ29 DNA polymerases was developed. Two alternative protocols were used, (5) a single-step primer-independent MDA (piMDA) and a modification (6) with a previous alkaline denaturation of input DNA (piMDA+D).
+DNA amplification was carried out by six different protocols. (1) Random-primer hexamers-based MDA (RP-MDA) was carried out with REPLIg (Qiagen) and (2) TruePrime (4basebio) was used for a control primer-less MDA (PrimPol-MDA). In both cases, amplification protocols followed the manufacturer's instructions, including the routine alkaline denaturation step. Recombinant piPolB ([Redrejo-Rodríguez et al. 2017](https://pubmed.ncbi.nlm.nih.gov/29117562/ "piPolB description paper"){target="_blank"}) was used for a single-enzyme, primer-free DNA amplification in a single step MDA protocol (3) or an alternative protocol (4) with a previous alkaline denaturation step (piPolB+D). Additionally, a new method based on the combination of piPolB and Φ29 DNA polymerases was developed. Two alternative protocols were used, (5) a single-step primer-independent MDA (piMDA) and a modification (6) with a previous alkaline denaturation of input DNA (piMDA+D).
 
 Amplification yield was assessed by absolute measure of DNA amplification product was performed by fluorescence quantitation of dilutions from each sample (triplicates) with the AccuBlue High Sensitivity dsDNA Quantitation Kit ([Biotum, #31006](https://biotium.com/product/accublue-high-sensitivity-dsdna-quantitation-kit-with-8-dna-standards/){target="_blank"}) using a FLUOstar Omega (BMG Labtech) fluorimeter. AccuBlue High Sensitivity dsDNA Standards ([Biotum, #31006C](https://biotium.com/product/accublue-high-sensitivity-dsdna-standards-set-of-eight/){target="_blank"}) were used to do the range standard curve in each experiment.
-
-### Buffer optimization
-
-Some chemicals or biomolecules have been reported to enhance DNA polymerase proficiency and amplification yield, such as salts, reducing agents, BSA, or glycerol, among others ([Gao et al. 2019](https://pubmed.ncbi.nlm.nih.gov/30617407/){target="_blank"}, [Jan and Kim, 2022](https://pubmed.ncbi.nlm.nih.gov/35909465/){target="_blank"}). In our study, we decided to assess the effect of DTT, BSA and glycerol on the piMDA protocol.
-
-```{r, optimization, fig.cap=capFig("Optimization of piMDA buffer components."),fig.width=6,fig.height=11,fig.align = 'left',warning=FALSE}
-#read table
-opt <- read.csv2("amplification_yield/buffer_optimization.csv")
-bsa <- opt[opt$Chem=="BSA",]
-bsa$Conc[bsa$Conc==0] <- 0.001
-dtt <- opt[opt$Chem=="DTT",]
-gly <- opt[opt$Chem=="Glycerol",]
-#plots
-p1 <-  ggplot(bsa, aes(x=Conc, y=Yield, alpha=0.05)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",alpha=0.25) + scale_x_log10(breaks=c(0.001,0.01,0.1,1,10),labels=c(0,0.01,0.1,1,10)) + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))   + geom_jitter(width=0.1, pch = 21,  color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  
-    theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
-     xlab("BSA (mg/mL)") + ylab("DNA product (%)") 
-p2 <- ggplot(dtt, aes(x=Conc, y=Yield, alpha=0.1)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",alpha=0.25)  + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))  + geom_jitter(pch = 21, width=0.1, color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  
-    theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
-     xlab("DTT (mM)") + ylab("DNA product (%)") 
-  
-p3 <- ggplot(gly, aes(x=Conc, y=Yield, alpha=0.1)) + geom_smooth(color="deepskyblue3", fill="deepskyblue3",method = 'loess',fullrange=TRUE, span=5,alpha=0.25)  + scale_y_continuous(limits = c(-15,120), breaks=c(0,25,50,75,100,120))  + geom_jitter(pch = 21, width=0.1, color="deepskyblue3", fill="deepskyblue3") + theme_bw() +  scale_x_continuous(breaks=c(0,2,4,6,8,10,12,14,16), labels=c(0,2,4,6,8,10,12,14,16))+ 
-     theme(text=element_text(size=15)) + guides(alpha="none",color="none") +
-     xlab("Glycerol (%)") + ylab("DNA product (%)") 
-
-
-optimization <- p1/ p3/ p2
-optimization
-#ggsave("figures/opti.svg",optimization,width=6,height=11)
-```
-
-The presence of BSA does not affect the yield of the amplification up to 1 mg/mL. However, BSA is being highly inhibitory at high concentration, likewise increasing concentration of glycerol. Surprisingly, DTT results strongly stimulatory, an effect that seems generalized for reducing agents (see Carlos PhD's Thesis).
-
-![External Figure 1. Effect of different reducing agents on piPolB-MDA assays.](images/reducing.png "Effect of different reducing agents on piPolB-MDA assays")
 
 ### Methods comparison
 
@@ -252,11 +220,11 @@ as.data.frame(format(pp$p.value,scientific=FALSE,digits=1)) %>%
 
 These results show that the piMDA method is comparable with other MDA alternatives in terms of sensitivity and DNA production. Moreover, its yield can be increased with the addition of a DNA denaturation step, obtaining statistically significant more amount of DNA per time unit than all the other protocols, except PrimPol-MDA.
 
-It should be also considered that these results apply specifically to this particular sample, and the reduced yield of RP-MDA respect to the other methods is likely by the presence of high GC content sequences, as discussed below.
+It should be also considered that these results apply specifically to this particular sample, and the reduced yield of RP-MDA respect to the other methods is likely by the presence of high-GC content sequences, as deeply discussed in the alongside manuscript..
 
 ## Illumina raw data processing
 
-Samples from independent amplification experiments, as well as the control non-amplified metagenome (NA), were sequenced by Illumina NextSeq V2.5 High Output, 2x75 bp paired ends sequencing. To reduce the sequencing-derived bias, the sequencing libraries were prepared using TruSeq DNA PCR-Free Low Throughput Library Prep kit (Illumina), at Conceição Egas' lab ([GENOINSEQ - BIOCANT](http://www.genoinseq.com/en/home/){target="_blank"}, Portugal). As shown below, NA, RP-MDA, piMDA and piMDA+D were sequenced from duplicated independent experiments.
+Samples from independent amplification experiments, as well as the control non-amplified metagenome (NA), were sequenced by Illumina NextSeq 500 V2.5 High Output, 2x75 bp paired ends sequencing. To reduce the sequencing-derived bias, the sequencing libraries were prepared using TruSeq DNA PCR-Free Low Throughput Library Prep kit (Illumina), at Conceição Egas' lab ([GENOINSEQ - BIOCANT](http://www.genoinseq.com/en/home/){target="_blank"}, Portugal). As shown below, NA, RP-MDA, piMDA and piMDA+D were sequenced from duplicated independent experiments.
 
 ### QC stats and trimming
 
@@ -467,7 +435,6 @@ profilin2 <- ggplot(meta2,aes(y=value, x=variable, group=Species, fill=Species,l
     scale_y_continuous(limits = c(0, 100), expand = c(0.08, -0.5)) 
 profiling / profilin2
 ```
-
 
 As shown in Figure 7, the amount of unknown (or junk) DNA is very high in piPolB samples, particularly without denaturation step, but not in piMDA. However, in any of the samples we detected sequences from other organisms than the expected bacteria, downplaying the presence of contaminant DNA. This suggest that, rather than contaminant DNA, piPolB might be performing *ab initio* DNA synthesis.
 
@@ -793,7 +760,7 @@ However, the piMDA samples show less variability in the coverage, with a low cov
 
 ##### Statistic comparisons of GC bias
 
-Normality test prompted us to non-parametrics group difference tests. Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference metagenome sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Normality test prompted us to non-parametrics group difference tests. Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference metagenome sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS \>5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r}
 
@@ -821,8 +788,7 @@ Only piMDA+D samples are not significantly different than controls samples.
 
 ##### Correlations: GC content vs. Normalized Coverage
 
-Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
-
+Now we are going to analyze the correlation between the GC-bias in each sample (Normalized coverage by Picard) and the actual GC-bias in the reference metagenome (WINDOWS variable in the Picard output). Again, we use a threshold of WINDOWS \>5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r GCbias_cor, fig.cap=capFig("Correlations between GC content and normalized coverage with all data"),fig.height=7,fig.width=7 }
 #multiple correlation
@@ -887,7 +853,7 @@ do.call("grid.arrange", c(plot_list2, ncol=2))
 
 ##### Correlations: GC content vs. Normalized Coverage per reference genome
 
-Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS >5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
+Here we are removing outliers from each genome, using the same criteria: Picard variable WINDOWS that represent the number of reference sequences of a 100 bp window length in that GC value. We use a threshold of WINDOWS \>5. Then, we use the function `cor.mtest()` to obtain the R^2^ and the p-value for the correlations within a confidence interval of 95%, thus avoiding the noise from outliers.
 
 ```{r,GCbias_cor_genome, fig.cap=capFig("Correlations among normalized coverage by GC content per reference genome"),fig.height=7,fig.width=7,warning=FALSE,fig.height=8,fig.width=12}
 
@@ -1026,7 +992,7 @@ Given the high background of mismatches in the *P aeruginosa* reference, we deci
 
 quast_ref <- read.table("quast_results/num_contigs.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
 names(quast_ref) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
-quast_ref[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned")
+quast_ref[,1] <- c("B. subtilis", "E. coli","K. rhizophila","P. aeruginosa","Not_aligned")
 
 quast_ref_melted <-  cbind(Category = quast_ref[[1]], stack(quast_ref[-1]))
 #fix names
@@ -1035,7 +1001,7 @@ quast_ref_melted <- data.frame(lapply(quast_ref_melted, function(x) {gsub("D.1",
 color_ref <- c(colorines[12:15],"Not_aligned"="grey")
 quast_ref_melted$ind <- factor(quast_ref_melted$ind, levels = c("NA",
     "RP-MDA", "PrimPol-MDA", "piPolB+D", "piMDA", "piMDA+D"))
-quast_ref_melted$Category <- factor(quast_ref_melted$Category, levels = c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned"))
+quast_ref_melted$Category <- factor(quast_ref_melted$Category, levels = c("B. subtilis", "E. coli","K. rhizophila","P. aeruginosa","Not_aligned"))
 plot <- ggplot(quast_ref_melted) + geom_point(aes(x = ind,
     y = as.numeric(values), group = Category, color = Category,
     fill = Category, shape = Category), size = 4, alpha = 0.7,
@@ -1054,7 +1020,7 @@ plot <- ggplot(quast_ref_melted) + geom_point(aes(x = ind,
 
 quast_ref_mism <- read.table("quast_results/num_mismatches_per_100_kbp.tsv",header=TRUE, na.strings = "", sep="\t",strip.white = TRUE)
 names(quast_ref_mism) <- c("Reference","NA","NA","RP-MDA","RP-MDA","PrimPol-MDA","piPolB+D","piMDA","piMDA","piMDA+D","piMDA+D")
-quast_ref_mism[,1] <- c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila")
+quast_ref_mism[,1] <- c("B. subtilis", "E. coli","K. rhizophila","P. aeruginosa")
 #normalize data
 quast_ref_mism[,2:11] <- quast_ref_mism[,2:11] /quast_ref_mism[,2]
 #melt
@@ -1064,7 +1030,7 @@ quast_ref_mism_melted <- data.frame(lapply(quast_ref_mism_melted, function(x) {g
 quast_ref_mism_melted <- data.frame(lapply(quast_ref_mism_melted, function(x) {gsub("D.1", "D", x)}))
 quast_ref_mism_melted$ind <- factor(quast_ref_mism_melted$ind, levels = c("NA",
     "RP-MDA", "PrimPol-MDA", "piPolB+D", "piMDA", "piMDA+D"))
-quast_ref_mism_melted$Category <- factor(quast_ref_mism_melted$Category, levels = c("E. coli","B. subtilis", "P. aeruginosa","K. rhizophila","Not_aligned"))
+quast_ref_mism_melted$Category <- factor(quast_ref_mism_melted$Category, levels = c("B. subtilis", "E. coli","K. rhizophila","P. aeruginosa","Not_aligned"))
 plot2 <- ggplot(quast_ref_mism_melted) + geom_point(aes(x = ind,
     y = as.numeric(values), group = Category, color = Category,
     fill = Category, shape = Category), size = 4, alpha = 0.7,
@@ -1193,7 +1159,8 @@ kbl(snps_table, align="c",caption="Table 8. Variant detection") %>%
 As shown in Table 8, variant calling capacity varies greatly samples. For example, RP-MDA and piPolB(+D) amplification result in poor variant detection of both single nucleotide polymorphisms (snps) and complex variants. It should be noted that with the exception of samples NA and NA2, which called the same SNVs, there are differences between the duplicates and the second batch of samples from RP-MDA. piMDA and especially piMDA+D allow better variant detection, with piMDA+D being identical to the control samples. Nevertheless, the PrimPol-MDA and piMDA(+D) methods show similar and good performance in variant detection, with up to 60-80% of variants overlapping with the non-amplified samples.
 
 ### Assembly k-mer content
-We used KAT v.2.4.1 to compare the Illumina reads with their corresponding Spades assembly. 
+
+We used KAT v.2.4.1 to compare the Illumina reads with their corresponding Spades assembly.
 
 ```{r kat_assembly, fig.cap=capFig("KAT k-mer plots comparing k-mer content of Illumina PCR-free reads with the corresponding assembly. The black dots of the graph represents the distribution of k-mers present in the reads but not in the assembly, and the red area represents the distribution of k-mers present in the reads and once in the assembly"),fig.width=11,fig.height=7,fig.align = 'left', warning=FALSE}
 reads <- c("Ctrl","Ctrl2","N4","D3","C3","F2","N2","B2","N6","A2")
@@ -1209,7 +1176,8 @@ p_kat <- lapply(1:length(reads), FUN = function(i) {
 })
 do.call("grid.arrange", c(p_kat, ncol=5))
 ```
-The black line in piPolB+D has a larger extension along the x-axis, indicating a higher number of k-mers excluded from the assembly. The red area in all graphs represents a normal distribution of k-mers found in the reads and occurring once in the assembly. The presence of orange dots in some samples, namely RP-MDA, RP-MDA2, PrimPol-MDA and piPolB+D, reflects the presence of repetitive content throughout the assembly, with k-mers in the reads occurring >2 times in the assembly, in agreement with a higher level of biased overamplification (Figure 4).
+
+The black line in piPolB+D has a larger extension along the x-axis, indicating a higher number of k-mers excluded from the assembly. The red area in all graphs represents a normal distribution of k-mers found in the reads and occurring once in the assembly. The presence of orange dots in some samples, namely RP-MDA, RP-MDA2, PrimPol-MDA and piPolB+D, reflects the presence of repetitive content throughout the assembly, with k-mers in the reads occurring \>2 times in the assembly, in agreement with a higher level of biased overamplification (Figure 4).
 
 ### Assembly binning
 
